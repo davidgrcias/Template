@@ -13,7 +13,7 @@
     <body id="editor" ng-app="ImageEditor" ng-strict-di>
 
         <div id="splash" ng-cloak>
-            <div id="splash-spinner"></div>
+          <div id="splash-spinner"></div>
         </div>
 
         <div ng-controller="MainController" ng-cloak style="height: 100%">

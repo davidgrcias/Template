@@ -96,16 +96,16 @@
       </div>
       <div class = "login-form">
         <h2>Upload Foto</h2>
-        <form action="" method = "post" spellcheck = "false">
-          <input class="form-control" type="email" placeholder="Email">
-          <input class="form-control" type="text" placeholder="Nama Foto">
+        <form id = "uploadForm" action="" method = "post" spellcheck = "false"  autocomplete="off" enctype="multipart/form-data">
+          <input class="form-control" type="email" placeholder="Email" required name = "email">
+          <input class="form-control" type="text" placeholder="Nama Foto" required name = "imageName">
           <div class="upload" style = "margin-top: -10px;">
             <button type = "button" class = "btn-warning">
               <i class = "fa fa-upload"></i> Upload Foto
-              <input type="file" name = "photo">
+              <input type="file" name="image" id = "image" accept=".jpg, .jpeg, .png" required>
             </button>
           </div>
-          <button type = "button" class = "submit-btn">Submit</button>
+          <button type = "submit" name = "submit" onclick = "uploadImage();" class = "submit-btn">Submit</button>
         </form>
       </div>
     </div>
@@ -123,3 +123,44 @@
       });
     });
   </script>
+
+  <script type="text/javascript">
+      // Prevent form from submit or refresh
+      var form = document.getElementById("uploadForm");
+      function handleForm(event) { event.preventDefault(); }
+      form.addEventListener('submit', handleForm);
+      // Function
+      function uploadImage(){
+        $(document).ready(function(){
+
+          $.ajax({
+            // Action
+            url: 'function.php',
+            // Method
+            type: 'POST',
+            data: {
+              // Get value
+              imageName: $("input[name=imageName]").val(),
+              email: $("input[name=email]").val(),
+              image: $("input[name=image]").val(),
+              action: "uploadImage"
+            },
+            success:function(response){
+              // Response is the output of action file
+              if(response == 1){
+                alert("Data Added Successfully!");
+              }
+              else if(response == 2){
+                alert("Email Is Not Available");
+              }
+              else if(response == 3){
+                alert("You Must Be Able To Speak More Than 1 Language");
+              }
+              else{
+
+              }
+            }
+          });
+        });
+      }
+    </script>

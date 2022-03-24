@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Kartu Ucapan Idul Fitri 2022</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
@@ -74,7 +74,7 @@
         to {background-position:-10000px 5000px;}
     }
 
-    .stars, .twinkling, .clouds {
+    .stars, .twinkling{
     position:absolute;
     top:0;
     left:0;
@@ -187,7 +187,7 @@
             color:white;
             text-decoration: none;
         }
-        A:hover{
+        a:hover{
             color:white;
             text-decoration: underline;
         }
@@ -200,6 +200,59 @@
   right: 0;
   bottom: 0;
 }
+
+.swing {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    top:-40px;
+}
+.swing:after{
+    content: '';  
+    top: -10px; left: 50%;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+/* nail */
+.swing:before{
+    content: '';
+    width: 5px; height: 5px;
+    top: -14px;left: 54%;
+    border-radius: 50% 50%;
+    background: #000;
+}
+ 
+@keyframes swing {
+    0% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+.swing2 {
+    animation: swing2 ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    top:-40px;
+}
+.swing2:after{
+    content: '';  
+    top: -10px; left: 50%;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+/* nail */
+.swing2:before{
+    content: '';
+    width: 5px; height: 5px;
+    top: -14px;left: 54%;
+    border-radius: 50% 50%;
+    background: #000;
+}
+ 
+@keyframes swing2 {
+    0% { transform: rotate(-3deg); }
+    100% { transform: rotate(3deg); }
+}
+
         .clear {
     clear: both;
 }
@@ -220,7 +273,10 @@
         </div>
 <img class="frame"src="eidmubarakpira.png" style="left:20%">
 <img class="frame"src="eidmubarakwanita.png" style="right:20%">
-    </div>
+<img class="swing frame" src="ketupateidmubarak.png" width="200" style="right:5%;" >
+<img class="swing2 frame" src="ketupateidmubarak.png" width="200" style="left:5%;" >
+</div>
+    
     <div class="sticky-bottom-right">By: DaJaVu!</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

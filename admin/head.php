@@ -7,10 +7,10 @@ $admin = mysqli_fetch_assoc(mysqli_query($connt, "SELECT * FROM data_admin"));
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>Admin - Aplikasi Bank Sampah</title>
+	<title>Admin - Template</title>
 
 	<!-- Site favicon -->
-	<link rel="icon" type="image/png" sizes="16x16" href="img/logo.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../eidmubarakpira.png">
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

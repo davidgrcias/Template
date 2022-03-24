@@ -1,5 +1,5 @@
 <?php
-$connt = mysqli_connect("localhost", "root", "", "banksampah");
+$connt = mysqli_connect("localhost", "root", "", "template");
 session_start();
 date_default_timezone_set("Asia/Jakarta");
 

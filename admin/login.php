@@ -6,7 +6,7 @@
 		<div class="container-fluid d-flex justify-content-between align-items-center">
 			<div class="brand-logo">
 				<a href="login.php">
-					<img src="img/logo.png" alt="" width = 50>
+					<h2>Template</h2>
 				</a>
 			</div>
 		</div>
@@ -14,7 +14,7 @@
   <?php
 
   if(!empty($_SESSION['idd'])){
-    header("Location: ../banksampah/");
+    header("Location: index.php");
   }
   else{
   }
@@ -61,7 +61,7 @@
                       var password = document.getElementById('password').value;
                       var kode = "logintoadmin";
                         $.ajax({
-                          url: '../banksampah/function.php',
+                          url: 'function.php',
                           type: 'POST',
                           data: {usernameemail:usernameemail,password:password,kode:kode},
                           success: function(response){

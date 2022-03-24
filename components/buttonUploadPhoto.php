@@ -39,7 +39,7 @@
   margin-bottom: 30px;
 }
 
-.login-form form input{
+.login-form form input, .login-form form select{
   width: 75%;
   margin-bottom: 20px;
   padding: 12px 12px;
@@ -85,6 +85,7 @@
   background-color: #d9a400!important;
 }
 </style>
+<?php require '../function.php'; ?>
 <button type="button" name="button" id="modalUpload-show">Kirim Foto</button>
 
 <div id="modalUpload">
@@ -96,16 +97,26 @@
       </div>
       <div class = "login-form">
         <h2>Upload Foto</h2>
-        <form id = "uploadForm" action="" method = "post" spellcheck = "false"  autocomplete="off" enctype="multipart/form-data">
-          <input class="form-control" type="email" placeholder="Email" required name = "email">
-          <input class="form-control" type="text" placeholder="Nama Foto" required name = "imageName">
+        <form action="" method = "post" spellcheck = "false" autocomplete="off" enctype="multipart/form-data">
+          <input class="form-control" type="email" placeholder="Email Kamu" required name = "email">
+          <input class="form-control" type="text" placeholder="Nama Gambar" required name = "imageName">
+          <?php
+          $colors = mysqli_query($conn, "SELECT * FROM color");
+          ?>
+          <select class="form-control" name="color_id">
+            <option value="" selected hidden>Warna Gambar</option>
+            <?php foreach($colors as $color) : ?>
+            <?php $color_id = $color["color_id"]; ?>
+            <option value="<?php echo $color_id; ?>"><?php echo $color["color"]; ?></option>
+            <?php endforeach; ?>
+          </select>
           <div class="upload" style = "margin-top: -10px;">
             <button type = "button" class = "btn-warning">
               <i class = "fa fa-upload"></i> Upload Foto
-              <input type="file" name="image" id = "image" accept=".jpg, .jpeg, .png" required>
+              <input type="file" name="image" accept=".jpg, .jpeg, .png" required>
             </button>
           </div>
-          <button type = "submit" name = "submit" onclick = "uploadImage();" class = "submit-btn">Submit</button>
+          <button type = "submit" name = "submitimage" class = "submit-btn">Submit</button>
         </form>
       </div>
     </div>
@@ -123,44 +134,3 @@
       });
     });
   </script>
-
-  <script type="text/javascript">
-      // Prevent form from submit or refresh
-      var form = document.getElementById("uploadForm");
-      function handleForm(event) { event.preventDefault(); }
-      form.addEventListener('submit', handleForm);
-      // Function
-      function uploadImage(){
-        $(document).ready(function(){
-
-          $.ajax({
-            // Action
-            url: 'function.php',
-            // Method
-            type: 'POST',
-            data: {
-              // Get value
-              imageName: $("input[name=imageName]").val(),
-              email: $("input[name=email]").val(),
-              image: $("input[name=image]").val(),
-              action: "uploadImage"
-            },
-            success:function(response){
-              // Response is the output of action file
-              if(response == 1){
-                alert("Data Added Successfully!");
-              }
-              else if(response == 2){
-                alert("Email Is Not Available");
-              }
-              else if(response == 3){
-                alert("You Must Be Able To Speak More Than 1 Language");
-              }
-              else{
-
-              }
-            }
-          });
-        });
-      }
-    </script>

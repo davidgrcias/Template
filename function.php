@@ -1,16 +1,11 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "template");
 
-if($_POST["action"] == "uploadImage"){
-  uploadImage();
-}
-
-function uploadImage(){
-  global $conn;
-
-  $imageName = $_POST["imageName"];
+if(isset($_POST["submitimage"])){
   $email = $_POST["email"];
-  
+  $imageName = $_POST["imageName"];
+  $color_id = $_POST["color_id"];
+
   if($_FILES["image"]["error"] == 4){
     echo
     "<script> alert('Image Does Not Exist'); </script>"
@@ -41,19 +36,19 @@ function uploadImage(){
       ";
     }
     else{
-      $newImageName = uniqid();
+      $newImageName = $imageName . " - " . date("Y.m.d") . " - " . date("h.i.sa");
       $newImageName .= '.' . $imageExtension;
 
-      move_uploaded_file($tmpName, 'img/' . $newImageName);
-      $query = "INSERT INTO tb_upload VALUES('', '$name', '$newImageName')";
+      move_uploaded_file($tmpName, '../usersUpload/' . $newImageName);
+      $query = "INSERT INTO card VALUES('', '$email', '$imageName', '$newImageName', '$color_id', 0)";
       mysqli_query($conn, $query);
       echo
       "
       <script>
         alert('Successfully Added');
-        document.location.href = 'data.php';
+        document.location.href = '';
       </script>
       ";
     }
+  }
 }
-?>

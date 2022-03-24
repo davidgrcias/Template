@@ -11,7 +11,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Volkhov:ital,wght@1,700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Creepster&display=swap');
         body {
   background-color: hsl(218, 41%, 15%);
   background-image: radial-gradient(
@@ -127,7 +127,7 @@
             color:#E0B493;
         }
         .gradient-border {
-        --borderWidth: 3px;
+        --borderWidth: 20%;
         background: #1D1F20;
         position: relative;
         border-radius: var(--borderWidth);
@@ -164,15 +164,15 @@
         }
 
         .button {
-            font-size:1em;
-    padding: 20px 10px;
+            font-size:100%;
+    padding: 5% 1%;
     border-radius: 25px;
     color: white;
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
     overflow: hidden;
-    margin: 25px;
+    margin: 5%;
     font-family: "concert one";
     filter: hue-rotate(0deg);
     border: 5px;
@@ -191,38 +191,19 @@
             color:white;
             text-decoration: underline;
         }
+
+        .sticky-bottom-right {
+  font-weight: bold;
+  font-family:'creepster';
+  font-size:2vw;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
         .clear {
     clear: both;
 }
-        @media only screen and (min-width: 600px) {
-        /* For tablets: */
-        . {height: 16.66%;}
-        .col-s-3 {width: 25%;}
-        .col-s-4 {width: 33.33%;}
-        .col-s-5 {width: 41.66%;}
-        .col-s-6 {width: 50%;}
-        .col-s-7 {width: 58.33%;}
-        .col-s-8 {width: 66.66%;}
-        .col-s-9 {width: 75%;}
-        .col-s-10 {width: 83.33%;}
-        .col-s-11 {width: 91.66%;}
-        .col-s-12 {width: 100%;}
-        }
-        @media only screen and (min-width: 768px) {
-        /* For desktop: */
-        .col-1 {width: 8.33%;}
-        .col-2 {width: 16.66%;}
-        .col-3 {width: 25%;}
-        .col-4 {width: 33.33%;}
-        .col-5 {width: 41.66%;}
-        .col-6 {width: 50%;}
-        .col-7 {width: 58.33%;}
-        .col-8 {width: 66.66%;}
-        .col-9 {width: 75%;}
-        .col-10 {width: 83.33%;}
-        .col-11 {width: 91.66%;}
-        .col-12 {width: 100%;}
-        }
+        
     </style>
 </head>
 <body>
@@ -240,7 +221,7 @@
 <img class="frame"src="eidmubarakpira.png" style="left:20%">
 <img class="frame"src="eidmubarakwanita.png" style="right:20%">
     </div>
-
+    <div class="sticky-bottom-right">By: DaJaVu!</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

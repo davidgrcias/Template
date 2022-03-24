@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Document</title>
     <style>
@@ -51,7 +52,7 @@
    }
         .title {
         font-family: 'Mr Dafoe';
-        font-size: 8em;
+        font-size: 9vw;
         color: white;
         text-shadow: 0 0 0.05em #fff, 0 0 0.2em #09F547, 0 0 0.3em #09F547;
         text-align: center;
@@ -111,14 +112,13 @@
     animation-direction: alternate;
     animation-iteration-count: 4;
         background-attachment: fixed;
-        height:150px;
-        width:150px;
+        width:13%;
         z-index:2;
         
         }
         h2{
             font-family:'satisfy';
-            font-size:5em;
+            font-size:7vw;
             color:white;
             text-align:center;
         }
@@ -194,6 +194,35 @@
         .clear {
     clear: both;
 }
+        @media only screen and (min-width: 600px) {
+        /* For tablets: */
+        . {height: 16.66%;}
+        .col-s-3 {width: 25%;}
+        .col-s-4 {width: 33.33%;}
+        .col-s-5 {width: 41.66%;}
+        .col-s-6 {width: 50%;}
+        .col-s-7 {width: 58.33%;}
+        .col-s-8 {width: 66.66%;}
+        .col-s-9 {width: 75%;}
+        .col-s-10 {width: 83.33%;}
+        .col-s-11 {width: 91.66%;}
+        .col-s-12 {width: 100%;}
+        }
+        @media only screen and (min-width: 768px) {
+        /* For desktop: */
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+        }
     </style>
 </head>
 <body>

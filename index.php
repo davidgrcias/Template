@@ -183,7 +183,14 @@
     text-decoration: underline;
             
         }
-
+        a {
+            color:white;
+            text-decoration: none;
+        }
+        A:hover{
+            color:white;
+            text-decoration: underline;
+        }
         .clear {
     clear: both;
 }
@@ -197,7 +204,7 @@
             <div><p class="title">2022</p><br>
             <h2> Happy Eid <p class="mubarak">Mubarak</p></h2><br>
             <div class="gradient-border button" id="lanjut">
-            Kirim Kartu Ucapan!
+            <a href="p2.php" >Kirim Kartu Ucapan!</a>
             </div>            
         </div>
         </div>

@@ -288,9 +288,8 @@ function sendmessage(){
 function unhidenews(){
   global $connt;
   $id = $_POST["idnya"];
-  $author = "<span style = \"color: #5cb85c;\"> Public </span>";
 
-  $query = "UPDATE news SET stat = 'p', status = '$author' WHERE id = $id";
+  $query = "UPDATE card SET approval = 1 WHERE card_id = $id";
   mysqli_query($connt, $query);
   echo mysqli_affected_rows($connt);
 }
@@ -298,9 +297,8 @@ function unhidenews(){
 function hidenews(){
   global $connt;
   $id = $_POST["idnya"];
-  $author = "<span style = \"color: #d9534f;\"> Private </span>";
 
-  $query = "UPDATE news SET stat = 'x', status = '$author' WHERE id = $id";
+  $query = "UPDATE card SET approval = 0 WHERE card_id = $id";
 
   mysqli_query($connt, $query);
   echo mysqli_affected_rows($connt);
@@ -818,13 +816,7 @@ function accountdeleteddfromadmin(){
 
   $deleteid = $_POST["deleteid"];
 
-  $selectsampah = count(query("SELECT * FROM sampah WHERE iduser = $deleteid"));
-  if($selectsampah >= 1){
-    echo 0;
-    exit;
-  }
-
-  $query = "DELETE FROM data_user WHERE id = $deleteid";
+  $query = "DELETE FROM card WHERE card_id = $deleteid";
   mysqli_query($connt, $query);
   echo 1;
 }

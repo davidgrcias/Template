@@ -8,9 +8,9 @@ else{
 ?>
 <div class="left-side-bar">
   <div class="brand-logo">
-    <a href="../banksampah" style = "display: flex; align-items: flex-end!important;">
-      <img style = "margin-left: auto; margin-right: auto; padding-bottom: 5px!important;" src="img/logo.png" alt="" class="light-logo" width = "45">
-      <p style = "font-size: 14px; line-height: 15px; text-align: center; margin-left: 2px;">Admin - Aplikasi Bank Sampah</p>
+    <a href="" style = "display: flex; align-items: flex-end!important;">
+      <img style = "margin-left: auto; margin-right: auto; padding-bottom: 5px!important;" src="../eidmubarakpira.png" alt="" class="light-logo" width = "45">
+      <p style = "font-size: 14px; line-height: 15px; text-align: center; margin-left: 2px;">Admin - Template</p>
     </a>
     <div class="close-sidebar" data-toggle="left-sidebar-close">
       <i class="ion-close-round"></i>

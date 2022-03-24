@@ -1,3 +1,18 @@
+<?php
+$con = mysqli_connect("localhost","root","","template");
+if (!$con) {
+  die('Could not connect: ' . mysqli_error());
+}
+
+$result = mysqli_query($con,"SELECT * FROM card");
+$row = mysqli_num_rows($result);
+$rows=[]; //kotk kosong
+    while ($rowa /*bajunya */= mysqli_fetch_assoc($result)){
+        $rows[]=$rowa; //baju masukin kotaknya ga bawa lemari
+    }
+?>
+
+<!-- HTML -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +29,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Volkhov:ital,wght@1,700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Creepster&display=swap');
         body {
+  background-repeat: no-repeat;
   background-color: hsl(218, 41%, 15%);
   background-image: radial-gradient(
     650px circle at 50% 0%,
@@ -125,7 +141,9 @@ transition: all 1s ease;
     box-shadow:0px 0px 30px white;
    }
    .imagethumbnail{
-       max-width:100%;
+       /* max-width:100%; */
+       width:2843.75%;
+       height:635px;
 transition: all 1s ease;
    }
    .imagethumbnail:hover{
@@ -134,7 +152,7 @@ transition: all 1s ease;
    .caption{
        text-align: center;
             font-family:"volkhov";
-            
+            font-size:25px;
             color: #b08d5b;
         }
         a {
@@ -177,14 +195,14 @@ transition: all 1s ease;
 
   <div class="row">
       <!-- ini ntar ambil semua data trus itung ada berapa kan nah trus digituin -->
-  <?php for ($i = 0; $i <=10;$i++):?>
+  <?php for ($i = 0; $i <$row;$i++):?>
     <div class="col-md-4">
       <div class="thumbnail">
-        <a href="p3/<?php#disini nanti id foto ?>" target="_blank">
-          <img src="eidmubarakpira.png" class="imagethumbnail" style="width:100%">
+        <a href="p3.php?o=<?=$rows[$i]["card_id"]; ?>" target="_self">
+          <img src="usersUpload/<?=$rows[$i]["image"];?>" class="imagethumbnail" style="width:100%">
       </div>
           <div class="caption">
-            <p>Deskripsi Foto, make php</p>
+            <p><?=$rows[$i]["imageName"];?></p>
           </div>
         </a>
       </div>

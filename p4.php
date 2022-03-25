@@ -479,16 +479,16 @@ $rows=[]; //kotk kosong
     <span style="all:unset;"><i class="fa fa-download"></i></span>
   </div></a>
 </div>
-    <form>
- <!-- <input type="button" value="No, really, go back!" onclick="history.go(-1)"> -->
-</form>
-<a href="#" class="wrapper" style="width:20%">
+
+
+<a href="#" class="wrapper" style="width:20%" id="copylink"onclick="copyURL()" onmouseout="outFunc()">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         Salin Tautan
     </a>
+    
   <div class="row">
     <div class="centerize">
       <div class="thumbnail">
@@ -507,6 +507,17 @@ $rows=[]; //kotk kosong
         <span></span>
         Buat Kartu Lagi!
     </a>
+
+    <script>
+    function copyURL() {
+    navigator.clipboard.writeText("HALOINIURLBROH");
+    
+    var tooltip = document.getElementById("copylink");
+    tooltip.innerHTML = "Copied: " + "urldisini";
+
+    }
+
+    </script>
 </body>
 </html>
 

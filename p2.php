@@ -198,7 +198,7 @@ transition: all 1s ease;
   <?php for ($i = 0; $i <$row;$i++):?>
     <div class="col-md-4">
       <div class="thumbnail">
-        <a href="p3.php?o=<?=$rows[$i]["card_id"]; ?>" target="_self">
+        <a href="p3.php?id=<?=$rows[$i]["card_id"]; ?>" target="_self">
           <img src="usersUpload/<?=$rows[$i]["image"];?>" class="imagethumbnail" style="width:100%">
       </div>
           <div class="caption">

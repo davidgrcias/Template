@@ -24,7 +24,7 @@ $rows=[]; //kotk kosong
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css" integrity="sha512-OivR4OdSsE1onDm/i3J3Hpsm5GmOVvr9r49K3jJ0dnsxVzZgaOJ5MfxEAxCyGrzWozL9uJGKz6un3A7L+redIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Kartu Ucapan Idul Fitri 2022</title>
 
     <style>
@@ -323,7 +323,7 @@ $rows=[]; //kotk kosong
                 display: inline-block;
                 padding: 25px 30px;
                 margin: 40px 0;
-                color: #03e9f4;
+                color: #07f403;
                 text-decoration: none;
                 text-transform: uppercase;
                 transition: 0.5s;
@@ -333,12 +333,12 @@ $rows=[]; //kotk kosong
             
             }
             a:hover{
-                background: #03e9f4;
+                background: #07f403;
                 color: #050801;
-                box-shadow: 0 0 5px #03e9f4,
-                            0 0 25px #03e9f4,
-                            0 0 50px #03e9f4,
-                            0 0 200px #03e9f4;
+                box-shadow: 0 0 5px #07f403,
+                            0 0 25px #07f403,
+                            0 0 50px #07f403,
+                            0 0 200px #07f403;
                 -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
             }
             a:nth-child(1){
@@ -356,7 +356,7 @@ $rows=[]; //kotk kosong
                 left: 0;
                 width: 100%;
                 height: 2px;
-                background: linear-gradient(90deg,transparent,#03e9f4);
+                background: linear-gradient(90deg,transparent,#07f403);
                 animation: animate1 1s linear infinite;
             }
             @keyframes animate1{
@@ -372,7 +372,7 @@ $rows=[]; //kotk kosong
                 right: 0;
                 width: 2px;
                 height: 100%;
-                background: linear-gradient(180deg,transparent,#03e9f4);
+                background: linear-gradient(180deg,transparent,#07f403);
                 animation: animate2 1s linear infinite;
                 animation-delay: 0.25s;
             }
@@ -389,7 +389,7 @@ $rows=[]; //kotk kosong
                 right: 0;
                 width: 100%;
                 height: 2px;
-                background: linear-gradient(270deg,transparent,#03e9f4);
+                background: linear-gradient(270deg,transparent,#07f403);
                 animation: animate3 1s linear infinite;
                 animation-delay: 0.50s;
             }
@@ -408,7 +408,7 @@ $rows=[]; //kotk kosong
                 left: 0;
                 width: 2px;
                 height: 100%;
-                background: linear-gradient(360deg,transparent,#03e9f4);
+                background: linear-gradient(360deg,transparent,#07f403);
                 animation: animate4 1s linear infinite;
                 animation-delay: 0.75s;
             }
@@ -419,6 +419,9 @@ $rows=[]; //kotk kosong
                 50%,100%{
                     bottom: 100%;
                 }
+            }
+            .clear{
+                
             }
     </style>
 </head>
@@ -441,42 +444,51 @@ $rows=[]; //kotk kosong
       </div>
     </div>
     <div class="wrapper">
-    <div class="icon other">
+    <div class="icon other" onclick="history.go(-1)">
     <div class="tooltip">Back</div>
     <span><i class="fa fa-arrow-rotate-back"></i></span>
   </div>
+  <a style="all:unset;" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fparse.com">
   <div class="icon facebook">
     <div class="tooltip">Facebook</div>
-    <span><i class="fa fa-facebook-f"></i></span>
-  </div>
+    <span style="all:unset;"><i class="fa fa-facebook-f"></i></span>
+  </div></a>
+  <a style="all:unset;" target="_blank" href="http://twitter.com/share?text=textgoeshere&url=http://urlgoeshere&hashtags=hashtag1,hashtag2,hashtag3">
   <div class="icon twitter">
     <div class="tooltip">Twitter</div>
-    <span><i class="fa fa-twitter"></i></span>
-  </div>
-  <div class="icon instagram">
-    <div class="tooltip">Instagram</div>
-    <span><i class="fa fa-instagram"></i></span>
-  </div>
+    <span style="all:unset;"><i class="fa fa-twitter"></i></span>
+  </div></a>
+  <a style="all:unset;" href="whatsapp://send?text=<?php #url disni?>" data-action="share/whatsapp/share">
   <div class="icon whatsapp">
     <div class="tooltip">Whatsapp</div>
-    <span><i class="fa fa-whatsapp"></i></span>
-  </div>
+    <span style="all:unset;"><i class="fa fa-whatsapp"></i></span>
+  </div></a>
+  <a style="all:unset;" target="_blank" href="https://line.me/share/url?url=<URL>&text=<TEXT>">
   <div class="icon line">
     <div class="tooltip">Line</div>
-    <span><i class="fab fa-line"></i></span>
-  </div>
+    <span style="all:unset;"><i class="fab fa-line"></i></span>
+  </div></a>
+  <a style="all:unset;" target="_blank" href="https://telegram.me/share/url?url=<URL>&text=<TEXT>">
   <div class="icon telegram">
     <div class="tooltip">Telegram</div>
-    <span><i class="fa fa-telegram"></i></span>
-  </div>
+    <span style="all:unset;"><i class="fa fa-telegram"></i></span>
+  </div></a>
+  <a style="all:unset;" download="endProduct/exampletemplatenumbaone.png" href="endProduct/exampletemplatenumbaone.png" title="ImageName">
   <div class="icon other">
     <div class="tooltip">Download</div>
-    <span><i class="fa fa-download"></i></span>
-  </div>
+    <span style="all:unset;"><i class="fa fa-download"></i></span>
+  </div></a>
 </div>
     <form>
  <!-- <input type="button" value="No, really, go back!" onclick="history.go(-1)"> -->
 </form>
+<a href="#" class="wrapper" style="width:20%">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Salin Tautan
+    </a>
   <div class="row">
     <div class="centerize">
       <div class="thumbnail">
@@ -488,7 +500,13 @@ $rows=[]; //kotk kosong
       </div>
   </div>
 </div>
-
+<a href="index.php" class="wrapper" style="width:25%">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Buat Kartu Lagi!
+    </a>
 </body>
 </html>
 

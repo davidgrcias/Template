@@ -43,7 +43,7 @@ $rows=[]; //kotk kosong
 
     .stepper-wrapper {
   font-family: 'satisfy';
-  font-size:2vw;
+  font-size:25px;
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
@@ -118,18 +118,19 @@ $rows=[]; //kotk kosong
 }
 .step-name{
     font-family:'concert one';
-    font-size:1.5vw;
+    font-size:20px;
 }
     
 .moon{
-     position: absolute;
+  position: absolute;
      top: 8%;
      left: 40%;
      transform: translate(-50%, -50%);
-     height: 10vw;
-     width: 10vw;
+     height: 100px;
+     width: 100px;
      box-shadow: -15px 15px 0 5px white  ;
      border-radius: 50%;
+     z-index: -1;
     filter: blur(2px);
    }
 

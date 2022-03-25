@@ -120,7 +120,7 @@ $tanggal = date('d') . ' ' . date('F') . ' ' . date('Y');
       <div class="dropdown">
         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
           <span class="user-icon">
-            <img src="../jurnal/assets/img/admin.png" alt="">
+            <img src="../eidmubarakpira.png" alt="">
           </span>
           <span class="user-name">&nbsp;<?php echo $user["username"]; ?></span>
         </a>

@@ -12,6 +12,24 @@ $rows=[]; //kotk kosong
     while ($rowa /*bajunya */= mysqli_fetch_assoc($result)){
         $rows=$rowa; //baju masukin kotaknya ga bawa lemari
     }
+
+if(isset($_POST['laporkan']))
+{
+  $id_user = $_SESSION['id_user'];
+  $nama = $_POST['nama'];
+  $email = $_SESSION['email'];
+  $kategori = $_POST['kategori'];
+  $pesan = $_POST['pesan'];
+        
+  $sql2 = "INSERT INTO lapor (id_user, nama, email, kategori, pesan) VALUE('$id_user', '$nama', '$email', '$kategori', '$pesan')";
+  $query2 = mysqli_query($conn, $sql2);
+     
+  if($query2) {
+    header('Location: p4.php?status=sukses');
+  } else {
+    header('Location: p4.php?status=gagal');
+        }
+    }
 ?>
 
 <!-- HTML -->
@@ -291,6 +309,34 @@ function myFunction5() {
 function myFunction6() {
    document.getElementById("bgc").style.backgroundImage = "url(bgcolor/bgc6.JPG)";
 }
+
+function berkat1() {
+  document.getElementById("isi").value = "Meditasi 1";
+}
+
+var AphorismFlag=false;
+function pilih1() {
+	var o=document.getElementById('pilihan1');
+	var theWord=o.value;
+	for(var i=1; i<5; i++) 	theWord=theWord.replace("<br>","\n");
+	
+	var tbox=document.getElementById('isi');
+ 
+	tbox.value=theWord;
+	 
+}
+function pilih2() {
+	var o=document.getElementById('pilihan2');
+	var theWord=o.value;
+	
+	var tbox=document.getElementById('isi');
+	if (AphorismFlag>0) {
+		tbox.value=theWord;
+	} else {
+		tbox.value = tbox.value + theWord;
+	}
+	AphorismFlag=0;
+}
 </script>
 </head>
 <body>
@@ -336,8 +382,9 @@ function myFunction6() {
 		  <input type='hidden' name='' value='' >
 
 		<div class='isiform' >
-			<input type='text' name='kepada' class='kepada' value='Kepada' >
-			<textarea class='isi' name='isi'>Isi</textarea>
+			<input type='text' name='kepada' class='kepada' value='Kepada'>
+      
+			<textarea class='isi' name='isi' id="isi">Isi</textarea>
 
 			<div style='text-align:right;'>
 				<input type='text' name='dari' class='dari' value='Dari'>
@@ -345,22 +392,22 @@ function myFunction6() {
 
 			<div style='margin-top:40px; float:left; font-size:30px;'>
 
-			Meditasi:<select class='pilihan'>
+			Meditasi:<select id="pilihan1" class='pilihan' onchange='pilih1()'>
         <option value=''>* Mengutip Jing Si *</option>
-        <option value=''>Meditasi 1</option>
-        <option value=''>Meditasi 2</option>
-        <option value=''>Meditasi 3</option>
-        <option value=''>Meditasi 4</option>
-        <option value=''>Meditasi 5</option>
+        <option value='Meditasi 1'>Meditasi 1</option>
+        <option value='Meditasi 2'>Meditasi 2</option>
+        <option value='Meditasi 3'>Meditasi 3</option>
+        <option value='Meditasi 4'>Meditasi 4</option>
+        <option value='Meditasi 5'>Meditasi 5</option>
       </select>
 <br>
-      Berkat:<select class='pilihan' name="">
+      Berkat:<select id="pilihan2" class='pilihan' onchange='pilih2()'>
         <option value=''>* Kata-kata keberuntungan *</option>
-        <option value=''>Berkat 1</option>
-        <option value=''>Berkat 2</option>
-        <option value=''>Berkat 3</option>
-        <option value=''>Berkat 4</option>
-        <option value=''>Berkat 5</option>
+        <option value='Berkat 1'>Berkat 1</option>
+        <option value='Berkat 2'>Berkat 2</option>
+        <option value='Berkat 3'>Berkat 3</option>
+        <option value='Berkat 4'>Berkat 4</option>
+        <option value='Berkat 5'>Berkat 5</option>
       </select>
 			</div><!-- /style -->
 

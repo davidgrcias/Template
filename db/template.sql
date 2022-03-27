@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2022 at 04:00 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Mar 27, 2022 at 10:43 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `template`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bgcolor`
+--
+
+CREATE TABLE `bgcolor` (
+  `id_bgc` int(11) NOT NULL,
+  `bgcolor_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bgcolor`
+--
+
+INSERT INTO `bgcolor` (`id_bgc`, `bgcolor_name`) VALUES
+(1, 'bgc1.jpg'),
+(2, 'bgc2.jpg'),
+(3, 'bgc3.jpg'),
+(4, 'bgc4.jpg'),
+(5, 'bgc5.jpg'),
+(6, 'bgc6.jpg');
 
 -- --------------------------------------------------------
 
@@ -43,6 +66,38 @@ CREATE TABLE `card` (
 INSERT INTO `card` (`card_id`, `email`, `imageName`, `image`, `color_id`, `approval`) VALUES
 (3, 'david@gmail.com', 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 1, 1),
 (4, 'jannsen@gmail.com', 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `card_end`
+--
+
+CREATE TABLE `card_end` (
+  `id_end` int(11) NOT NULL,
+  `card_id` int(11) NOT NULL,
+  `imageName` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `bgcolor` varchar(255) NOT NULL,
+  `kepada` varchar(255) NOT NULL,
+  `isi` varchar(255) NOT NULL,
+  `dari` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `card_end`
+--
+
+INSERT INTO `card_end` (`id_end`, `card_id`, `imageName`, `image`, `bgcolor`, `kepada`, `isi`, `dari`) VALUES
+(1, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc1.jpg', 'Kepada', 'Meditasi 1. Berkat 1.', 'Dari'),
+(2, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc1.jpg', 'Kepada', 'Meditasi 1.', 'Dari'),
+(3, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc2.jpg', 'Kepada', 'Meditasi 5.', 'Dari'),
+(4, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc3.jpg', 'Kepada', 'Isi', 'Dari'),
+(5, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc4.jpg', 'Kepada', 'Meditasi 5. Berkat 4.', 'Dari'),
+(6, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc5.jpg', 'Kepada', 'Meditasi 4. Berkat 2.', 'Dari'),
+(7, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc6.jpg', 'Kepada', 'Meditasi 2. Berkat 3. Berkat 1.', 'Dari'),
+(8, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc6.jpg', 'David', 'Meditasi 2. Berkat 3. Berkat 1.', 'James'),
+(9, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc4.jpg', 'Vincent', 'Meditasi 3. Berkat 5. Berkat 4. Berkat 2. Berkat 3. Berkat 1.', 'James');
 
 -- --------------------------------------------------------
 
@@ -167,10 +222,22 @@ INSERT INTO `sampah` (`id`, `iduser`, `tanggal`, `area`, `jenis`, `jumlah`, `tot
 --
 
 --
+-- Indexes for table `bgcolor`
+--
+ALTER TABLE `bgcolor`
+  ADD PRIMARY KEY (`id_bgc`);
+
+--
 -- Indexes for table `card`
 --
 ALTER TABLE `card`
   ADD PRIMARY KEY (`card_id`);
+
+--
+-- Indexes for table `card_end`
+--
+ALTER TABLE `card_end`
+  ADD PRIMARY KEY (`id_end`);
 
 --
 -- Indexes for table `color`
@@ -209,10 +276,22 @@ ALTER TABLE `sampah`
 --
 
 --
+-- AUTO_INCREMENT for table `bgcolor`
+--
+ALTER TABLE `bgcolor`
+  MODIFY `id_bgc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `card`
 --
 ALTER TABLE `card`
   MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `card_end`
+--
+ALTER TABLE `card_end`
+  MODIFY `id_end` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `color`

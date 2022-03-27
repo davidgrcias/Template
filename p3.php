@@ -13,23 +13,43 @@ $rows=[]; //kotk kosong
         $rows=$rowa; //baju masukin kotaknya ga bawa lemari
     }
 
-if(isset($_POST['laporkan']))
+if(isset($_POST['selesai']))
 {
-  $id_user = $_SESSION['id_user'];
-  $nama = $_POST['nama'];
-  $email = $_SESSION['email'];
-  $kategori = $_POST['kategori'];
-  $pesan = $_POST['pesan'];
-        
-  $sql2 = "INSERT INTO lapor (id_user, nama, email, kategori, pesan) VALUE('$id_user', '$nama', '$email', '$kategori', '$pesan')";
-  $query2 = mysqli_query($conn, $sql2);
-     
-  if($query2) {
+  $card_id = $_POST['card_id'];
+  $imageName = $_POST['imageName'];
+  $image = $_POST['image'];
+  $bgcolor = $_POST['bgcolor'];
+  $kepada = $_POST['kepada'];
+  $isi = $_POST['isi'];
+  $dari = $_POST['dari'];
+
+  $sql = "INSERT INTO card_end (card_id, imageName, image, bgcolor, kepada, isi, dari) VALUE('$card_id', '$imageName', '$image', '$bgcolor', '$kepada', '$isi', '$dari')";
+  $query = mysqli_query($con, $sql);
+
+  if($query) {
     header('Location: p4.php?status=sukses');
   } else {
     header('Location: p4.php?status=gagal');
         }
     }
+
+$sql_bg1 = mysqli_query($con, "SELECT * FROM bgcolor WHERE id_bgc='1'");
+$bgc1 = mysqli_fetch_assoc($sql_bg1);
+
+$sql_bg2 = mysqli_query($con, "SELECT * FROM bgcolor WHERE id_bgc='2'");
+$bgc2 = mysqli_fetch_assoc($sql_bg2);
+
+$sql_bg3 = mysqli_query($con, "SELECT * FROM bgcolor WHERE id_bgc='3'");
+$bgc3 = mysqli_fetch_assoc($sql_bg3);
+
+$sql_bg4 = mysqli_query($con, "SELECT * FROM bgcolor WHERE id_bgc='4'");
+$bgc4 = mysqli_fetch_assoc($sql_bg4);
+
+$sql_bg5 = mysqli_query($con, "SELECT * FROM bgcolor WHERE id_bgc='5'");
+$bgc5 = mysqli_fetch_assoc($sql_bg5);
+
+$sql_bg6 = mysqli_query($con, "SELECT * FROM bgcolor WHERE id_bgc='6'");
+$bgc6 = mysqli_fetch_assoc($sql_bg6);
 ?>
 
 <!-- HTML -->
@@ -292,29 +312,31 @@ input[type='submit'] {
     </style>
 <script>
 function myFunction() {
-   document.getElementById("bgc").style.backgroundImage = "url(bgcolor/bgc1.JPG)";
+   document.getElementById("bgc").style.backgroundImage = "url(bgcolor/<?php echo $bgc1["bgcolor_name"] ?>)";
+   document.getElementById("bgcolor").value = "<?php echo $bgc1["bgcolor_name"] ?>";
 }
 function myFunction2() {
-   document.getElementById("bgc").style.backgroundImage = "url(bgcolor/bgc2.JPG)";
+   document.getElementById("bgc").style.backgroundImage = "url(bgcolor/<?php echo $bgc2["bgcolor_name"] ?>)";
+   document.getElementById("bgcolor").value = "<?php echo $bgc2["bgcolor_name"] ?>";
 }
 function myFunction3() {
-   document.getElementById("bgc").style.backgroundImage = "url(bgcolor/bgc3.JPG)";
+   document.getElementById("bgc").style.backgroundImage = "url(bgcolor/<?php echo $bgc3["bgcolor_name"] ?>)";
+   document.getElementById("bgcolor").value = "<?php echo $bgc3["bgcolor_name"] ?>";
 }
 function myFunction4() {
-   document.getElementById("bgc").style.backgroundImage = "url(bgcolor/bgc4.JPG)";
+   document.getElementById("bgc").style.backgroundImage = "url(bgcolor/<?php echo $bgc4["bgcolor_name"] ?>)";
+   document.getElementById("bgcolor").value = "<?php echo $bgc4["bgcolor_name"] ?>";
 }
 function myFunction5() {
-   document.getElementById("bgc").style.backgroundImage = "url(bgcolor/bgc5.JPG)";
+   document.getElementById("bgc").style.backgroundImage = "url(bgcolor/<?php echo $bgc5["bgcolor_name"] ?>)";
+   document.getElementById("bgcolor").value = "<?php echo $bgc5["bgcolor_name"] ?>";
 }
 function myFunction6() {
-   document.getElementById("bgc").style.backgroundImage = "url(bgcolor/bgc6.JPG)";
+   document.getElementById("bgc").style.backgroundImage = "url(bgcolor/<?php echo $bgc6["bgcolor_name"] ?>)";
+   document.getElementById("bgcolor").value = "<?php echo $bgc6["bgcolor_name"] ?>";
 }
 
-function berkat1() {
-  document.getElementById("isi").value = "Meditasi 1";
-}
-
-var AphorismFlag=false;
+var Berkat=false;
 function pilih1() {
 	var o=document.getElementById('pilihan1');
 	var theWord=o.value;
@@ -330,12 +352,12 @@ function pilih2() {
 	var theWord=o.value;
 	
 	var tbox=document.getElementById('isi');
-	if (AphorismFlag>0) {
+	if (Berkat>0) {
 		tbox.value=theWord;
 	} else {
 		tbox.value = tbox.value + theWord;
 	}
-	AphorismFlag=0;
+	Berkat=0;
 }
 </script>
 </head>
@@ -368,20 +390,21 @@ function pilih2() {
           <img src="usersUpload/<?php echo $rows["image"] ?>" class="imagethumbnail" style="width:100%">
       </div>
       <div class='colorSelect'>
-			  <div class='csBox' onclick="myFunction()"><img src='bgcolor/bgc1.JPG'></div>
-			  <div class='csBox' onclick="myFunction2()"><img src='bgcolor/bgc2.JPG'></div>
-			  <div class='csBox' onclick="myFunction3()"><img src='bgcolor/bgc3.JPG'></div>
-			  <div class='csBox' onclick="myFunction4()"><img src='bgcolor/bgc4.JPG'></div>
-			  <div class='csBox' onclick="myFunction5()"><img src='bgcolor/bgc5.JPG'></div>
-			  <div class='csBox' onclick="myFunction6()"><img src='bgcolor/bgc6.JPG'></div>
+			  <div class='csBox' onclick="myFunction()"><img src='bgcolor/<?php echo $bgc1["bgcolor_name"] ?>'></div>
+			  <div class='csBox' onclick="myFunction2()"><img src='bgcolor/<?php echo $bgc2["bgcolor_name"] ?>'></div>
+			  <div class='csBox' onclick="myFunction3()"><img src='bgcolor/<?php echo $bgc3["bgcolor_name"] ?>'></div>
+			  <div class='csBox' onclick="myFunction4()"><img src='bgcolor/<?php echo $bgc4["bgcolor_name"] ?>'></div>
+			  <div class='csBox' onclick="myFunction5()"><img src='bgcolor/<?php echo $bgc5["bgcolor_name"] ?>'></div>
+			  <div class='csBox' onclick="myFunction6()"><img src='bgcolor/<?php echo $bgc6["bgcolor_name"] ?>'></div>
 		  </div>
 
-    <form method='POST' action='p4.php'>
+    <form method='POST' action=''>
 		  <input type='hidden' name='card_id' value='<?php echo $rows["card_id"] ?>' >
-		  <input type='hidden' name='bgc' value='' >
-		  <input type='hidden' name='' value='' >
+		  <input type='hidden' name='imageName' value='<?php echo $rows["imageName"] ?>'>
+		  <input type='hidden' name='image' value='<?php echo $rows["image"] ?>'>
+		  <input type='hidden' name='bgcolor' id="bgcolor" value='<?php echo $bgc1["bgcolor_name"] ?>'>
 
-		<div class='isiform' >
+		<div class='isiform'>
 			<input type='text' name='kepada' class='kepada' value='Kepada'>
       
 			<textarea class='isi' name='isi' id="isi">Isi</textarea>
@@ -412,7 +435,7 @@ function pilih2() {
 			</div><!-- /style -->
 
 			<div style='clear:both;text-align:center; margin-top:240px;'>
-				<input type='submit' value='Selesai!' name="submit">
+				<input type='submit' value='Selesai!' name="selesai">
 			</div>
 		</form>
 

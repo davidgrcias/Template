@@ -394,20 +394,20 @@ function pilih2() {
 
 			Meditasi:<select id="pilihan1" class='pilihan' onchange='pilih1()'>
         <option value=''>* Mengutip Jing Si *</option>
-        <option value='Meditasi 1'>Meditasi 1</option>
-        <option value='Meditasi 2'>Meditasi 2</option>
-        <option value='Meditasi 3'>Meditasi 3</option>
-        <option value='Meditasi 4'>Meditasi 4</option>
-        <option value='Meditasi 5'>Meditasi 5</option>
+        <option value='Meditasi 1.'>Meditasi 1</option>
+        <option value='Meditasi 2.'>Meditasi 2</option>
+        <option value='Meditasi 3.'>Meditasi 3</option>
+        <option value='Meditasi 4.'>Meditasi 4</option>
+        <option value='Meditasi 5.'>Meditasi 5</option>
       </select>
 <br>
       Berkat:<select id="pilihan2" class='pilihan' onchange='pilih2()'>
         <option value=''>* Kata-kata keberuntungan *</option>
-        <option value='Berkat 1'>Berkat 1</option>
-        <option value='Berkat 2'>Berkat 2</option>
-        <option value='Berkat 3'>Berkat 3</option>
-        <option value='Berkat 4'>Berkat 4</option>
-        <option value='Berkat 5'>Berkat 5</option>
+        <option value=' Berkat 1.'>Berkat 1</option>
+        <option value=' Berkat 2.'>Berkat 2</option>
+        <option value=' Berkat 3.'>Berkat 3</option>
+        <option value=' Berkat 4.'>Berkat 4</option>
+        <option value=' Berkat 5.'>Berkat 5</option>
       </select>
 			</div><!-- /style -->
 

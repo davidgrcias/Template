@@ -20,33 +20,23 @@ else{
     <div class="sidebar-menu">
       <ul id="accordion-menu">
         <li class="dropdown">
-          <a href="../banksampah" class="dropdown-toggle no-arrow">
+          <a href="index.php" class="dropdown-toggle no-arrow">
             <span class="micon dw dw-home"></span><span class="mtext">Dashboard</span>
           </a>
         </li>
-        <li class="dropdown">
-          <a href="users.php" class="dropdown-toggle no-arrow">
-            <span class="micon dw dw-user"></span><span class="mtext">Users</span>
+        <li>
+          <a href="kartu.php" class="dropdown-toggle no-arrow">
+            <span class="micon dw dw-image"></span><span class="mtext">Kartu</span>
           </a>
         </li>
         <li>
-          <a href="jenis.php" class="dropdown-toggle no-arrow">
-            <span class="micon dw dw-list3"></span><span class="mtext">Jenis</span>
-          </a>
-        </li>
-        <li>
-          <a href="sampah.php" class="dropdown-toggle no-arrow">
-            <span class="micon dw dw-trash"></span><span class="mtext">Sampah</span>
-          </a>
-        </li>
-        <li>
-          <a href="laporan.php" class="dropdown-toggle no-arrow">
-            <span class="micon dw dw-book"></span><span class="mtext">Laporan</span>
+          <a href="warna.php" class="dropdown-toggle no-arrow">
+            <span class="micon dw dw-list3"></span><span class="mtext">Warna</span>
           </a>
         </li>
         <li>
           <a href="admin.php" class="dropdown-toggle no-arrow">
-            <span class="micon dw dw-diagram"></span><span class="mtext">Admin</span>
+            <span class="micon dw dw-user"></span><span class="mtext">Admin</span>
           </a>
         </li>
         <li>

@@ -27,11 +27,11 @@
 					<div class="card-box height-100-p widget-style1">
 						<div style = "display: flex; height: 80px;">
 							<div class="progress-data" style = "border-right: 1px solid #eaeaea; display: flex; justify-content: center; width: 50%!important;">
-								<i style = "color: #1e90ff; display: block; font-size: 50px; margin: auto!important;" class="icon-copy fa fa-user-circle-o" aria-hidden="true"></i>
+								<i style = "color: 	#00ff00; display: block; font-size: 50px; margin: auto!important;" class="icon-copy fa fa-image" aria-hidden="true"></i>
 							</div>
 							<div class="widget-data" style = "padding: 0px 0px 0px 0px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: auto; text-align: center; width: 30%!important;">
-								<div class="h4 mb-0" style = "color: #1e90ff; width: 80px; text-align: center;"><?php echo count(query("SELECT * FROM data_admin")); ?></div>
-								<div class="weight-600 font-14" style = "color: #1e90ff; width: 80px; text-align: center;"><a style = "color: #1e90ff;" href = "admin.php">Admin</a></div>
+								<div class="h4 mb-0" style = "color: #00ff00; width: 80px; text-align: center;"><?php echo count(query("SELECT * FROM card")); ?></div>
+								<div class="weight-600 font-14" style = "color: #00ff00; width: 80px; text-align: center;"><a style = "color: #00ff00;" href = "card.php">Kartu</a></div>
 							</div>
 						</div>
 					</div>
@@ -40,11 +40,24 @@
 					<div class="card-box height-100-p widget-style1">
 						<div style = "display: flex; height: 80px;">
 							<div class="progress-data" style = "border-right: 1px solid #eaeaea; display: flex; justify-content: center; width: 50%!important;">
-								<i style = "color: 	#00ff00; display: block; font-size: 50px; margin: auto!important;" class="icon-copy fa fa-list" aria-hidden="true"></i>
+								<i style = "color: 	#FF6347; display: block; font-size: 50px; margin: auto!important;" class="icon-copy fa fa-list" aria-hidden="true"></i>
 							</div>
 							<div class="widget-data" style = "padding: 0px 0px 0px 0px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: auto; text-align: center; width: 30%!important;">
-								<div class="h4 mb-0" style = "color: #00ff00; width: 80px; text-align: center;"><?php echo count(query("SELECT * FROM card")); ?></div>
-								<div class="weight-600 font-14" style = "color: #00ff00; width: 80px; text-align: center;"><a style = "color: #00ff00;" href = "card.php">Kartu</a></div>
+								<div class="h4 mb-0" style = "color: #FF6347; width: 80px; text-align: center;"><?php echo count(query("SELECT * FROM color")); ?></div>
+								<div class="weight-600 font-14" style = "color: #FF6347; width: 80px; text-align: center;"><a style = "color: #FF6347;" href = "color.php">Warna</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 mb-30">
+					<div class="card-box height-100-p widget-style1">
+						<div style = "display: flex; height: 80px;">
+							<div class="progress-data" style = "border-right: 1px solid #eaeaea; display: flex; justify-content: center; width: 50%!important;">
+								<i style = "color: #1e90ff; display: block; font-size: 50px; margin: auto!important;" class="icon-copy fa fa-user-circle-o" aria-hidden="true"></i>
+							</div>
+							<div class="widget-data" style = "padding: 0px 0px 0px 0px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: auto; text-align: center; width: 30%!important;">
+								<div class="h4 mb-0" style = "color: #1e90ff; width: 80px; text-align: center;"><?php echo count(query("SELECT * FROM data_admin")); ?></div>
+								<div class="weight-600 font-14" style = "color: #1e90ff; width: 80px; text-align: center;"><a style = "color: #1e90ff;" href = "admin.php">Admin</a></div>
 							</div>
 						</div>
 					</div>

@@ -26,22 +26,11 @@ if(isset($_POST['selesai']))
   $sql = "INSERT INTO card_end (card_id, imageName, image, bgcolor, kepada, isi, dari) VALUE('$card_id', '$imageName', '$image', '$bgcolor', '$kepada', '$isi', '$dari')";
   $query = mysqli_query($con, $sql);
 
-  $resultb = mysqli_query($con,"SELECT id_end FROM card_end ORDER BY id_end DESC limit 1");
-  $rowk = mysqli_num_rows($resultb);
-  $rowz=[]; //kotk kosong
-  echo "<br>";
-  while ($rowb /*bajunya */= mysqli_fetch_assoc($resultb)){
-    $rowz=$rowb; //baju masukin kotaknya ga bawa lemari
-}
-
-  session_start();
-  $_SESSION["card_now"]=$rowz["id_end"];
-  $_SESSION["card_color"]=$bgcolor;
-    if($query) {
-      header('Location: p4.php');
-    } else {
-      header('Location: p3.php?status=gagal');
-          }
+  if($query) {
+    header('Location: p33.php?status=sukses');
+  } else {
+    header('Location: p33.php?status=gagal');
+        }
     }
 
 $sql_bg1 = mysqli_query($con, "SELECT * FROM bgcolor WHERE id_bgc='1'");
@@ -61,6 +50,9 @@ $bgc5 = mysqli_fetch_assoc($sql_bg5);
 
 $sql_bg6 = mysqli_query($con, "SELECT * FROM bgcolor WHERE id_bgc='6'");
 $bgc6 = mysqli_fetch_assoc($sql_bg6);
+
+$sql_end = mysqli_query($con, "SELECT * FROM card_end WHERE id_end='1'");
+$end = mysqli_fetch_assoc($sql_end);
 ?>
 
 <!-- HTML -->
@@ -72,6 +64,8 @@ $bgc6 = mysqli_fetch_assoc($sql_bg6);
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <title>Kartu Ucapan Idul Fitri 2022</title>
 
     <style>
@@ -94,7 +88,7 @@ $bgc6 = mysqli_fetch_assoc($sql_bg6);
 
     .stepper-wrapper {
   font-family: 'satisfy';
-  font-size:25px;
+  font-size:2vw;
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
@@ -154,7 +148,7 @@ $bgc6 = mysqli_fetch_assoc($sql_bg6);
 .stepper-item.completed::after {
   position: absolute;
   content: "";
-  border-bottom: 2px solid #00ff04;
+  border-bottom: 2px solid #ccc;
   width: 100%;
   top: 20px;
   left: 50%;
@@ -169,19 +163,18 @@ $bgc6 = mysqli_fetch_assoc($sql_bg6);
 }
 .step-name{
     font-family:'concert one';
-    font-size:20px;
+    font-size:1.5vw;
 }
     
 .moon{
-  position: absolute;
+     position: absolute;
      top: 8%;
      left: 40%;
      transform: translate(-50%, -50%);
-     height: 100px;
-     width: 100px;
+     height: 10vw;
+     width: 10vw;
      box-shadow: -15px 15px 0 5px white  ;
      border-radius: 50%;
-     z-index: -1;
     filter: blur(2px);
    }
 
@@ -373,7 +366,7 @@ function pilih2() {
 }
 </script>
 </head>
-<body body onload = "autoClick();">
+<body>
 <div class="moon"></div>
 <div class="container">
 <div class="stepper-wrapper">
@@ -381,9 +374,9 @@ function pilih2() {
         <div class="step-counter"><a href="p2.php">1</a></div>
         <div class="step-name">Pilihan Kartu Ucapan</div>
       </div>
-      <div class="stepper-item active" >
-        <div class="step-counter" style="background-color: #4bb543;"><a href="">2</a></div>
-        <div class="step-name" style="text-decoration:none;">Tulis Pesan Anda</div>
+      <div class="stepper-item completed">
+        <div class="step-counter"><a href="">2</a></div>
+        <div class="step-name">Tulis Pesan Anda</div>
       </div>
       <div class="stepper-item">
         <div class="step-counter">3</div>
@@ -447,7 +440,7 @@ function pilih2() {
 			</div><!-- /style -->
 
 			<div style='clear:both;text-align:center; margin-top:240px;'>
-				<input id="download" type='submit' value='Selesai!' name="selesai">
+				<input type='submit' value='Selesai!' name="selesai">
 			</div>
 		</form>
 
@@ -456,27 +449,43 @@ function pilih2() {
     </div> <!-- /cardBase -->
   <!-- </div> --> <!-- col-md-7 -->
 </div>
-</center>
-<script type="text/javascript">
-      function autoClick(){
-        $("#download").click();
-      }
+</center><br/>
+<div id="html-content-holder"> <center>         
+                <div class="bgcolor" id="bgc">
+                  <div class="thumbnail">
+                      <img src="usersUpload/<?php echo $end["image"] ?>" class="imagethumbnail" style="width:100%">
+                  </div>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <p style="font-size:70px;"><?php echo $end["kepada"] ?></p>
+                  
+                        <p style="font-size:70px;"><?php echo $end["isi"] ?></p>
+            
+                        <p style="font-size:70px;"><?php echo $end["dari"] ?></p>
+            <div style="height:200px;"></div>
+            
+                </div> <!-- /bgc -->
+            </div> <!--holder --></center><center>
+                <input id="btn-Preview-Image" type="button" value="Preview"/></center>
+                <br/>
+                <h3>Preview :</h3>
+                <div id="previewImage">
+                </div>
+<script>
+$(document).ready(function(){
+	
+var element = $("#html-content-holder"); // global variable
+var getCanvas; // global variable
+ 
+    $("#btn-Preview-Image").on('click', function () {
+         html2canvas(element, {
+         onrendered: function (canvas) {
+                $("#previewImage").append(canvas);
+                getCanvas = canvas;
+             }
+         });
+    });
 
-      $(document).ready(function(){
-        var element = $("#bgc");
-
-        $("#download").on('click', function(){
-
-          html2canvas(element, {
-            onrendered: function(canvas) {
-              var imageData = canvas.toDataURL("image/jpg");
-              var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
-              $("#download").attr("download", "image.jpg").attr("href", newData);
-            }
-          });
-
-        });
-      });
-    </script>
+});
+</script>
 </body>
 </html>

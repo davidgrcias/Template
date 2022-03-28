@@ -6,8 +6,9 @@ if (!$con) {
 
 session_start();
 $cnow=$_SESSION["card_now"];
+$cclor= $_SESSION["card_color"];
 
-$result = mysqli_query($con,"SELECT * FROM card");
+$result = mysqli_query($con,"SELECT * FROM card_end WHERE id_end=$cnow");
 $row = mysqli_num_rows($result);
 $rows=[]; //kotk kosong
     while ($rowa /*bajunya */= mysqli_fetch_assoc($result)){
@@ -20,6 +21,10 @@ $rows=[]; //kotk kosong
 <html>
 <head>
 <meta charset="UTF-8">
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js">
+    </script>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
@@ -425,25 +430,25 @@ $rows=[]; //kotk kosong
             }
 
             .bgcolor {
-	position:relative;
-	width: 920px;;
-	height: 1840px;
-	background-image:url('bgcolor/bgc1.JPG');
-	background-size: 100% repeat;
-}
-
-   .bottombutton{
-     font-size:3vw;
-     left:50%;
-     color:white;
-     padding:20px;
-     background-color:lightgray;
-     border-radius:50px;
-     box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.5);
-   }
-            .clear{
-                
+            	position:relative;
+            	width: 90%;
+            	height: 1840px;
+            	background-image:url('bgcolor/<?=$cclor;?>');
+            	background-size: 100% repeat;
             }
+
+               .bottombutton{
+                 font-size:3vw;
+                 left:50%;
+                 color:white;
+                 padding:20px;
+                 background-color:lightgray;
+                 border-radius:50px;
+                 box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.5);
+               }
+                .clear{
+
+                }
     </style>
 </head>
 <body onload = "autoClick();">
@@ -494,7 +499,7 @@ $rows=[]; //kotk kosong
     <div class="tooltip">Telegram</div>
     <span style="all:unset;"><i class="fa fa-telegram"></i></span>
   </div></a>
-  <a id="download" href="rapih.php" style="all:unset;">
+  <a id="download" style="all:unset;">
   <div class="icon other">
     <div class="tooltip">Download</div>
     <span style="all:unset;"><i class="fa fa-download"></i></span>
@@ -515,18 +520,21 @@ $rows=[]; //kotk kosong
   <!-- <div class="col-md-7"> -->
           
     <div class="bgcolor" id="bgc">
-      <div style="overflow: hidden;position:relative;top:4%;width:80%;border-radius:10px;box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);">
-          <img src="usersUpload/<?= 'Bunga - 2022.03.24 - 05.24.10am.jpeg' ?>" class="imagethumbnail" style="width:780px;height:1065px;">
+      <div style="overflow: hidden;position:relative;top:4%;width:75%;border-radius:10px;box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);">
+          <img src="usersUpload/<?= $rows[0]['image']; ?>" class="imagethumbnail" style="width:780px;height:1065px;">
       </div>
 		<div style="margin:15% 8% 0 8%;width:84%;box-sizing:border-box;">
-			<p style="text-align:left;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;float:left;">Kepada: </p>
+			<p style="text-align:left;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;float:left;">
+            <?= $rows[0]['kepada']?> </p>
       <br><br><br><br><br>
       
-			<p style="font-size: 25px; line-height:70px;height:180px; width:100%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;margin-top:20px;margin-bottom:20px;text-align:center;">Isi</p>
+			<p style="font-size: 25px; line-height:70px;height:180px; width:100%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;margin-top:20px;margin-bottom:20px;text-align:center;">
+            <?= $rows[0]['isi']?></p>
 
       <br><br>
       
-				<p style='align:right;text-align:right;float:right;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-right:10px;outline-width: 1px;outline-color:#ff4c4d;'>Dari :</p>
+			<p style='align:right;text-align:right;float:right;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-right:10px;outline-width: 1px;outline-color:#ff4c4d;'>
+            <?= $rows[0]['dari']?></p>
 
 			<div style='margin-top:40px; float:left; font-size:30px;'>
 

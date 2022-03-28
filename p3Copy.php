@@ -195,8 +195,7 @@ $bgc6 = mysqli_fetch_assoc($sql_bg6);
    }
    .imagethumbnail{
        /* max-width:100%; */
-       width: 773px;;
-       height: 1064px;
+       width: 100%;
        transition: all 1s ease;
    }
    .caption{
@@ -226,8 +225,8 @@ $bgc6 = mysqli_fetch_assoc($sql_bg6);
 
 .bgcolor {
 	position:relative;
-	width: 960px;;
-	height: 1920px;
+	width: 920px;;
+	height: 1840px;
 	background-image:url('bgcolor/bgc1.JPG');
 	background-size: 100% repeat;
 }
@@ -392,63 +391,28 @@ function pilih2() {
 <center>
       <!-- ini ntar ambil semua data trus itung ada berapa kan nah trus digituin -->
   <!-- <div class="col-md-7"> -->
-          <div class="caption">
-            <p>Card Name : <?php echo $rows["imageName"] ?></p>
-          </div>
           
     <div class="bgcolor" id="bgc">
       <div class="thumbnail">
           <img src="usersUpload/<?php echo $rows["image"] ?>" class="imagethumbnail" style="width:100%">
       </div>
-      <div class='colorSelect'>
-			  <div class='csBox' onclick="myFunction()"><img src='bgcolor/<?php echo $bgc1["bgcolor_name"] ?>'></div>
-			  <div class='csBox' onclick="myFunction2()"><img src='bgcolor/<?php echo $bgc2["bgcolor_name"] ?>'></div>
-			  <div class='csBox' onclick="myFunction3()"><img src='bgcolor/<?php echo $bgc3["bgcolor_name"] ?>'></div>
-			  <div class='csBox' onclick="myFunction4()"><img src='bgcolor/<?php echo $bgc4["bgcolor_name"] ?>'></div>
-			  <div class='csBox' onclick="myFunction5()"><img src='bgcolor/<?php echo $bgc5["bgcolor_name"] ?>'></div>
-			  <div class='csBox' onclick="myFunction6()"><img src='bgcolor/<?php echo $bgc6["bgcolor_name"] ?>'></div>
-		  </div>
-
-    <form method='POST' action=''>
-		  <input type='hidden' name='card_id' value='<?php echo $rows["card_id"] ?>' >
-		  <input type='hidden' name='imageName' value='<?php echo $rows["imageName"] ?>'>
-		  <input type='hidden' name='image' value='<?php echo $rows["image"] ?>'>
-		  <input type='hidden' name='bgcolor' id="bgcolor" value='<?php echo $bgc1["bgcolor_name"] ?>'>
 
 		<div class='isiform'>
-			<input type='text' name='kepada' class='kepada' value='Kepada'>
-      
-			<textarea class='isi' name='isi' id="isi">Isi</textarea>
+			<p class='kepada'>Kepada: </p>
+      <br>
+			<p class='isi'>Isi</p>
 
 			<div style='text-align:right;'>
-				<input type='text' name='dari' class='dari' value='Dari'>
+				<p class='dari'>Dari :</p>
 			</div>
 
 			<div style='margin-top:40px; float:left; font-size:30px;'>
 
-			Meditasi:<select id="pilihan1" class='pilihan' onchange='pilih1()'>
-        <option value=''>* Mengutip Jing Si *</option>
-        <option value='Meditasi 1.'>Meditasi 1</option>
-        <option value='Meditasi 2.'>Meditasi 2</option>
-        <option value='Meditasi 3.'>Meditasi 3</option>
-        <option value='Meditasi 4.'>Meditasi 4</option>
-        <option value='Meditasi 5.'>Meditasi 5</option>
-      </select>
-<br>
-      Berkat:<select id="pilihan2" class='pilihan' onchange='pilih2()'>
-        <option value=''>* Kata-kata keberuntungan *</option>
-        <option value=' Berkat 1.'>Berkat 1</option>
-        <option value=' Berkat 2.'>Berkat 2</option>
-        <option value=' Berkat 3.'>Berkat 3</option>
-        <option value=' Berkat 4.'>Berkat 4</option>
-        <option value=' Berkat 5.'>Berkat 5</option>
-      </select>
+			
 			</div><!-- /style -->
 
 			<div style='clear:both;text-align:center; margin-top:240px;'>
-				<input id="download" type='submit' value='Selesai!' name="selesai">
 			</div>
-		</form>
 
 <div style='height:200px;'></div>
 
@@ -456,26 +420,28 @@ function pilih2() {
   <!-- </div> --> <!-- col-md-7 -->
 </div>
 </center>
+<a id="download">Download</a>
+
 <script type="text/javascript">
-      function autoClick(){
-        $("#download").click();
-      }
+  function autoClick(){
+    $("#download").click();
+  }
 
-      $(document).ready(function(){
-        var element = $("#bgc");
+  $(document).ready(function(){
+    var element = $("#htmlContent");
 
-        $("#download").on('click', function(){
+    $("#download").on('click', function(){
 
-          html2canvas(element, {
-            onrendered: function(canvas) {
-              var imageData = canvas.toDataURL("image/jpg");
-              var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
-              $("#download").attr("download", "image.jpg").attr("href", newData);
-            }
-          });
-
-        });
+      html2canvas(element, {
+        onrendered: function(canvas) {
+          var imageData = canvas.toDataURL("image/jpg");
+          var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
+          $("#download").attr("download", "image.jpg").attr("href", newData);
+        }
       });
-    </script>
+
+    });
+  });
+</script>
 </body>
 </html>

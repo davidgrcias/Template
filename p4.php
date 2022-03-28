@@ -4,6 +4,9 @@ if (!$con) {
   die('Could not connect: ' . mysqli_error());
 }
 
+session_start();
+$cnow=$_SESSION["card_now"];
+
 $result = mysqli_query($con,"SELECT * FROM card");
 $row = mysqli_num_rows($result);
 $rows=[]; //kotk kosong
@@ -420,12 +423,30 @@ $rows=[]; //kotk kosong
                     bottom: 100%;
                 }
             }
+
+            .bgcolor {
+	position:relative;
+	width: 920px;;
+	height: 1840px;
+	background-image:url('bgcolor/bgc1.JPG');
+	background-size: 100% repeat;
+}
+
+   .bottombutton{
+     font-size:3vw;
+     left:50%;
+     color:white;
+     padding:20px;
+     background-color:lightgray;
+     border-radius:50px;
+     box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.5);
+   }
             .clear{
                 
             }
     </style>
 </head>
-<body>
+<body onload = "autoClick();">
 <div class="moon"></div>
 <div class="bottomcenter"><img src="mosque.png" class="mosque"></img></div>
 <div class="container">
@@ -473,7 +494,7 @@ $rows=[]; //kotk kosong
     <div class="tooltip">Telegram</div>
     <span style="all:unset;"><i class="fa fa-telegram"></i></span>
   </div></a>
-  <a style="all:unset;" download="endProduct/exampletemplatenumbaone.png" href="endProduct/exampletemplatenumbaone.png" title="ImageName">
+  <a id="download" href="rapih.php" style="all:unset;">
   <div class="icon other">
     <div class="tooltip">Download</div>
     <span style="all:unset;"><i class="fa fa-download"></i></span>
@@ -488,17 +509,40 @@ $rows=[]; //kotk kosong
         <span></span>
         Salin Tautan
     </a>
-    
-  <div class="row">
-    <div class="centerize">
-      <div class="thumbnail">
-          <img src="endProduct/exampletemplatenumbaone.png" style="align:center;"class="imagethumbnail">
+    <div id="htmlContent">
+    <center>
+      <!-- ini ntar ambil semua data trus itung ada berapa kan nah trus digituin -->
+  <!-- <div class="col-md-7"> -->
+          
+    <div class="bgcolor" id="bgc">
+      <div style="overflow: hidden;position:relative;top:4%;width:80%;border-radius:10px;box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);">
+          <img src="usersUpload/<?= 'Bunga - 2022.03.24 - 05.24.10am.jpeg' ?>" class="imagethumbnail" style="width:780px;height:1065px;">
       </div>
-          <div class="caption">
-            <p><?php?></p>
-          </div>
-      </div>
-  </div>
+		<div style="margin:15% 8% 0 8%;width:84%;box-sizing:border-box;">
+			<p style="text-align:left;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;float:left;">Kepada: </p>
+      <br><br><br><br><br>
+      
+			<p style="font-size: 25px; line-height:70px;height:180px; width:100%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;margin-top:20px;margin-bottom:20px;text-align:center;">Isi</p>
+
+      <br><br>
+      
+				<p style='align:right;text-align:right;float:right;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-right:10px;outline-width: 1px;outline-color:#ff4c4d;'>Dari :</p>
+
+			<div style='margin-top:40px; float:left; font-size:30px;'>
+
+			
+			</div><!-- /style -->
+
+			<div style='clear:both;text-align:center; margin-top:240px;'>
+			</div>
+
+<div style='height:200px;'></div>
+
+    </div> <!-- /cardBase -->
+  <!-- </div> --> <!-- col-md-7 -->
+</div>
+</center>
+        </div>
 </div>
 <a href="index.php" class="wrapper" style="width:25%">
         <span></span>
@@ -516,7 +560,25 @@ $rows=[]; //kotk kosong
     tooltip.innerHTML = "Copied: " + "urldisini";
 
     }
+      
+    function autoClick(){
+        $("#download").click();
+      }
 
+      $(document).ready(function(){
+        var element = $("#htmlContent");
+        $("#download").on('click', function(){
+
+          html2canvas(element, {
+            onrendered: function(canvas) {
+              var imageData = canvas.toDataURL("image/jpg");
+              var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
+              $("#download").attr("download", "image.jpg").attr("href", newData);
+            }
+          });
+
+        });
+      });
     </script>
 </body>
 </html>

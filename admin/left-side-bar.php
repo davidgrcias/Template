@@ -30,11 +30,6 @@ else{
           </a>
         </li>
         <li>
-          <a href="warna.php" class="dropdown-toggle no-arrow">
-            <span class="micon dw dw-list3"></span><span class="mtext">Warna</span>
-          </a>
-        </li>
-        <li>
           <a href="admin.php" class="dropdown-toggle no-arrow">
             <span class="micon dw dw-user"></span><span class="mtext">Admin</span>
           </a>

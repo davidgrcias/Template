@@ -31,20 +31,7 @@
 							</div>
 							<div class="widget-data" style = "padding: 0px 0px 0px 0px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: auto; text-align: center; width: 30%!important;">
 								<div class="h4 mb-0" style = "color: #00ff00; width: 80px; text-align: center;"><?php echo count(query("SELECT * FROM card")); ?></div>
-								<div class="weight-600 font-14" style = "color: #00ff00; width: 80px; text-align: center;"><a style = "color: #00ff00;" href = "card.php">Kartu</a></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 mb-30">
-					<div class="card-box height-100-p widget-style1">
-						<div style = "display: flex; height: 80px;">
-							<div class="progress-data" style = "border-right: 1px solid #eaeaea; display: flex; justify-content: center; width: 50%!important;">
-								<i style = "color: 	#FF6347; display: block; font-size: 50px; margin: auto!important;" class="icon-copy fa fa-list" aria-hidden="true"></i>
-							</div>
-							<div class="widget-data" style = "padding: 0px 0px 0px 0px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: auto; text-align: center; width: 30%!important;">
-								<div class="h4 mb-0" style = "color: #FF6347; width: 80px; text-align: center;"><?php echo count(query("SELECT * FROM color")); ?></div>
-								<div class="weight-600 font-14" style = "color: #FF6347; width: 80px; text-align: center;"><a style = "color: #FF6347;" href = "color.php">Warna</a></div>
+								<div class="weight-600 font-14" style = "color: #00ff00; width: 80px; text-align: center;"><a style = "color: #00ff00;" href = "kartu.php">Kartu</a></div>
 							</div>
 						</div>
 					</div>
@@ -73,7 +60,6 @@
 							<th>Kartu</th>
 							<th>Email Pengirim</th>
 							<th>Nama Kartu</th>
-							<th>Warna</th>
 							<th>Status</th>
 							<th class="datatable-nosort">Aksi</th>
 						</tr>
@@ -89,11 +75,6 @@
 							<td width = 180>
 								<!-- <h5 class="font-16">Shirt</h5> -->
 								<?php echo $user["imageName"]; ?>
-							</td>
-							<td>
-								<?php $colorid = $user["color_id"]; ?>
-								<?php $color = mysqli_fetch_assoc(mysqli_query($connt, "SELECT * FROM color WHERE color_id = $colorid")); ?>
-								<?php echo $color["color"]; ?>
 							</td>
 							<td>
 								<?php $approval = $user["approval"]; ?>

@@ -1,6 +1,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style media="screen">
-<<<<<<< HEAD
           #modalUpload{
           position: fixed;
           top: 0;
@@ -110,102 +109,6 @@
 </style>
 
 <div class="bottomcenter"><img src="mosque.png" class="mosque"></img></div>
-=======
-  #modalUpload{
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 100;
-  /* display: flex; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal{
-  background-color: #e6ecf0;
-  padding: 10px 0 20px 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.top-form{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.top-form .close-modal{
-  cursor: pointer;
-  padding: 0 20px;
-  font-size: 20px;
-}
-
-.login-form{
-  width: 100%;
-}
-
-.login-form h2{
-  letter-spacing: 1px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
-
-.login-form form input, .login-form form select{
-  width: 75%;
-  margin-bottom: 20px;
-  padding: 12px 12px;
-  box-sizing: border-box;
-  border: 1px solid #d0d5d8;
-  border-radius: 3px;
-}
-
-.login-form form button{
-  padding: 12px 0px;
-  width: 75%;
-  background-color: #5dca88;
-  border: 0;
-  border-radius: 3px;
-  color: white;
-  margin: 10px auto;
-  cursor: pointer;
-}
-
-.btn-warning{
-  position: relative;
-  padding: 11px 16px;
-  font-size: 15px;
-  line-height: 1.5;
-  border-radius: 3px;
-  color: #fff;
-  background-color: #ffc100!important;
-  border: 0;
-  transition: 0.2s;
-  overflow: hidden; \\ L
-}
-
-.btn-warning input[type = "file"]{
-  cursor: pointer;
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  transform: scale(3);
-  opacity: 0;
-}
-
-.btn-warning:hover{
-  background-color: #d9a400!important;
-}
-</style>
-
->>>>>>> f71e9da0bab63f518565eef21f488fa27dbccc94
 <div id="modalUpload">
     <div class="modal">
       <div class="top-form">
@@ -279,8 +182,4 @@ if(isset($_POST["submitimage"])){
       ";
     }
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> f71e9da0bab63f518565eef21f488fa27dbccc94

@@ -4,7 +4,7 @@ if (!$con) {
   die('Could not connect: ' . mysqli_error());
 }
 
-$result = mysqli_query($con,"SELECT * FROM card");
+$result = mysqli_query($con,"SELECT * FROM card WHERE approval = 1");
 $row = mysqli_num_rows($result);
 $rows=[]; //kotk kosong
     while ($rowa /*bajunya */= mysqli_fetch_assoc($result)){
@@ -120,7 +120,7 @@ $rows=[]; //kotk kosong
     font-family:'concert one';
     font-size:20px;
 }
-    
+
 .moon{
   position: absolute;
      top: 8%;
@@ -213,5 +213,3 @@ transition: all 1s ease;
 
 </body>
 </html>
-
-

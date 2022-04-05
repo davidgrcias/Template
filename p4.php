@@ -7,13 +7,22 @@ if (!$con) {
 session_start();
 $cnow=$_SESSION["card_now"];
 $cclor= $_SESSION["card_color"];
-
-$result = mysqli_query($con,"SELECT * FROM card_end WHERE id_end=$cnow");
+if(isset($_GET["ides"])){
+    $ide=$_GET['ides'];
+    $result = mysqli_query($con,"SELECT * FROM card_end WHERE unique_name='$ide'");
+    if($result===false) {
+        $result = mysqli_query($con,"SELECT * FROM card_end WHERE id_end=$cnow");
+    } else{
+        header("Location:p2.php");
+    }
+}else{
+$result = mysqli_query($con,"SELECT * FROM card_end WHERE id_end=$cnow");}
 $row = mysqli_num_rows($result);
 $rows=[]; //kotk kosong
     while ($rowa /*bajunya */= mysqli_fetch_assoc($result)){
         $rows[]=$rowa; //baju masukin kotaknya ga bawa lemari
     }
+$urls=$rows[0]['unique_name'];
 ?>
 
 <!-- HTML -->
@@ -474,27 +483,27 @@ $rows=[]; //kotk kosong
     <div class="tooltip">Back</div>
     <span><i class="fa fa-arrow-rotate-back"></i></span>
   </div>
-  <a style="all:unset;" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fparse.com">
+  <a style="all:unset;" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blabla<?=$urls;?>">
   <div class="icon facebook">
     <div class="tooltip">Facebook</div>
     <span style="all:unset;"><i class="fa fa-facebook-f"></i></span>
   </div></a>
-  <a style="all:unset;" target="_blank" href="http://twitter.com/share?text=textgoeshere&url=http://urlgoeshere&hashtags=hashtag1,hashtag2,hashtag3">
+  <a style="all:unset;" target="_blank" href="http://twitter.com/share?text=Check Out My Card!&url=http://blabla<?=$urls;?>&hashtags=hashtag1,hashtag2,hashtag3">
   <div class="icon twitter">
     <div class="tooltip">Twitter</div>
     <span style="all:unset;"><i class="fa fa-twitter"></i></span>
   </div></a>
-  <a style="all:unset;" href="whatsapp://send?text=<?php #url disni?>" data-action="share/whatsapp/share">
+  <a style="all:unset;" href="whatsapp://send?text=<?=$urls;?>" data-action="share/whatsapp/share">
   <div class="icon whatsapp">
     <div class="tooltip">Whatsapp</div>
     <span style="all:unset;"><i class="fa fa-whatsapp"></i></span>
   </div></a>
-  <a style="all:unset;" target="_blank" href="https://line.me/share/url?url=<URL>&text=<TEXT>">
+  <a style="all:unset;" target="_blank" href="https://line.me/share/url?https://blabla<?=$urls;?>&text=Check Out My Card!">
   <div class="icon line">
     <div class="tooltip">Line</div>
     <span style="all:unset;"><i class="fab fa-line"></i></span>
   </div></a>
-  <a style="all:unset;" target="_blank" href="https://telegram.me/share/url?url=<URL>&text=<TEXT>">
+  <a style="all:unset;" target="_blank" href="https://telegram.me/share/url?url=https://blabla<?=$urls;?>&text=Check Out My Card!">
   <div class="icon telegram">
     <div class="tooltip">Telegram</div>
     <span style="all:unset;"><i class="fa fa-telegram"></i></span>
@@ -519,8 +528,8 @@ $rows=[]; //kotk kosong
       <!-- ini ntar ambil semua data trus itung ada berapa kan nah trus digituin -->
   <!-- <div class="col-md-7"> -->
           
-    <div class="bgcolor" id="bgc">
-      <div style="overflow: hidden;position:relative;top:4%;width:75%;border-radius:10px;box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);">
+    <div class="bgcolor" style="width:1000px" id="bgc">
+      <div style="overflow: hidden;position:relative;top:4%;width:755px;border-radius:10px;box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);">
           <img src="usersUpload/<?= $rows[0]['image']; ?>" class="imagethumbnail" style="width:780px;height:1065px;">
       </div>
 		<div style="margin:15% 8% 0 8%;width:84%;box-sizing:border-box;">
@@ -562,10 +571,10 @@ $rows=[]; //kotk kosong
 
     <script>
     function copyURL() {
-    navigator.clipboard.writeText("HALOINIURLBROH");
+    navigator.clipboard.writeText("https://blabla<?=$urls;?>");
     
     var tooltip = document.getElementById("copylink");
-    tooltip.innerHTML = "Copied: " + "urldisini";
+    tooltip.innerHTML = "Copied Card's URL";
 
     }
       

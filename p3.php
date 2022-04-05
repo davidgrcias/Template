@@ -3,6 +3,27 @@ $con = mysqli_connect("localhost","root","","template");
 if (!$con) {
   die('Could not connect: ' . mysqli_error());
 }
+$acak='none';
+function generate(){
+  global $acak;
+  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $charactersLength = strlen($characters);
+  $randomString = '';
+  for ($i = 0; $i <5; $i++) {
+      $randomString .= $characters[rand(0, $charactersLength - 1)];
+
+  $acak= $randomString;
+}
+}
+function urlmaking(){
+  global $con,$acak;
+  generate();
+$checking=mysqli_query($con, "SELECT * FROM card_end WHERE unique_name='$acak'");
+$row = mysqli_num_rows($checking);
+if ($row>=1) {
+  urlmaking();
+}
+}
 
 $id = $_GET['id'];
 $result = mysqli_query($con,"SELECT * FROM card WHERE card_id='$id'");
@@ -15,6 +36,8 @@ $rows=[]; //kotk kosong
 
 if(isset($_POST['selesai']))
 {
+  urlmaking();
+
   $card_id = $_POST['card_id'];
   $imageName = $_POST['imageName'];
   $image = $_POST['image'];
@@ -23,7 +46,7 @@ if(isset($_POST['selesai']))
   $isi = $_POST['isi'];
   $dari = $_POST['dari'];
 
-  $sql = "INSERT INTO card_end (card_id, imageName, image, bgcolor, kepada, isi, dari) VALUE('$card_id', '$imageName', '$image', '$bgcolor', '$kepada', '$isi', '$dari')";
+  $sql = "INSERT INTO card_end (card_id, imageName, image, bgcolor, kepada, isi, dari, unique_name) VALUE('$card_id', '$imageName', '$image', '$bgcolor', '$kepada', '$isi', '$dari','$acak')";
   $query = mysqli_query($con, $sql);
 
   $resultb = mysqli_query($con,"SELECT id_end FROM card_end ORDER BY id_end DESC limit 1");

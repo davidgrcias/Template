@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2022 at 11:09 AM
+-- Generation Time: Apr 05, 2022 at 02:28 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -81,67 +81,77 @@ CREATE TABLE `card_end` (
   `bgcolor` varchar(255) NOT NULL,
   `kepada` varchar(255) NOT NULL,
   `isi` varchar(255) NOT NULL,
-  `dari` varchar(255) NOT NULL
+  `dari` varchar(255) NOT NULL,
+  `unique_name` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `card_end`
 --
 
-INSERT INTO `card_end` (`id_end`, `card_id`, `imageName`, `image`, `bgcolor`, `kepada`, `isi`, `dari`) VALUES
-(1, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc1.jpg', 'Kepada', 'Meditasi 1. Berkat 1.', 'Dari'),
-(2, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc1.jpg', 'Kepada', 'Meditasi 1.', 'Dari'),
-(3, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc2.jpg', 'Kepada', 'Meditasi 5.', 'Dari'),
-(4, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc3.jpg', 'Kepada', 'Isi', 'Dari'),
-(5, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc4.jpg', 'Kepada', 'Meditasi 5. Berkat 4.', 'Dari'),
-(6, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc5.jpg', 'Kepada', 'Meditasi 4. Berkat 2.', 'Dari'),
-(7, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc6.jpg', 'Kepada', 'Meditasi 2. Berkat 3. Berkat 1.', 'Dari'),
-(8, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc6.jpg', 'David', 'Meditasi 2. Berkat 3. Berkat 1.', 'James'),
-(9, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc4.jpg', 'Vincent', 'Meditasi 3. Berkat 5. Berkat 4. Berkat 2. Berkat 3. Berkat 1.', 'James'),
-(10, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc3.jpg', 'Kepada', 'Meditasi 4.', 'Dari'),
-(11, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(12, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc4.jpg', 'Kepada', 'Isi', 'Dari'),
-(13, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(14, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(15, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(16, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(17, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(18, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(19, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(20, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(21, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(22, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(23, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(24, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(25, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(26, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(27, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(28, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(29, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(30, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(31, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(32, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(33, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(34, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(35, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(36, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(37, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(38, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(39, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(40, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(41, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(42, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(43, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(44, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(45, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(46, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(47, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(48, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(49, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(50, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(51, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(52, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari'),
-(53, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari');
+INSERT INTO `card_end` (`id_end`, `card_id`, `imageName`, `image`, `bgcolor`, `kepada`, `isi`, `dari`, `unique_name`) VALUES
+(1, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc1.jpg', 'Kepada', 'Meditasi 1. Berkat 1.', 'Dari', ''),
+(2, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc1.jpg', 'Kepada', 'Meditasi 1.', 'Dari', ''),
+(3, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc2.jpg', 'Kepada', 'Meditasi 5.', 'Dari', ''),
+(4, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc3.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(5, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc4.jpg', 'Kepada', 'Meditasi 5. Berkat 4.', 'Dari', ''),
+(6, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc5.jpg', 'Kepada', 'Meditasi 4. Berkat 2.', 'Dari', ''),
+(7, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc6.jpg', 'Kepada', 'Meditasi 2. Berkat 3. Berkat 1.', 'Dari', ''),
+(8, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc6.jpg', 'David', 'Meditasi 2. Berkat 3. Berkat 1.', 'James', ''),
+(9, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc4.jpg', 'Vincent', 'Meditasi 3. Berkat 5. Berkat 4. Berkat 2. Berkat 3. Berkat 1.', 'James', ''),
+(10, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc3.jpg', 'Kepada', 'Meditasi 4.', 'Dari', ''),
+(11, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(12, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc4.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(13, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(14, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(15, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(16, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(17, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(18, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(19, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(20, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(21, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(22, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(23, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(24, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(25, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', '1r15r'),
+(26, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(27, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(28, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(29, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(30, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(31, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(32, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(33, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(34, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(35, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(36, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(37, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(38, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(39, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(40, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(41, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(42, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(43, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(44, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(45, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(46, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(47, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(48, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(49, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(50, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(51, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(52, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(53, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(54, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(55, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Dear my precious treasure,', 'Meditasi 3. Berkat 4. Berkat 5. Berkat 4. Berkat 3. Berkat 2.', 'Sincerely, Si ganteng', ''),
+(56, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Dear my precious treasure,', 'Meditasi 3. Berkat 4. Berkat 5. Berkat 4. Berkat 3. Berkat 2.', 'Sincerely, Si ganteng', ''),
+(57, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc6.jpg', 'Dear my precious treasure,', 'Meditasi 3. Berkat 4. Berkat 5. Berkat 4. Berkat 3. Berkat 2.', 'Sincerely, Si ganteng', ''),
+(58, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc5.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(59, 4, 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 'bgc1.jpg', 'Kepada', 'Isi', 'Dari', ''),
+(60, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc4.jpg', 'Kepada', 'Isi', 'Dari', '2mi5P'),
+(61, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc1.jpg', 'Kepada', 'selasa 5 april', 'Dari', '1r15r'),
+(62, 3, 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 'bgc1.jpg', 'Kepada', 'selasa 5 april 2022', 'Dari', 'lyCBE');
 
 -- --------------------------------------------------------
 
@@ -335,7 +345,7 @@ ALTER TABLE `card`
 -- AUTO_INCREMENT for table `card_end`
 --
 ALTER TABLE `card_end`
-  MODIFY `id_end` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id_end` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `color`

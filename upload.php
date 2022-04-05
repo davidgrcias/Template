@@ -99,13 +99,13 @@
       <div class="top-form">
       </div>
       <div class = "login-form">
-        <h1>Upload Foto</h1>
+        <h1>Upload Kartu</h1>
         <form action="" method = "post" spellcheck = "false" autocomplete="off" enctype="multipart/form-data">
-          <input class="form-control" type="email" placeholder="Email Kamu" required name = "email">
-          <input class="form-control" type="text" placeholder="Nama Gambar" required name = "imageName">
+          <input class="form-control" type="email" placeholder="Email" required name = "email">
+          <input class="form-control" type="text" placeholder="Nama Kartu" required name = "imageName">
           <div class="upload" style = "margin-top: -10px;">
             <button type = "button" class = "btn-warning">
-              <i class = "fa fa-upload"></i> Upload Foto
+              <i class = "fa fa-upload"></i> Upload Kartu
               <input type="file" name="image" accept=".jpg, .jpeg, .png" required>
             </button>
           </div>

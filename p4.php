@@ -462,7 +462,7 @@ $urls=$rows[0]['unique_name'];
 </head>
 <body onload = "autoClick();">
 <div class="moon"></div>
-<div class="bottomcenter"><img src="mosque.png" class="mosque"></img></div>
+<div class="bottomcenter"><img src="images/mosque.png" class="mosque"></img></div>
 <div class="container">
 <div class="stepper-wrapper">
       <div class="stepper-item completed">

@@ -3,16 +3,6 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: Apr 05, 2022 at 02:28 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
-=======
--- Generation Time: Apr 04, 2022 at 05:54 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
->>>>>>> f71e9da0bab63f518565eef21f488fa27dbccc94
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";

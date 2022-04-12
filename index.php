@@ -271,10 +271,10 @@
             </div>            
         </div>
         </div>
-<img class="frame"src="eidmubarakpira.png" style="left:20%">
-<img class="frame"src="eidmubarakwanita.png" style="right:20%">
-<img class="swing frame" src="ketupateidmubarak.png" width="200" style="right:5%;" >
-<img class="swing2 frame" src="ketupateidmubarak.png" width="200" style="left:5%;" >
+<img class="frame"src="images/eidmubarakpira.png" style="left:20%">
+<img class="frame"src="images/eidmubarakwanita.png" style="right:20%">
+<img class="swing frame" src="images/ketupateidmubarak.png" width="200" style="right:5%;" >
+<img class="swing2 frame" src="images/ketupateidmubarak.png" width="200" style="left:5%;" >
 </div>
     
     <div class="sticky-bottom-right">By: DaJaVu!</div>

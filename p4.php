@@ -442,7 +442,8 @@ $urls=$rows[0]['unique_name'];
             	position:relative;
             	width: 90%;
             	height: 1840px;
-            	background-image:url('bgcolor/<?=$cclor;?>');
+                background-color:<?=$cclor;?>;
+            	/* background-image:url('bgcolor/<?=$cclor;?>'); */
             	background-size: 100% repeat;
             }
 

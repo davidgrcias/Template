@@ -16,6 +16,9 @@ if(isset($_GET["ides"])){
         header("Location:p2.php");
     }
 }else{
+$kumpulanuyu = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card_end WHERE id_end = $cnow"));
+$kumpulanuyucard_id = $kumpulanuyu["card_id"];
+$kumpulan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card WHERE card_id = $kumpulanuyucard_id"));
 $result = mysqli_query($con,"SELECT * FROM card_end WHERE id_end=$cnow");}
 $row = mysqli_num_rows($result);
 $rows=[]; //kotk kosong
@@ -531,7 +534,7 @@ $urls=$rows[0]['unique_name'];
           
     <div class="bgcolor" style="width:1000px" id="bgc">
       <div style="overflow: hidden;position:relative;top:4%;width:755px;border-radius:10px;box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);">
-          <img src="usersUpload/<?= $rows[0]['image']; ?>" class="imagethumbnail" style="width:780px;height:1065px;">
+          <img src="usersUpload/<?= $kumpulan['image']; ?>" class="imagethumbnail" style="width:780px;height:1065px;">
       </div>
 		<div style="margin:15% 8% 0 8%;width:84%;box-sizing:border-box;">
 			<p style="text-align:left;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;float:left;">

@@ -26,6 +26,8 @@ if ($row>=1) {
 }
 
 $id = $_GET['id'];
+$indomie = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card_end"));
+$kumpulan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card WHERE card_id = $id"));
 $result = mysqli_query($con,"SELECT * FROM card WHERE card_id='$id'");
 $row = mysqli_num_rows($result);
 $rows=[]; //kotk kosong
@@ -46,7 +48,7 @@ if(isset($_POST['selesai']))
   $isi = $_POST['isi'];
   $dari = $_POST['dari'];
 
-  $sql = "INSERT INTO card_end (card_id, imageName, image, bgcolor, kepada, isi, dari, unique_name) VALUE('$card_id', '$imageName', '$image', '$bgcolor', '$kepada', '$isi', '$dari','$acak')";
+  $sql= "INSERT INTO card_end VALUES ('','$card_id', '$kepada', '$isi', '$dari','$acak') ";
   $query = mysqli_query($con, $sql);
 
   $resultb = mysqli_query($con,"SELECT id_end FROM card_end ORDER BY id_end DESC limit 1");
@@ -392,12 +394,12 @@ function pilih2() {
       <!-- ini ntar ambil semua data trus itung ada berapa kan nah trus digituin -->
   <!-- <div class="col-md-7"> -->
           <div class="caption">
-            <p>Card Name : <?php echo $rows["imageName"] ?></p>
+            <p>Card Name : <?php echo $kumpulan["imageName"] ?></p>
           </div>
           
     <div class="bgcolor" id="bgc">
       <div class="thumbnail">
-          <img src="usersUpload/<?php echo $rows["image"] ?>" class="imagethumbnail" style="width:100%">
+          <img src="usersUpload/<?php echo $kumpulan["image"] ?>" class="imagethumbnail" style="width:100%">
       </div>
       <div class='colorSelect'>
 			  <div class='csBox' onclick="myFunction()" style='background-color:#0057B7;'></div>

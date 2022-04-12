@@ -144,7 +144,7 @@ $urls=$rows[0]['unique_name'];
                 font-family:'concert one';
                 font-size:20px;
             }
-                
+
             .moon{
                 position: absolute;
                 top: 8%;
@@ -208,7 +208,7 @@ $urls=$rows[0]['unique_name'];
             left: 50%;
             top:50%;
             transform: translate(-50%, -50%);
-            margin: auto;    
+            margin: auto;
         }
 
         @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
@@ -350,7 +350,7 @@ $urls=$rows[0]['unique_name'];
                 letter-spacing: 4px;
                 overflow: hidden;
                 margin-right: 50px;
-            
+
             }
             a:hover{
                 background: #07f403;
@@ -531,7 +531,7 @@ $urls=$rows[0]['unique_name'];
     <center>
       <!-- ini ntar ambil semua data trus itung ada berapa kan nah trus digituin -->
   <!-- <div class="col-md-7"> -->
-          
+
     <div class="bgcolor" style="width:1000px" id="bgc">
       <div style="overflow: hidden;position:relative;top:4%;width:755px;border-radius:10px;box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);">
           <img src="usersUpload/<?= $kumpulan['image']; ?>" class="imagethumbnail" style="width:780px;height:1065px;">
@@ -540,18 +540,18 @@ $urls=$rows[0]['unique_name'];
 			<p style="text-align:left;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;float:left;">
             <?= $rows[0]['kepada']?> </p>
       <br><br><br><br><br>
-      
+
 			<p style="font-size: 25px; line-height:70px;height:180px; width:100%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;margin-top:20px;margin-bottom:20px;text-align:center;">
             <?= $rows[0]['isi']?></p>
 
       <br><br>
-      
+
 			<p style='align:right;text-align:right;float:right;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-right:10px;outline-width: 1px;outline-color:#ff4c4d;'>
             <?= $rows[0]['dari']?></p>
 
 			<div style='margin-top:40px; float:left; font-size:30px;'>
 
-			
+
 			</div><!-- /style -->
 
 			<div style='clear:both;text-align:center; margin-top:240px;'>
@@ -565,7 +565,7 @@ $urls=$rows[0]['unique_name'];
 </center>
         </div>
 </div>
-<a href="index.php" class="wrapper" style="width:25%">
+<a href="p2.php" class="wrapper" style="width:25%">
         <span></span>
         <span></span>
         <span></span>
@@ -576,12 +576,12 @@ $urls=$rows[0]['unique_name'];
     <script>
     function copyURL() {
     navigator.clipboard.writeText("https://blabla<?=$urls;?>");
-    
+
     var tooltip = document.getElementById("copylink");
     tooltip.innerHTML = "Copied Card's URL";
 
     }
-      
+
     function autoClick(){
         $("#download").click();
       }
@@ -603,5 +603,3 @@ $urls=$rows[0]['unique_name'];
     </script>
 </body>
 </html>
-
-

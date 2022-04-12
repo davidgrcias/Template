@@ -1,4 +1,7 @@
 <?php
+if(!isset($_GET["id"])){
+  header("Location: p2.php");
+}
 $con = mysqli_connect("localhost","root","","template");
 if (!$con) {
   die('Could not connect: ' . mysqli_error());
@@ -178,7 +181,7 @@ if(isset($_POST['selesai']))
     font-family:'concert one';
     font-size:20px;
 }
-    
+
 .moon{
   position: absolute;
      top: 8%;
@@ -263,7 +266,7 @@ if(isset($_POST['selesai']))
 
 .isiform {
 	margin:15% 8% 0 8%;
-	width:84%;  
+	width:84%;
 	box-sizing:border-box;
 	--border:1px solid red;
 }
@@ -285,7 +288,7 @@ if(isset($_POST['selesai']))
 	font-size: 25px; line-height:70px;
 	height:180px; width:100%;
 	box-sizing: border-box;
- 
+
 	--background: transparent;
 	border: 2px solid #ff9999;
 	border-radius: 15px;
@@ -301,7 +304,7 @@ if(isset($_POST['selesai']))
 	font-size: 25px; line-height:70px;
 	height:50px; width:40%;
 	box-sizing: border-box;
- 
+
 	--background: transparent;
 	border: 2px solid #ff9999;
 	border-radius: 15px;
@@ -311,7 +314,7 @@ if(isset($_POST['selesai']))
 	outline-color:#ff4c4d;
 	--float:right;
 	text-align:right;
-	
+
 }
 input[type='submit'] {
 	color:#00FF00;
@@ -323,7 +326,7 @@ input[type='submit'] {
 	border-radius:20px;
 	cursor:pointer;
 }
-.pilihan { 
+.pilihan {
 	position:relative;
 	margin-top:25px;
 	display:inline-block;
@@ -361,18 +364,18 @@ var Doa=false;
 function pilih1() {
 	var o=document.getElementById('pilihan1');
 	var theWord=o.value;
-	// for(var i=1; i<5; i++) 	
+	// for(var i=1; i<5; i++)
   theWord=theWord.replace("<br>","\n");
-	
+
 	var tbox=document.getElementById('isi');
- 
+
 	tbox.value=theWord;
-	 
+
 }
 function pilih2() {
 	var o=document.getElementById('pilihan2');
 	var theWord2=o.value;
-	
+
 	var tbox=document.getElementById('isi');
 	if (Doa>0) {
 		tbox.value=theWord2;
@@ -406,7 +409,7 @@ function pilih2() {
           <div class="caption">
             <p>Card Name : <?php echo $kumpulan["imageName"] ?></p>
           </div>
-          
+
     <div class="bgcolor" id="bgc">
       <div class="thumbnail">
           <img src="usersUpload/<?php echo $kumpulan["image"] ?>" class="imagethumbnail" style="width:100%">
@@ -426,7 +429,7 @@ function pilih2() {
 
 		<div class='isiform'>
 			<input type='text' name='kepada' class='kepada' value='Kepada'>
-      
+
 			<textarea class='isi' name='isi' id="isi">Isi</textarea>
 
 			<div style='text-align:right;'>

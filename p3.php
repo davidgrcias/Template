@@ -464,6 +464,14 @@ $urls=$rows[0]['unique_name'];
                 .clear{
 
                 }
+
+                .step-name{
+                  cursor: pointer;
+                }
+
+                .step-counter{
+                  cursor: pointer;
+                }
     </style>
 </head>
 <body onload = "autoClick();">
@@ -472,18 +480,26 @@ $urls=$rows[0]['unique_name'];
 <div class="container">
 <div class="stepper-wrapper">
       <div class="stepper-item completed">
-        <div class="step-counter">1</div>
-        <div class="step-name">Pilih Kartu Ucapan</div>
+        <div class="step-counter" onclick = "directp1();">1</div>
+        <div class="step-name"><span onclick = "directp1();">Pilih Kartu Ucapan</span></div>
       </div>
       <div class="stepper-item completed">
-        <div class="step-counter">2</div>
-        <div class="step-name">Tulis Pesan Anda</div>
+        <div class="step-counter" style = "cursor: not-allowed;">2</div>
+        <div class="step-name" style = "cursor: not-allowed;">Tulis Pesan Anda</div>
       </div>
       <div class="stepper-item completed active">
-        <div class="step-counter">3</div>
-        <div class="step-name">Kirim Kartu</div>
+        <div class="step-counter"><span onclick = "window.location.reload();">3</span></div>
+        <div class="step-name"><span onclick = "window.location.reload();">Kirim Kartu</span></div>
       </div>
     </div>
+    <script type="text/javascript">
+      function directp1(){
+        document.location.href = "p1.php";
+      }
+      function directp2(){
+        document.location.href = "p2.php";
+      }
+    </script>
     <div class="wrapper">
     <div class="icon other" onclick="history.go(-1)">
     <div class="tooltip">Back</div>

@@ -174,6 +174,14 @@ transition: all 1s ease;
   right: 0;
   bottom: 0;
 }
+
+.step-name{
+  cursor: pointer;
+}
+
+.step-counter{
+  cursor: pointer;
+}
     </style>
 </head>
 <body>
@@ -181,19 +189,26 @@ transition: all 1s ease;
 <div class="container">
 <div class="stepper-wrapper">
       <div class="stepper-item completed">
-        <div class="step-counter">1</div>
-        <div class="step-name">Pilih Kartu Ucapan</div>
+        <div class="step-counter" onclick = "directp1();">1</div>
+        <div class="step-name" onclick = "directp1();">Pilih Kartu Ucapan</div>
       </div>
       <div class="stepper-item">
-        <div class="step-counter">2</div>
-        <div class="step-name">Tulis Pesan Anda</div>
+        <div class="step-counter" style = "cursor: not-allowed;">2</div>
+        <div class="step-name" style = "cursor: not-allowed;">Tulis Pesan Anda</div>
       </div>
       <div class="stepper-item">
-        <div class="step-counter">3</div>
-        <div class="step-name">Kirim Kartu</div>
+        <div class="step-counter" style = "cursor: not-allowed;">3</div>
+        <div class="step-name" style = "cursor: not-allowed;">Kirim Kartu</div>
       </div>
     </div>
-
+<script type="text/javascript">
+  function directp1(){
+    document.location.href = "p1.php";
+  }
+  function directp2(){
+    document.location.href = "p2.php";
+  }
+</script>
   <div class="row">
       <!-- ini ntar ambil semua data trus itung ada berapa kan nah trus digituin -->
   <?php for ($i = 0; $i <$row;$i++):?>

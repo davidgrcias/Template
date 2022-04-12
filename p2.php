@@ -335,6 +335,15 @@ input[type='submit'] {
 	width:420px; max-width:420px;
 	font-size:25px;
 }
+
+.step-name{
+  cursor: pointer;
+}
+
+.step-counter{
+  cursor: pointer;
+}
+
     </style>
 <script>
 function myFunction() {
@@ -398,17 +407,25 @@ function pilih2() {
 <div class="stepper-wrapper">
       <div class="stepper-item completed">
         <div class="step-counter"><a href="p1.php">1</a></div>
-        <div class="step-name">Pilihan Kartu Ucapan</div>
+        <div class="step-name"><span onclick = "directp1();">Pilihan Kartu Ucapan</span></div>
       </div>
       <div class="stepper-item active" >
         <div class="step-counter" style="background-color: #4bb543;"><a href="">2</a></div>
-        <div class="step-name" style="text-decoration:none;">Tulis Pesan Anda</div>
+        <div class="step-name" style="text-decoration:none;" onclick = "window.location.reload();">Tulis Pesan Anda</div>
       </div>
       <div class="stepper-item">
-        <div class="step-counter">3</div>
-        <div class="step-name">Kirim Kartu</div>
+        <div class="step-counter" style = "cursor: not-allowed;">3</div>
+        <div class="step-name" style = "cursor: not-allowed;">Kirim Kartu</div>
       </div>
     </div>
+    <script type="text/javascript">
+      function directp1(){
+        document.location.href = "p1.php";
+      }
+      function directp2(){
+        document.location.href = "p2.php";
+      }
+    </script>
 <center>
       <!-- ini ntar ambil semua data trus itung ada berapa kan nah trus digituin -->
   <!-- <div class="col-md-7"> -->

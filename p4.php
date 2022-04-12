@@ -7,6 +7,7 @@ if (!$con) {
 session_start();
 $cnow=$_SESSION["card_now"];
 $cclor= $_SESSION["card_color"];
+$tcolor= $_SESSION["text_color"];
 if(isset($_GET["ides"])){
     $ide=$_GET['ides'];
     $result = mysqli_query($con,"SELECT * FROM card_end WHERE unique_name='$ide'");
@@ -446,6 +447,7 @@ $urls=$rows[0]['unique_name'];
             	width: 90%;
             	height: 1840px;
                 background-color:<?=$cclor;?>;
+                color:<?=$tcolor;?>;
             	/* background-image:url('bgcolor/<?=$cclor;?>'); */
             	background-size: 100% repeat;
             }
@@ -537,16 +539,16 @@ $urls=$rows[0]['unique_name'];
           <img src="usersUpload/<?= $kumpulan['image']; ?>" class="imagethumbnail" style="width:780px;height:1065px;">
       </div>
 		<div style="margin:15% 8% 0 8%;width:84%;box-sizing:border-box;">
-			<p style="text-align:left;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;float:left;">
+			<p style="text-align:left;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;float:left;">
             <?= $rows[0]['kepada']?> </p>
       <br><br><br><br><br>
 
-			<p style="font-size: 25px; line-height:70px;height:180px; width:100%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;margin-top:20px;margin-bottom:20px;text-align:center;">
+			<p style="font-size: 25px; line-height:70px;height:180px; width:100%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;margin-top:20px;margin-bottom:20px;text-align:center;">
             <?= $rows[0]['isi']?></p>
 
       <br><br>
 
-			<p style='align:right;text-align:right;float:right;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;color: #3c3222;padding-right:10px;outline-width: 1px;outline-color:#ff4c4d;'>
+			<p style='align:right;text-align:right;float:right;font-size: 25px; line-height:70px;height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-right:10px;outline-width: 1px;outline-color:#ff4c4d;'>
             <?= $rows[0]['dari']?></p>
 
 			<div style='margin-top:40px; float:left; font-size:30px;'>

@@ -50,6 +50,7 @@ if(isset($_POST['selesai']))
   $kepada = $_POST['kepada'];
   $isi = $_POST['isi'];
   $dari = $_POST['dari'];
+  $textcolor = $_POST['text_color'];
 
   $sql= "INSERT INTO card_end VALUES ('','$card_id', '$kepada', '$isi', '$dari','$acak') ";
   $query = mysqli_query($con, $sql);
@@ -65,6 +66,7 @@ if(isset($_POST['selesai']))
   session_start();
   $_SESSION["card_now"]=$rowz["id_end"];
   $_SESSION["card_color"]=$bgcolor;
+  $_SESSION["text_color"]=$textcolor;
     if($query) {
       header('Location: p4.php');
     } else {
@@ -340,24 +342,28 @@ function myFunction() {
    document.getElementById("bgcolor").value = "#0057B7";
    document.getElementById("ucapan").style.color = "white";
    document.getElementById("doa").style.color = "white";
+   document.getElementById("textcolor").value = "white";
 }
 function myFunction2() {
    document.getElementById("bgc").style.backgroundColor = "#F1E6B2";
    document.getElementById("bgcolor").value = "#F1E6B2";
    document.getElementById("ucapan").style.color = "black";
    document.getElementById("doa").style.color = "black";
+   document.getElementById("textcolor").value = "black";
 }
 function myFunction3() {
    document.getElementById("bgc").style.backgroundColor = "#7BA4DB";
    document.getElementById("bgcolor").value = "#7BA4DB";
    document.getElementById("ucapan").style.color = "white";
    document.getElementById("doa").style.color = "white";
+   document.getElementById("textcolor").value = "white";
 }
 function myFunction4() {
    document.getElementById("bgc").style.backgroundColor = "#707372";
    document.getElementById("bgcolor").value = "#707372";
    document.getElementById("ucapan").style.color = "black";
    document.getElementById("doa").style.color = "black";
+   document.getElementById("textcolor").value = "black";
 }
 
 var Doa=false;
@@ -426,6 +432,7 @@ function pilih2() {
 		  <input type='hidden' name='imageName' value='<?php echo $rows["imageName"] ?>'>
 		  <input type='hidden' name='image' value='<?php echo $rows["image"] ?>'>
 		  <input type='hidden' name='bgcolor' id="bgcolor" value='#0057B7'>
+		  <input type='hidden' name='text_color' id="textcolor" value='white'>
 
 		<div class='isiform'>
 			<input type='text' name='kepada' class='kepada' value='Kepada'>

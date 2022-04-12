@@ -235,6 +235,7 @@ if(isset($_POST['selesai']))
 	width: 960px;;
 	height: 1920px;
   background-color:#0057B7;
+  color:white;
 	/* background-image:url('bgcolor/bgc1.JPG'); */
 	background-size: 100% repeat;
 }
@@ -332,25 +333,34 @@ input[type='submit'] {
 function myFunction() {
    document.getElementById("bgc").style.backgroundColor = "#0057B7";
    document.getElementById("bgcolor").value = "#0057B7";
+   document.getElementById("ucapan").style.color = "white";
+   document.getElementById("doa").style.color = "white";
 }
 function myFunction2() {
    document.getElementById("bgc").style.backgroundColor = "#F1E6B2";
    document.getElementById("bgcolor").value = "#F1E6B2";
+   document.getElementById("ucapan").style.color = "black";
+   document.getElementById("doa").style.color = "black";
 }
 function myFunction3() {
    document.getElementById("bgc").style.backgroundColor = "#7BA4DB";
    document.getElementById("bgcolor").value = "#7BA4DB";
+   document.getElementById("ucapan").style.color = "white";
+   document.getElementById("doa").style.color = "white";
 }
 function myFunction4() {
    document.getElementById("bgc").style.backgroundColor = "#707372";
    document.getElementById("bgcolor").value = "#707372";
+   document.getElementById("ucapan").style.color = "black";
+   document.getElementById("doa").style.color = "black";
 }
 
 var Doa=false;
 function pilih1() {
 	var o=document.getElementById('pilihan1');
 	var theWord=o.value;
-	for(var i=1; i<5; i++) 	theWord=theWord.replace("<br>","\n");
+	// for(var i=1; i<5; i++) 	
+  theWord=theWord.replace("<br>","\n");
 	
 	var tbox=document.getElementById('isi');
  
@@ -359,13 +369,13 @@ function pilih1() {
 }
 function pilih2() {
 	var o=document.getElementById('pilihan2');
-	var theWord=o.value;
+	var theWord2=o.value;
 	
 	var tbox=document.getElementById('isi');
 	if (Doa>0) {
-		tbox.value=theWord;
+		tbox.value=theWord2;
 	} else {
-		tbox.value = tbox.value + theWord;
+		tbox.value = tbox.value + theWord2;
 	}
 	Doa=0;
 }
@@ -423,7 +433,7 @@ function pilih2() {
 
 			<div style='margin-top:40px; float:left; font-size:30px;'>
 
-			Ucapan: <select id="pilihan1" class='pilihan' onchange='pilih1()'>
+			<p id="ucapan" style="display: inline;">Ucapan:</p> <select id="pilihan1" class='pilihan' onchange='pilih1()'>
         <option value=''>* Ucapan *</option>
         <option value='Ucapan 1.'>Ucapan 1</option>
         <option value='Ucapan 2.'>Ucapan 2</option>
@@ -432,8 +442,8 @@ function pilih2() {
         <option value='Ucapan 5.'>Ucapan 5</option>
       </select>
 <br>
-      &nbsp&nbsp&nbsp&nbsp&nbspDoa: <select id="pilihan2" class='pilihan' onchange='pilih2()'>
-        <option value=''>* Doa *</option>
+      &nbsp&nbsp&nbsp&nbsp&nbsp<p id="doa" style="display: inline;">Doa:</p> <select id="pilihan2" class='pilihan' onchange='pilih2()'>
+        <option value='' id = "doa">* Doa *</option>
         <option value=' Doa 1.'>Doa 1</option>
         <option value=' Doa 2.'>Doa 2</option>
         <option value=' Doa 3.'>Doa 3</option>

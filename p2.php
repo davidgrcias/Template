@@ -496,19 +496,11 @@ function pilih2() {
       </script>
 			<p id="ucapan" style="display: inline;">Ucapan:</p> <select id="pilihan1" size = "return this.length();" class='pilihan' style = "width: 100%;" onchange='pilih1()'>
         <option value=''>* Ucapan *</option>
-<<<<<<< HEAD
-        <option value='Ucapan 1.'>Ucapan 1Ucapan 1Ucapan 1Ucapan 1Ucapan 1Ucapan 1Ucapan 1Ucapan 1Ucapan 1Ucapan 1Ucapan 1Ucapan 1Ucapan 1</option>
-        <option value='Ucapan 2.'>Ucapan 2</option>
-        <option value='Ucapan 3.'>Ucapan 3</option>
-        <option value='Ucapan 4.'>Ucapan 4</option>
-        <option value='Ucapan 5.'>Ucapan 5</option>
-=======
         <option class="short" data-limit='70' value='Selamat hari raya idul fitri 1443 H.'>Selamat hari raya idul fitri 1443 H</option>
         <option class="short" data-limit='70' value='Bulan Ramadan beranjak pergi, semoga kita semua kembali fitri.'>Bulan Ramadan beranjak pergi, semoga kita semua kembali fitri</option>
         <option class="short" data-limit='70' value='Bulan suci Ramadan telah berlalu, fajar hari kemenangan tampak mewarnai langit, membawa sinar kedamaian dan kesucian.'>Bulan suci Ramadan telah berlalu, fajar hari kemenangan tampak mewarnai langit, membawa sinar kedamaian dan kesucian</option>
         <option class="short" data-limit='70' value='Ucapan 4.'>Ucapan 4</option>
         <option class="short" data-limit='70' value='Ucapan 5.'>Ucapan 5</option>
->>>>>>> d4f2f03b802af88c1e3a12e01f7cbf8628c6dc8a
       </select>
 <br>
       &nbsp&nbsp&nbsp&nbsp&nbsp<p id="doa" style="display: inline;">Doa:</p> <select id="pilihan2" class='pilihan' onchange='pilih2()'>

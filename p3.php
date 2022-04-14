@@ -147,16 +147,20 @@ $urls=$rows[0]['unique_name'];
             }
 
             .moon{
-                position: absolute;
-                top: 8%;
-                left: 40%;
-                transform: translate(-50%, -50%);
-                height: 100px;
-                width: 100px;
-                box-shadow: -15px 15px 0 5px white  ;
-                border-radius: 50%;
-                z-index: -1;
-                filter: blur(2px);
+            position: absolute;
+              top: 10%;
+              left: 40%;
+              transform: translate(-50%, -50%);
+              width: 100px; height: 100px; background: white; border-radius: 50%;
+              box-shadow: 0 0 30px 0px #e6e6e6, 0 0 100px 0 white;
+              background-image: linear-gradient(
+              45deg,
+              #e6e6e6 0%,
+              white 90%,
+              white 100%
+              );
+              z-index: -1;
+              filter: blur(2px);
             }
 
             .mosque{

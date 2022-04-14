@@ -271,13 +271,13 @@
             </div>            
         </div>
         </div>
-<img class="frame"src="images/eidmubarakpira.png" style="left:20%">
-<img class="frame"src="images/eidmubarakwanita.png" style="right:20%">
+<img class="frame"src="images/pria-eidmubar.png" style="left:20%">
+<img class="frame"src="images/wanita-eidmubarak.png" style="right:20%">
 <img class="swing frame" src="images/ketupateidmubarak.png" width="200" style="right:5%;" >
 <img class="swing2 frame" src="images/ketupateidmubarak.png" width="200" style="left:5%;" >
 </div>
     
-    <div class="sticky-bottom-right">By: DaJaVu!</div>
+    <div class="sticky-bottom-right"></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

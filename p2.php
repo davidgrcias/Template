@@ -274,7 +274,7 @@ if(isset($_POST['selesai']))
 }
 
 .kepada {
-	font-size: 25px; line-height:70px;
+	font-size: 25px;
 	height:50px; width:40%;
 	box-sizing: border-box;
 	--background: transparent;
@@ -303,7 +303,7 @@ if(isset($_POST['selesai']))
 	text-align:center;
 }
 .dari {
-	font-size: 25px; line-height:70px;
+	font-size: 25px;
 	height:50px; width:40%;
 	box-sizing: border-box;
 

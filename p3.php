@@ -444,8 +444,8 @@ $urls=$rows[0]['unique_name'];
 
             .bgcolor {
             	position:relative;
-            	width: 90%;
-            	height: 1840px;
+            	width: 1200px;
+            	height: 1700px;
                 background-color:<?=$cclor;?>;
                 color:<?=$tcolor;?>;
             	/* background-image:url('bgcolor/<?=$cclor;?>'); */

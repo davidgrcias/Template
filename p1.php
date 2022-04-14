@@ -143,8 +143,7 @@ transition: all 1s ease;
    }
    .imagethumbnail{
        /* max-width:100%; */
-       width:2843.75%;
-       height:635px;
+       height:100%;
 transition: all 1s ease;
    }
    .imagethumbnail:hover{

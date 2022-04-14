@@ -189,21 +189,17 @@ if(isset($_POST['selesai']))
      top: 8%;
      left: 40%;
      transform: translate(-50%, -50%);
-     width: 100px; height: 100px; background: white; border-radius: 50%;
-    box-shadow: 0 0 30px 0px gray, 0 0 100px 0 white;
-    background-image: linear-gradient(
-45deg,
-gray 0%,
-white 90%,
-white 100%
-);
+     height: 100px;
+     width: 100px;
+     box-shadow: -15px 15px 0 5px white  ;
+     border-radius: 50%;
      z-index: -1;
     filter: blur(2px);
    }
 
    .thumbnail{
-      overflow: hidden;
-      position:relative;
+       overflow: hidden;
+       position:relative;
 	    top:4%;
 	    width:80%;
 	    /* left:10%; */
@@ -348,13 +344,6 @@ input[type='submit'] {
   cursor: pointer;
 }
 
-select option {
-    margin: 40px;
-    background: rgba(0, 0, 0, 0.3);
-    color: #fff;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-    font-size:10px;
-}
     </style>
 <script>
 function myFunction() {
@@ -505,7 +494,7 @@ function pilih2() {
 <br>
       &nbsp&nbsp&nbsp&nbsp&nbsp<p id="doa" style="display: inline;">Doa:</p> <select id="pilihan2" class='pilihan' onchange='pilih2()'>
         <option value='' id = "doa">* Doa *</option>
-        <option class="short" data-limit='70' value=' Taqabbalallahu minna wa minkum.'>Taqabbalallahu minna wa minkum 1</option>
+        <option class="short" data-limit='70' value=' Taqabbalallahu minna wa minkum.'>Taqabbalallahu minna wa minkum</option>
         <option class="short" data-limit='70' value=' Mohon maaf lahir dan batin.'>Mohon maaf lahir dan batin</option>
         <option class="short" data-limit='70' value=' Di hari yang suci ini, semoga kita senantiasa diberikan ampunan dan diberkahi kegembiraan.'>Di hari yang suci ini, semoga kita senantiasa diberikan ampunan dan diberkahi kegembiraan</option>
         <option class="short" data-limit='70' value=' Doa 4.'>Doa 4</option>
@@ -544,23 +533,6 @@ function pilih2() {
 
         });
       });
-
-      var $select = $('select');
-
-$select
-    .on('change', function () {
-        var $this = $(this),
-            // use replace to remove extra white (if desired)
-            txt = $this.find('option:selected').text().replace(/\s+/g, ' ');
-        // add title to select
-        $this.attr('title', txt);
-    })
-    .change()
-    .find('option').each(function () {
-        var $this = $(this);
-        // add title to each option, so it works on hover
-        $this.attr('title', $this.text());
-    });
     </script>
 </body>
 </html>

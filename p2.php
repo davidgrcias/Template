@@ -93,21 +93,12 @@ if(isset($_POST['selesai']))
         @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Creepster&display=swap');
         body {
   background-repeat: no-repeat;
-  background-color: hsl(218, 41%, 15%);
-  background-image: radial-gradient(
-    650px circle at 50% 0%,
-    hsl(218, 41%, 35%) 15%,
-    hsl(218, 41%, 30%) 35%,
-    hsl(218, 41%, 20%) 75%,
-    hsl(218, 41%, 19%) 80%,
-    transparent 100%
-  );
+  background-color: #e0e0e0;
 }
 
     .stepper-wrapper {
   font-family: 'satisfy';
   font-size:25px;
-  margin-top: 50px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -185,15 +176,15 @@ if(isset($_POST['selesai']))
 }
 
 .moon{
-  position: absolute;
+  position: sticky;
      top: 10%;
      left: 40%;
      transform: translate(-50%, -50%);
      width: 100px; height: 100px; background: white; border-radius: 50%;
-    box-shadow: 0 0 30px 0px #e6e6e6, 0 0 100px 0 white;
+    box-shadow: 0 0 30px 0px yellow, 0 0 100px 0 white;
     background-image: linear-gradient(
     45deg,
-    #e6e6e6 0%,
+    yellow 0%,
     white 90%,
     white 100%
     );
@@ -342,6 +333,7 @@ input[type='submit'] {
 
 .step-name{
   cursor: pointer;
+  color:#4BB543;
 }
 
 .step-counter{
@@ -419,7 +411,7 @@ function pilih2() {
       </div>
       <div class="stepper-item">
         <div class="step-counter" style = "cursor: not-allowed;">3</div>
-        <div class="step-name" style = "cursor: not-allowed;">Kirim Kartu</div>
+        <div class="step-name" style = "cursor: not-allowed;color:#0A2E16;" >Kirim Kartu</div>
       </div>
     </div>
     <script type="text/javascript">

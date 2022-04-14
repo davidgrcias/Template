@@ -69,7 +69,6 @@ $urls=$rows[0]['unique_name'];
                 .stepper-wrapper {
             font-family: 'satisfy';
             font-size:25px;
-            margin-top: 50px;
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
@@ -147,7 +146,7 @@ $urls=$rows[0]['unique_name'];
             }
 
             .moon{
-            position: absolute;
+            position: sticky;
               top: 10%;
               left: 40%;
               transform: translate(-50%, -50%);
@@ -164,8 +163,9 @@ $urls=$rows[0]['unique_name'];
             }
 
             .mosque{
-                height: 80vw;
-                width: 80vw;
+              max-width: 100%;
+  height: auto;
+
                 z-index:-2;
                 filter: blur(2px);
             }
@@ -244,8 +244,8 @@ $urls=$rows[0]['unique_name'];
             border-radius: 50%;
             padding: 15px;
             margin: 10px;
-            width: 50px;
-            height: 50px;
+            width:1em;
+            height: 1em;
             font-size: 18px;
             display: flex;
             justify-content: center;
@@ -480,7 +480,7 @@ $urls=$rows[0]['unique_name'];
 </head>
 <body onload = "autoClick();">
 <div class="moon"></div>
-<div class="bottomcenter"><img src="images/mosque.png" class="mosque"></img></div>
+<div class="bottomcenter"><img src="images/mosque-bright.png" class="mosque"></img></div>
 <div class="container">
 <div class="stepper-wrapper">
       <div class="stepper-item completed">
@@ -524,11 +524,6 @@ $urls=$rows[0]['unique_name'];
     <div class="tooltip">Whatsapp</div>
     <span style="all:unset;"><i class="fa fa-whatsapp"></i></span>
   </div></a>
-  <a style="all:unset;" target="_blank" href="https://line.me/share/url?https://blabla<?=$urls;?>&text=Check Out My Card!">
-  <div class="icon line">
-    <div class="tooltip">Line</div>
-    <span style="all:unset;"><i class="fab fa-line"></i></span>
-  </div></a>
   <a style="all:unset;" target="_blank" href="https://telegram.me/share/url?url=https://blabla<?=$urls;?>&text=Check Out My Card!">
   <div class="icon telegram">
     <div class="tooltip">Telegram</div>
@@ -542,7 +537,7 @@ $urls=$rows[0]['unique_name'];
 </div>
 
 
-<a href="#" class="wrapper" style="width:20%" id="copylink"onclick="copyURL()" onmouseout="outFunc()">
+<a href="#" class="wrapper" style="width:30%" id="copylink"onclick="copyURL()" onmouseout="outFunc()">
         <span></span>
         <span></span>
         <span></span>

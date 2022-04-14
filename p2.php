@@ -287,7 +287,7 @@ if(isset($_POST['selesai']))
 	float:left;
 }
 .isi {
-	font-size: 25px; line-height:70px;
+	font-size: 25px;
 	height:180px; width:100%;
 	box-sizing: border-box;
 
@@ -461,23 +461,44 @@ function pilih2() {
 			</div>
 
 			<div style='margin-top:40px; float:left; font-size:30px;'>
+      <script>
+        function shortString(selector) {
+        const elements = document.querySelectorAll(selector);
+        const tail = '...';
+        if (elements && elements.length) {
+          for (const element of elements) {
+            let text = element.innerText;
+            if (element.hasAttribute('data-limit')) {
+              if (text.length > element.dataset.limit) {
+                element.innerText = `${text.substring(0, element.dataset.limit - tail.length).trim()}${tail}`;
+              }
+            } else {
+              throw Error('Cannot find attribute \'data-limit\'');
+            }
+          }
+        }
+      }
 
-			<p id="ucapan" style="display: inline;">Ucapan:</p> <select id="pilihan1" class='pilihan' onchange='pilih1()'>
+      window.onload = function() {
+        shortString('.short');
+      };
+      </script>
+			<p id="ucapan" style="display: inline;">Ucapan:</p> <select id="pilihan1" size = "return this.length();" class='pilihan' style = "width: 100%;" onchange='pilih1()'>
         <option value=''>* Ucapan *</option>
-        <option value='Ucapan 1.'>Ucapan 1</option>
-        <option value='Ucapan 2.'>Ucapan 2</option>
-        <option value='Ucapan 3.'>Ucapan 3</option>
-        <option value='Ucapan 4.'>Ucapan 4</option>
-        <option value='Ucapan 5.'>Ucapan 5</option>
+        <option class="short" data-limit='70' value='Selamat hari raya idul fitri 1443 H.'>Selamat hari raya idul fitri 1443 H</option>
+        <option class="short" data-limit='70' value='Bulan Ramadan beranjak pergi, semoga kita semua kembali fitri.'>Bulan Ramadan beranjak pergi, semoga kita semua kembali fitri</option>
+        <option class="short" data-limit='70' value='Bulan suci Ramadan telah berlalu, fajar hari kemenangan tampak mewarnai langit, membawa sinar kedamaian dan kesucian.'>Bulan suci Ramadan telah berlalu, fajar hari kemenangan tampak mewarnai langit, membawa sinar kedamaian dan kesucian</option>
+        <option class="short" data-limit='70' value='Ucapan 4.'>Ucapan 4</option>
+        <option class="short" data-limit='70' value='Ucapan 5.'>Ucapan 5</option>
       </select>
 <br>
       &nbsp&nbsp&nbsp&nbsp&nbsp<p id="doa" style="display: inline;">Doa:</p> <select id="pilihan2" class='pilihan' onchange='pilih2()'>
         <option value='' id = "doa">* Doa *</option>
-        <option value=' Doa 1.'>Doa 1</option>
-        <option value=' Doa 2.'>Doa 2</option>
-        <option value=' Doa 3.'>Doa 3</option>
-        <option value=' Doa 4.'>Doa 4</option>
-        <option value=' Doa 5.'>Doa 5</option>
+        <option class="short" data-limit='70' value=' Taqabbalallahu minna wa minkum.'>Taqabbalallahu minna wa minkum 1</option>
+        <option class="short" data-limit='70' value=' Mohon maaf lahir dan batin.'>Mohon maaf lahir dan batin</option>
+        <option class="short" data-limit='70' value=' Di hari yang suci ini, semoga kita senantiasa diberikan ampunan dan diberkahi kegembiraan.'>Di hari yang suci ini, semoga kita senantiasa diberikan ampunan dan diberkahi kegembiraan</option>
+        <option class="short" data-limit='70' value=' Doa 4.'>Doa 4</option>
+        <option class="short" data-limit='70' value=' Doa 5.'>Doa 5</option>
       </select>
 			</div><!-- /style -->
 

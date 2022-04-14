@@ -80,10 +80,11 @@ if(isset($_POST['selesai']))
 <html>
 <head>
 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width, inital-scale = 1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="p2css.css">
     <title>Kartu Ucapan Idul Fitri 2022</title>
 
     <style>
@@ -438,15 +439,17 @@ function pilih2() {
           </div>
 
     <div class="bgcolor" id="bgc">
-      <div class="thumbnail">
-          <img src="usersUpload/<?php echo $kumpulan["image"] ?>" class="imagethumbnail" style="width:100%">
+      <div class="seper">
+        <div class="thumbnail">
+            <img src="usersUpload/<?php echo $kumpulan["image"] ?>" class="imagethumbnail" style="width:100%">
+        </div>
+        <div class='colorSelect'>
+  			  <div class='csBox' onclick="myFunction()" style='background-color:#0057B7;'></div>
+  			  <div class='csBox' onclick="myFunction2()" style='background-color:#F1E6B2;'></div>
+  			  <div class='csBox' onclick="myFunction3()" style='background-color:#7BA4DB;'></div>
+  			  <div class='csBox' onclick="myFunction4()" style='background-color:#707372;'></div>
+  		  </div>
       </div>
-      <div class='colorSelect'>
-			  <div class='csBox' onclick="myFunction()" style='background-color:#0057B7;'></div>
-			  <div class='csBox' onclick="myFunction2()" style='background-color:#F1E6B2;'></div>
-			  <div class='csBox' onclick="myFunction3()" style='background-color:#7BA4DB;'></div>
-			  <div class='csBox' onclick="myFunction4()" style='background-color:#707372;'></div>
-		  </div>
 
     <form method='POST' action=''>
 		  <input type='hidden' name='card_id' value='<?php echo $rows["card_id"] ?>' >
@@ -487,7 +490,7 @@ function pilih2() {
         shortString('.short');
       };
       </script>
-			<p id="ucapan" style="display: inline;">Ucapan:</p> <select id="pilihan1" size = "return this.length();" class='pilihan' style = "width: 100%;" onchange='pilih1()'>
+			<p id="ucapan" style="display: inline;">Ucapan:</p><select id="pilihan1" size = "return this.length();" class='pilihan' style = "width: 100%;" onchange='pilih1()'>
         <option value=''>* Ucapan *</option>
         <option class="short" data-limit='70' value='Selamat hari raya idul fitri 1443 H.'>Selamat hari raya idul fitri 1443 H</option>
         <option class="short" data-limit='70' value='Bulan Ramadan beranjak pergi, semoga kita semua kembali fitri.'>Bulan Ramadan beranjak pergi, semoga kita semua kembali fitri</option>
@@ -496,7 +499,7 @@ function pilih2() {
         <option class="short" data-limit='70' value='Ucapan 5.'>Ucapan 5</option>
       </select>
 <br>
-      &nbsp&nbsp&nbsp&nbsp&nbsp<p id="doa" style="display: inline;">Doa:</p> <select id="pilihan2" class='pilihan' onchange='pilih2()'>
+      <p id="doa" style="display: inline;">Doa:</p> <select id="pilihan2" class='pilihan' onchange='pilih2()'>
         <option value='' id = "doa">* Doa *</option>
         <option class="short" data-limit='70' value=' Taqabbalallahu minna wa minkum.'>Taqabbalallahu minna wa minkum</option>
         <option class="short" data-limit='70' value=' Mohon maaf lahir dan batin.'>Mohon maaf lahir dan batin</option>

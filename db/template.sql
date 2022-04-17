@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2022 at 03:41 AM
+-- Generation Time: Apr 17, 2022 at 05:41 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -40,10 +40,11 @@ CREATE TABLE `card` (
 --
 
 INSERT INTO `card` (`card_id`, `email`, `imageName`, `image`, `approval`) VALUES
-(3, 'david@gmail.com', 'Ngabuburit ala anak-anak', 'Ngabuburit ala anak-anak - 2022.03.24 - 05.17.07am.jpg', 1),
-(4, 'jannsen@gmail.com', 'Bunga', 'Bunga - 2022.03.24 - 05.24.10am.jpeg', 1),
-(7, 'djdk@gmail.com', 'David ', 'David  - 2022.04.11 - 07.00.19am.jpg', 0),
-(8, 'vinsen@gmail.com', 'Eid Mubarak', 'Eid Mubarak - 2022.04.11 - 07.01.30am.png', 1);
+(9, 'vinsensutanto@gmail.com', 'Eid Mubarak - mosque and moon in night time', 'Eid Mubarak - mosque and moon in night time - 2022.04.14 - 03.00.25am.png', 1),
+(10, 'vinsensutanto@gmail.com', 'Green Hill', 'Green Hill - 2022.04.17 - 05.34.51pm.png', 1),
+(11, 'vinsensutanto@gmail.com', 'Home', 'Home - 2022.04.17 - 05.35.21pm.png', 1),
+(12, 'vinsensutanto@gmail.com', 'leach photo', 'leach photo - 2022.04.17 - 05.36.14pm.png', 1),
+(13, 'vinsensutanto@gmail.com', 'Dark Green Theme ', 'Dark Green Theme  - 2022.04.17 - 05.39.37pm.png', 1);
 
 -- --------------------------------------------------------
 
@@ -65,80 +66,14 @@ CREATE TABLE `card_end` (
 --
 
 INSERT INTO `card_end` (`id_end`, `card_id`, `kepada`, `isi`, `dari`, `unique_name`) VALUES
-(1, 3, 'Kepada', 'Meditasi 1. Berkat 1.', 'Dari', ''),
-(2, 3, 'Kepada', 'Meditasi 1.', 'Dari', ''),
-(3, 3, 'Kepada', 'Meditasi 5.', 'Dari', ''),
-(4, 3, 'Kepada', 'Isi', 'Dari', ''),
-(5, 3, 'Kepada', 'Meditasi 5. Berkat 4.', 'Dari', ''),
-(6, 4, 'Kepada', 'Meditasi 4. Berkat 2.', 'Dari', ''),
-(7, 4, 'Kepada', 'Meditasi 2. Berkat 3. Berkat 1.', 'Dari', ''),
-(8, 4, 'David', 'Meditasi 2. Berkat 3. Berkat 1.', 'James', ''),
-(9, 3, 'Vincent', 'Meditasi 3. Berkat 5. Berkat 4. Berkat 2. Berkat 3. Berkat 1.', 'James', ''),
-(10, 3, 'Kepada', 'Meditasi 4.', 'Dari', ''),
-(11, 3, 'Kepada', 'Isi', 'Dari', ''),
-(12, 3, 'Kepada', 'Isi', 'Dari', ''),
-(13, 4, 'Kepada', 'Isi', 'Dari', ''),
-(14, 4, 'Kepada', 'Isi', 'Dari', ''),
-(15, 4, 'Kepada', 'Isi', 'Dari', ''),
-(16, 4, 'Kepada', 'Isi', 'Dari', ''),
-(17, 4, 'Kepada', 'Isi', 'Dari', ''),
-(18, 4, 'Kepada', 'Isi', 'Dari', ''),
-(19, 4, 'Kepada', 'Isi', 'Dari', ''),
-(20, 4, 'Kepada', 'Isi', 'Dari', ''),
-(21, 4, 'Kepada', 'Isi', 'Dari', ''),
-(22, 4, 'Kepada', 'Isi', 'Dari', ''),
-(23, 4, 'Kepada', 'Isi', 'Dari', ''),
-(24, 4, 'Kepada', 'Isi', 'Dari', ''),
-(25, 4, 'Kepada', 'Isi', 'Dari', '1r15r'),
-(26, 4, 'Kepada', 'Isi', 'Dari', ''),
-(27, 4, 'Kepada', 'Isi', 'Dari', ''),
-(28, 4, 'Kepada', 'Isi', 'Dari', ''),
-(29, 4, 'Kepada', 'Isi', 'Dari', ''),
-(30, 4, 'Kepada', 'Isi', 'Dari', ''),
-(31, 4, 'Kepada', 'Isi', 'Dari', ''),
-(32, 4, 'Kepada', 'Isi', 'Dari', ''),
-(33, 4, 'Kepada', 'Isi', 'Dari', ''),
-(34, 4, 'Kepada', 'Isi', 'Dari', ''),
-(35, 4, 'Kepada', 'Isi', 'Dari', ''),
-(36, 4, 'Kepada', 'Isi', 'Dari', ''),
-(37, 4, 'Kepada', 'Isi', 'Dari', ''),
-(38, 4, 'Kepada', 'Isi', 'Dari', ''),
-(39, 4, 'Kepada', 'Isi', 'Dari', ''),
-(40, 4, 'Kepada', 'Isi', 'Dari', ''),
-(41, 4, 'Kepada', 'Isi', 'Dari', ''),
-(42, 4, 'Kepada', 'Isi', 'Dari', ''),
-(43, 4, 'Kepada', 'Isi', 'Dari', ''),
-(44, 4, 'Kepada', 'Isi', 'Dari', ''),
-(45, 4, 'Kepada', 'Isi', 'Dari', ''),
-(46, 4, 'Kepada', 'Isi', 'Dari', ''),
-(47, 4, 'Kepada', 'Isi', 'Dari', ''),
-(48, 4, 'Kepada', 'Isi', 'Dari', ''),
-(49, 4, 'Kepada', 'Isi', 'Dari', ''),
-(50, 4, 'Kepada', 'Isi', 'Dari', ''),
-(51, 4, 'Kepada', 'Isi', 'Dari', ''),
-(52, 4, 'Kepada', 'Isi', 'Dari', ''),
-(53, 4, 'Kepada', 'Isi', 'Dari', ''),
-(54, 3, 'Kepada', 'Isi', 'Dari', ''),
-(55, 4, 'Dear my precious treasure,', 'Meditasi 3. Berkat 4. Berkat 5. Berkat 4. Berkat 3. Berkat 2.', 'Sincerely, Si ganteng', ''),
-(56, 4, 'Dear my precious treasure,', 'Meditasi 3. Berkat 4. Berkat 5. Berkat 4. Berkat 3. Berkat 2.', 'Sincerely, Si ganteng', ''),
-(57, 4, 'Dear my precious treasure,', 'Meditasi 3. Berkat 4. Berkat 5. Berkat 4. Berkat 3. Berkat 2.', 'Sincerely, Si ganteng', ''),
-(58, 3, 'Kepada', 'Isi', 'Dari', ''),
-(59, 4, 'Kepada', 'Isi', 'Dari', ''),
-(60, 3, 'Kepada', 'Isi', 'Dari', '2mi5P'),
-(61, 3, 'Kepada', 'selasa 5 april', 'Dari', '1r15r'),
-(62, 3, 'Kepada', 'selasa 5 april 2022', 'Dari', 'lyCBE'),
-(63, 3, 'Kepada', 'Isi', 'Dari', 'LVfiI'),
-(64, 3, 'Kepada', 'Isi', 'Dari', 'ly0m1'),
-(65, 3, 'Kepada', 'Isi', 'Dari', 'HHZTf'),
-(66, 4, 'David', 'Selamat Idul Fitri! ', 'Saya', 'CUfKa'),
-(67, 3, 'Kepada', 'Isi', 'Dari', 'WunOO'),
-(68, 3, 'Kepada', 'Isi', 'Dari', 'BQ3ne'),
-(69, 3, 'Kepada', 'Isi', 'Dari', '1lZHA'),
-(70, 4, 'Kepada', 'Isi', 'Dari', '6dgWO'),
-(71, 8, 'Kepada', 'Isi', 'Dari', 'CAoL2'),
-(72, 8, 'Kepada', 'Isi', 'Dari', 'JAL3J'),
-(73, 3, 'Kepada', 'Isi', 'Dari', '16ayc'),
-(74, 8, 'Kepada', 'Ucapan 1.', 'Dari', 'IZVVX');
+(1, 8, 'Kepada', 'Bulan Ramadan beranjak pergi, semoga kita semua kembali fitri. Di hari yang suci ini, semoga kita senantiasa diberikan ampunan dan diberkahi kegembiraan.', 'Dari', 'MfGkH'),
+(2, 9, 'Kepada', 'Isi', 'Dari', 'aZ219'),
+(3, 4, 'Kepada', 'Isi', 'Dari', 'w3ojO'),
+(4, 9, 'Kepada', 'Isi', 'Dari', 'BbOZ7'),
+(5, 9, 'Kepada', 'Isi', 'Dari', 'mLvVc'),
+(6, 9, 'Kepada', 'Isi', 'Dari', 'VLsCF'),
+(7, 9, 'Kepada', 'Isi', 'Dari', 'W6sS7'),
+(8, 9, 'Kepada', 'Isi', 'Dari', 'wIlcu');
 
 -- --------------------------------------------------------
 
@@ -199,13 +134,13 @@ ALTER TABLE `data_admin`
 -- AUTO_INCREMENT for table `card`
 --
 ALTER TABLE `card`
-  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `card_end`
 --
 ALTER TABLE `card_end`
-  MODIFY `id_end` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id_end` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `data_admin`

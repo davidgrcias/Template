@@ -170,14 +170,19 @@ $urls=$rows[0]['unique_name'];
                 filter: blur(2px);
             }
             .thumbnail{
-                margin-top:3%;
+       overflow: hidden;
+       position:relative;
+	    top:4%;
+	    width:80%;
+	    /* left:10%; */
+ 	    border-radius:10px;
+	    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);
             }
             .imagethumbnail{
-                /* max-width:100%; 3750%*/
-                width:920px;
-                height:1840px;
-                display:block;
-                margin: 0 auto;
+       /* max-width:100%; */
+       width: 773px;;
+       height: 1064px;
+       transition: all 1s ease;
             }
             .caption{
                 text-align: center;
@@ -448,8 +453,6 @@ $urls=$rows[0]['unique_name'];
 
             .bgcolor {
             	position:relative;
-            	width: 1200px;
-            	height: 1700px;
                 background-color:<?=$cclor;?>;
                 color:<?=$tcolor;?>;
             	/* background-image:url('bgcolor/<?=$cclor;?>'); */
@@ -476,6 +479,11 @@ $urls=$rows[0]['unique_name'];
                 .step-counter{
                   cursor: pointer;
                 }
+                @media screen and (max-width: 800px) {
+                .bgcolor {
+                  max-height: 1000px!important;
+                }
+              }
     </style>
 </head>
 <body onload = "autoClick();">
@@ -549,21 +557,23 @@ $urls=$rows[0]['unique_name'];
       <!-- ini ntar ambil semua data trus itung ada berapa kan nah trus digituin -->
   <!-- <div class="col-md-7"> -->
 
-    <div class="bgcolor" style="width:1000px" id="bgc">
-      <div style="overflow: hidden;position:relative;top:4%;width:755px;border-radius:10px;box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);">
-          <img src="usersUpload/<?= $kumpulan['image']; ?>" class="imagethumbnail" style="width:780px;height:1065px;">
+    <div class="bgcolor" style="width:100%;height:auto;padding-top:15%;padding-bottom:0%;" id="bgc">
+      <div class="seper">
+        <div class="thumbnail">
+          <img src="usersUpload/<?= $kumpulan['image']; ?>" class="imagethumbnail" style="width:100%;height:100%;">
+        </div>
       </div>
 		<div style="margin:15% 8% 0 8%;width:84%;box-sizing:border-box;">
-			<p style="text-align:left;font-size: 25px; height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;float:left;">
+			<p style="text-align:left;font-size: 4vw; height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;float:left;">
             <?= $rows[0]['kepada']?> </p>
       <br><br><br><br><br>
 
-			<p style="font-size: 25px; height:180px; width:100%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;margin-top:20px;margin-bottom:20px;text-align:center;">
+			<p style="font-size: 4vw; height:180px; width:100%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;margin-top:20px;margin-bottom:20px;text-align:center;">
             <?= $rows[0]['isi']?></p>
 
       <br><br>
 
-			<p style='align:right;text-align:right;float:right;font-size: 25px; height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-right:10px;outline-width: 1px;outline-color:#ff4c4d;'>
+			<p style='align:right;text-align:right;float:right;font-size: 4vw; height:50px; width:40%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-right:10px;outline-width: 1px;outline-color:#ff4c4d;'>
             <?= $rows[0]['dari']?></p>
 
 			<div style='margin-top:40px; float:left; font-size:30px;'>

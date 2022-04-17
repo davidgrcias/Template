@@ -112,7 +112,8 @@
     animation-direction: alternate;
     animation-iteration-count: 4;
         background-attachment: fixed;
-        width:13%;
+        max-width:13%;
+        height:auto;
         z-index:2;
         
         }
@@ -164,7 +165,6 @@
         }
 
         .button {
-            font-size:100%;
     padding: 5% 1%;
     border-radius: 25px;
     color: white;
@@ -256,6 +256,32 @@
         .clear {
     clear: both;
 }
+
+@media screen and (max-width: 800px) {
+                .container {
+                  width: 300px!important;
+                }
+                .title{
+                    font-size:20vw;
+                }
+                .swing {
+                top:-20px;
+                }
+                .swing2 {
+                top:-20px;
+                }
+                .foto{
+
+                top:120px;
+                }
+                h2{
+                    margin-top:60px;
+                    font-size:15vw;
+                }
+                .button{
+                    /* font-size:; */
+                }
+              }
         
     </style>
 </head>
@@ -271,8 +297,8 @@
             </div>            
         </div>
         </div>
-<img class="frame"src="images/pria-eidmubar.png" style="left:20%">
-<img class="frame"src="images/wanita-eidmubarak.png" style="right:20%">
+<img class="frame foto"src="images/pria-eidmubar.png" style="left:20%">
+<img class="frame foto"src="images/wanita-eidmubarak.png" style="right:20%">
 <img class="swing frame" src="images/ketupateidmubarak.png" width="200" style="right:5%;" >
 <img class="swing2 frame" src="images/ketupateidmubarak.png" width="200" style="left:5%;" >
 </div>

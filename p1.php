@@ -1,8 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","root","","template");
-if (!$con) {
-  die('Could not connect: ' . mysqli_error());
-}
+require 'config.php';
 
 $result = mysqli_query($con,"SELECT * FROM card WHERE approval = 1");
 $row = mysqli_num_rows($result);

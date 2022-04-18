@@ -1,10 +1,6 @@
 <?php
-$con = mysqli_connect("localhost","root","","template");
-if (!$con) {
-  die('Could not connect: ' . mysqli_error());
-}
+require 'config.php';
 
-session_start();
 $cnow=$_SESSION["card_now"];
 $cclor= $_SESSION["card_color"];
 $tcolor= $_SESSION["text_color"];

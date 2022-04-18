@@ -1,10 +1,8 @@
 <?php
+require 'config.php';
+
 if(!isset($_GET["id"])){
   header("Location: p1.php");
-}
-$con = mysqli_connect("localhost","root","","template");
-if (!$con) {
-  die('Could not connect: ' . mysqli_error());
 }
 $acak='none';
 function generate(){
@@ -62,8 +60,6 @@ if(isset($_POST['selesai']))
   while ($rowb /*bajunya */= mysqli_fetch_assoc($resultb)){
     $rowz=$rowb; //baju masukin kotaknya ga bawa lemari
 }
-
-  session_start();
   $_SESSION["card_now"]=$rowz["id_end"];
   $_SESSION["card_color"]=$bgcolor;
   $_SESSION["text_color"]=$textcolor;

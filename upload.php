@@ -1,3 +1,6 @@
+<?php
+require 'config.php';
+?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style media="screen">
           #modalUpload{
@@ -104,7 +107,7 @@
             left: 50%;
             top:50%;
             transform: translate(-50%, -50%);
-            margin: auto;    
+            margin: auto;
         }
 </style>
 
@@ -131,8 +134,6 @@
   </div>
 
 <?php
-$conn = mysqli_connect("localhost", "root", "", "template");
-
 if(isset($_POST["submitimage"])){
   $email = $_POST["email"];
   $imageName = $_POST["imageName"];
@@ -172,7 +173,7 @@ if(isset($_POST["submitimage"])){
 
       move_uploaded_file($tmpName, 'usersUpload/' . $newImageName);
       $query = "INSERT INTO card VALUES('', '$email', '$imageName', '$newImageName', 0)";
-      mysqli_query($conn, $query);
+      mysqli_query($con, $query);
       echo
       "
       <script>

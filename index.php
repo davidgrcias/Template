@@ -28,7 +28,7 @@
   );
             z-index: 1;
         }
-        
+
         .moon{
      position: absolute;
      top: 50%;
@@ -46,7 +46,7 @@
         text-shadow: 0 0 0.05em #fff, 0 0 0.2em hsl(90.27, 71.97%, 69.22%), 0 0 0.3em hsl(90.27, 71.97%, 69.22%);
         text-align: center;
     }
-    
+
 
     @keyframes smoothbounceball{
     from { transform: translate3d(0, 0, 0);}
@@ -61,7 +61,7 @@
         max-width:13%;
         height:auto;
         z-index:2;
-        
+
         }
         h2{
             font-family:'satisfy';
@@ -127,7 +127,7 @@
         .button:hover{
             transform: scale(1.2);
     text-decoration: underline;
-            
+
         }
         a {
             color:white;
@@ -153,7 +153,7 @@
     top:-40px;
 }
 .swing:after{
-    content: '';  
+    content: '';
     top: -10px; left: 50%;
     border-bottom: none;
     border-right: none;
@@ -167,7 +167,7 @@
     border-radius: 50% 50%;
     background: #000;
 }
- 
+
 @keyframes swing {
     0% { transform: rotate(3deg); }
     100% { transform: rotate(-3deg); }
@@ -179,7 +179,7 @@
     top:-40px;
 }
 .swing2:after{
-    content: '';  
+    content: '';
     top: -10px; left: 50%;
     border-bottom: none;
     border-right: none;
@@ -193,7 +193,7 @@
     border-radius: 50% 50%;
     background: #000;
 }
- 
+
 @keyframes swing2 {
     0% { transform: rotate(-3deg); }
     100% { transform: rotate(3deg); }
@@ -228,7 +228,7 @@
                     /* font-size:; */
                 }
               }
-        
+
     </style>
 </head>
 <body>
@@ -238,7 +238,7 @@
             <h2> Happy Eid <p class="mubarak">Mubarak</p></h2><br>
             <div class="gradient-border button" id="lanjut">
             <a href="p2.php" >Kirim Kartu Ucapan!</a>
-            </div>            
+            </div>
         </div>
         </div>
 <img class="frame foto"src="images/pria-eidmubar.png" style="left:20%">
@@ -246,7 +246,7 @@
 <img class="swing frame" src="images/ketupateidmubarak.png" width="200" style="right:5%;" >
 <img class="swing2 frame" src="images/ketupateidmubarak.png" width="200" style="left:5%;" >
 </div>
-    
+
     <div class="sticky-bottom-right"></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

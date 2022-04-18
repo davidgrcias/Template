@@ -451,12 +451,12 @@ function pilih2() {
 		  <input type='hidden' name='text_color' id="textcolor" value='white'>
 
 		<div class='isiform'>
-			<input type='text' name='kepada' class='kepada' value='Kepada'>
+			<input type='text' name='kepada' class='kepada' value='Kepada' maxlength = 20>
 
-			<textarea class='isi' name='isi' id="isi">Isi</textarea>
+			<textarea class='isi' name='isi' id="isi" maxlength = 300>Isi</textarea>
 
 			<div style='text-align:right;'>
-				<input type='text' name='dari' class='dari' value='Dari'>
+				<input type='text' name='dari' class='dari' value='Dari' maxlength = 20>
 			</div>
 
 			<div style='margin-top:40px; float:left; font-size:30px;'>

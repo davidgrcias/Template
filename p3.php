@@ -481,7 +481,7 @@ $urls=$rows[0]['unique_name'];
                 }
                 @media screen and (max-width: 800px) {
                 .bgcolor {
-                  max-height: 1000px!important;
+                  /* max-height: 1000px!important; */
                 }
                 .wrapper{
                   width:280px!important;
@@ -560,7 +560,7 @@ $urls=$rows[0]['unique_name'];
       <!-- ini ntar ambil semua data trus itung ada berapa kan nah trus digituin -->
   <!-- <div class="col-md-7"> -->
 
-    <div class="bgcolor" style="width:100%;height:auto;padding-top:15%;padding-bottom:0%;" id="bgc">
+    <div class="bgcolor" style="width:100%;padding-top:15%;padding-bottom:0%;" id="bgc">
       <div class="seper">
         <div class="thumbnail">
           <img src="usersUpload/<?= $kumpulan['image']; ?>" class="imagethumbnail" style="width:100%;height:100%;">
@@ -569,7 +569,7 @@ $urls=$rows[0]['unique_name'];
 		<div style="margin:2% 8% 0% 8%;width:84%;box-sizing:border-box;">
 			<p style="text-align:left;font-size: 4vw; height:50px; width:50%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;float:left;">
             <?= $rows[0]['kepada']?> </p>
-      <p style="margin:30% 0% 30% 0%;opacity:0;">.</p>
+      <p style="margin:20% 0% 20% 0%;opacity:0;">.</p>
 
 			<p style="font-size: 4vw; width:100%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;margin-top:20px;margin-bottom:20px;text-align:center;">
             <?= $rows[0]['isi']?></p>
@@ -578,15 +578,9 @@ $urls=$rows[0]['unique_name'];
 			<p style="text-align:right;font-size: 4vw; height:50px; width:50%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;float:right;">
             <?= $rows[0]['dari']?></p>
 
-			<div style='margin-top:40px; float:left; font-size:30px;'>
-
-
-			</div><!-- /style -->
-
-			<div style='clear:both;text-align:center; margin-top:240px;'>
+			<div style='clear:both;text-align:center; margin-top:5%;'>
 			</div>
 
-<div style='height:200px;'></div>
 
     </div> <!-- /cardBase -->
   <!-- </div> --> <!-- col-md-7 -->

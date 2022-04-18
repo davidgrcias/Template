@@ -13,28 +13,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Volkhov:ital,wght@1,700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Creepster&display=swap');
         body {
-  background-color: hsl(218, 41%, 15%);
-  background-image: radial-gradient(
-    650px circle at 50% 0%,
-    hsl(218, 41%, 35%) 15%,
-    hsl(218, 41%, 30%) 35%,
-    hsl(218, 41%, 20%) 75%,
-    hsl(218, 41%, 19%) 80%,
-    transparent 100%
-  );
+  background-color: hsl(168, 65.85%, 35%);
 }
         .container {
             height: 100%;
             width:70%;
             display: flex;
             justify-content: center;
-  background-color: hsl(218, 41%, 15%);
+  background-color: hsl(87.08, 71.07%, 65%);
   background-image: radial-gradient(
     650px circle at 50% 0%,
-    hsl(218, 41%, 35%) 15%,
-    hsl(218, 41%, 30%) 35%,
-    hsl(218, 41%, 20%) 75%,
-    hsl(218, 41%, 19%) 80%,
+    hsl(128, 49.45%, 65%) 15%,
     transparent 100%
   );
             z-index: 1;
@@ -53,54 +42,11 @@
         .title {
         font-family: 'Mr Dafoe';
         font-size: 9vw;
-        color: white;
-        text-shadow: 0 0 0.05em #fff, 0 0 0.2em #09F547, 0 0 0.3em #09F547;
+        color: hsl(66.43, 93.33%, 70.59%);
+        text-shadow: 0 0 0.05em #fff, 0 0 0.2em hsl(90.27, 71.97%, 69.22%), 0 0 0.3em hsl(90.27, 71.97%, 69.22%);
         text-align: center;
     }
-    @keyframes move-twink-back {
-        from {background-position:0 0;}
-        to {background-position:-10000px 5000px;}
-    }
-    @-webkit-keyframes move-twink-back {
-        from {background-position:0 0;}
-        to {background-position:-10000px 5000px;}
-    }
-    @-moz-keyframes move-twink-back {
-        from {background-position:0 0;}
-        to {background-position:-10000px 5000px;}
-    }
-    @-ms-keyframes move-twink-back {
-        from {background-position:0 0;}
-        to {background-position:-10000px 5000px;}
-    }
-
-    .stars, .twinkling{
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    width:100%;
-    height:100%;
-    display:block;
-    }
-
-    .stars {
-    background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
-    z-index:0;
-    overflow:hidden;
-    }
-
-    .twinkling{
-    background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
-    z-index:0;
-
-    -moz-animation:move-twink-back 200s linear infinite;
-    -ms-animation:move-twink-back 200s linear infinite;
-    -o-animation:move-twink-back 200s linear infinite;
-    -webkit-animation:move-twink-back 200s linear infinite;
-    animation:move-twink-back 200s linear infinite;
-    }
+    
 
     @keyframes smoothbounceball{
     from { transform: translate3d(0, 0, 0);}
@@ -125,7 +71,7 @@
         }
         .mubarak{
             font-family:"volkhov";
-            color:#E0B493;
+            color:#F7FF7F;
         }
         .gradient-border {
         --borderWidth: 20%;
@@ -286,8 +232,6 @@
     </style>
 </head>
 <body>
-<div class="stars"></div>
-<div class="twinkling"></div>
     <div class="container vh-100">
         <div class="container">
             <div><p class="title">2022</p><br>

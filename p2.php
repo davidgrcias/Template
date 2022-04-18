@@ -482,22 +482,24 @@ function pilih2() {
         shortString('.short');
       };
       </script>
-			<p id="ucapan" style="display: inline;">Ucapan:</p><select id="pilihan1" size = "return this.length();" class='pilihan' style = "width: 100%;" onchange='pilih1()'>
+			<p id="ucapan" style="display: inline;">Ucapan:</p> <select id="pilihan1" size = "return this.length();" class='pilihan' style = "width: 100%;" onchange='pilih1()'>
         <option value=''>* Ucapan *</option>
-        <option class="short" data-limit='70' value='Selamat hari raya idul fitri 1443 H.'>Selamat hari raya idul fitri 1443 H</option>
+        <option class="short" data-limit='70' value='Selamat Hari Raya Idul Fitri 1443 H.'>Selamat Hari Raya Idul Fitri 1443 H</option>
         <option class="short" data-limit='70' value='Bulan Ramadan beranjak pergi, semoga kita semua kembali fitri.'>Bulan Ramadan beranjak pergi, semoga kita semua kembali fitri</option>
         <option class="short" data-limit='70' value='Bulan suci Ramadan telah berlalu, fajar hari kemenangan tampak mewarnai langit, membawa sinar kedamaian dan kesucian.'>Bulan suci Ramadan telah berlalu, fajar hari kemenangan tampak mewarnai langit, membawa sinar kedamaian dan kesucian</option>
-        <option class="short" data-limit='70' value='Ucapan 4.'>Ucapan 4</option>
-        <option class="short" data-limit='70' value='Ucapan 5.'>Ucapan 5</option>
+        <option class="short" data-limit='70' value='Hanya permohonan maaf setulus hati yang dapat aku ucapkan kepadamu di hari kemenangan ini.'>Hanya permohonan maaf setulus hati yang dapat aku ucapkan kepadamu di hari kemenangan ini</option>
+        <option class="short" data-limit='70' value='Kumandang takbir mengalun merdu dari surau pertanda hari kemenangan telah tiba.'>Kumandang takbir mengalun merdu dari surau pertanda hari kemenangan telah tiba</option>
       </select>
 <br>
-      <p id="doa" style="display: inline;">Doa:</p> <select id="pilihan2" class='pilihan' onchange='pilih2()'>
+      &nbsp&nbsp&nbsp&nbsp&nbsp<p id="doa" style="display: inline;">Doa:</p> <select id="pilihan2" class='pilihan' onchange='pilih2()'>
         <option value='' id = "doa">* Doa *</option>
         <option class="short" data-limit='70' value=' Taqabbalallahu minna wa minkum.'>Taqabbalallahu minna wa minkum</option>
         <option class="short" data-limit='70' value=' Mohon maaf lahir dan batin.'>Mohon maaf lahir dan batin</option>
         <option class="short" data-limit='70' value=' Di hari yang suci ini, semoga kita senantiasa diberikan ampunan dan diberkahi kegembiraan.'>Di hari yang suci ini, semoga kita senantiasa diberikan ampunan dan diberkahi kegembiraan</option>
-        <option class="short" data-limit='70' value=' Doa 4.'>Doa 4</option>
-        <option class="short" data-limit='70' value=' Doa 5.'>Doa 5</option>
+        <option class="short" data-limit='70' value=' Semoga Allah menerima amal ibadah Ramadan kita semua.'>Semoga Allah menerima amal ibadah Ramadan kita semua</option>
+        <option class="short" data-limit='70' value=' Semoga kebahagiaan akan selalu bersamamu setiap harinya.'>Semoga kebahagiaan akan selalu bersamamu setiap harinya</option>
+        <option class="short" data-limit='70' value=' Semoga kita dapat memperbaiki diri dan saling memaafkan dengan lapang dada.'>Semoga kita dapat memperbaiki diri dan saling memaafkan dengan lapang dada</option>
+        <option class="short" data-limit='70' value=' Mohon maaf atas segala ucapan dan perbuatanku yang telah menyakitimu.'>Mohon maaf atas segala ucapan dan perbuatanku yang telah menyakitimu</option>
       </select>
 			</div><!-- /style -->
 
@@ -506,7 +508,7 @@ function pilih2() {
 			</div>
 		</form>
 
-<div style='height:200px;'></div>
+<div style='height:70px;'></div>
 
     </div> <!-- /cardBase -->
   <!-- </div> --> <!-- col-md-7 -->

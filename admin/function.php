@@ -1,6 +1,6 @@
 <?php
-$connt = mysqli_connect("localhost", "root", "", "template");
-session_start();
+require 'session.php';
+require 'connt.php';
 date_default_timezone_set("Asia/Jakarta");
 
 if(!empty($_POST["kode"])){
@@ -114,6 +114,32 @@ if(!empty($_POST["kode"])){
   }
   elseif($_POST["kode"] == "editjenis"){
     editjenis();
+  }
+}
+
+function logintoadmin(){
+  global $connt;
+  $usernameemail = strtolower(htmlspecialchars($_POST["usernameemail"]));
+  $password = strtolower(htmlspecialchars($_POST["password"]));
+
+  $result = mysqli_query($connt, "SELECT * FROM data_admin WHERE username = '$usernameemail' OR email = '$usernameemail'");
+  if (mysqli_num_rows($result) >= 1){
+
+    $row = mysqli_fetch_assoc($result);
+
+    if (password_verify($password, $row["password"])){
+        $_SESSION["loginn"] = true;
+        $_SESSION["idd"] = $row["id"];
+        echo 1;
+    }
+    else{
+      echo 99;
+      exit;
+    }
+  }
+  else{
+    echo 999;
+    exit;
   }
 }
 
@@ -302,32 +328,6 @@ function hidenews(){
 
   mysqli_query($connt, $query);
   echo mysqli_affected_rows($connt);
-}
-
-function logintoadmin(){
-  global $connt;
-  $usernameemail = strtolower(htmlspecialchars($_POST["usernameemail"]));
-  $password = strtolower(htmlspecialchars($_POST["password"]));
-
-  $result = mysqli_query($connt, "SELECT * FROM data_admin WHERE username = '$usernameemail' OR email = '$usernameemail'");
-  if (mysqli_num_rows($result) >= 1){
-
-    $row = mysqli_fetch_assoc($result);
-
-    if (password_verify($password, $row["password"])){
-        $_SESSION["loginn"] = true;
-        $_SESSION["idd"] = $row["id"];
-        echo 1;
-    }
-    else{
-      echo 99;
-      exit;
-    }
-  }
-  else{
-    echo 999;
-    exit;
-  }
 }
 
 function hapusadmin(){

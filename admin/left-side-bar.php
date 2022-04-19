@@ -1,15 +1,7 @@
-<?php
-if(empty($thamuz)){
-  header("Location: login.php");
-}
-else{
-
-}
-?>
 <div class="left-side-bar">
   <div class="brand-logo">
     <a href="" style = "display: flex; align-items: flex-end!important;">
-      <img style = "margin-left: auto; margin-right: auto; padding-bottom: 5px!important;" src="../eidmubarakpira.png" alt="" class="light-logo" width = "45">
+      <img style = "margin-left: auto; margin-right: auto; padding-bottom: 5px!important;" src="../images/eidmubarakpira.png" alt="" class="light-logo" width = "45">
       <p style = "font-size: 14px; line-height: 15px; text-align: center; margin-left: 2px;">Admin - Template</p>
     </a>
     <div class="close-sidebar" data-toggle="left-sidebar-close">

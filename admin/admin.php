@@ -1,3 +1,6 @@
+<?php require 'session.php'; ?>
+<?php require 'connt.php'; ?>
+<?php require 'sessionin.php'; ?>
 <!DOCTYPE html>
 <html>
 <?php require 'head.php'; ?>
@@ -25,10 +28,7 @@
   }
 </style>
 <body>
-	<?php require 'pre-loader.php'; ?>
-
 	<?php require 'header.php'; ?>
-
 	<?php require 'left-side-bar.php'; ?>
 
 	<div class="mobile-menu-overlay"></div>

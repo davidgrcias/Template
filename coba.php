@@ -7,23 +7,25 @@ $tcolor= $_SESSION["text_color"];
 if(isset($_GET["ides"])){
     $ide=$_GET['ides'];
     $result = mysqli_query($con,"SELECT * FROM card_end WHERE unique_name='$ide'");
+    $kumpulanuyu = mysqli_fetch_assoc($result);
+    $kumpulanuyucard_id = $kumpulanuyu["card_id"];
+    $kumpulan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card WHERE card_id = $kumpulanuyucard_id"));
     if($result===false) {
-        $result = mysqli_query($con,"SELECT * FROM card_end WHERE id_end=$cnow");
-    } else{
         header("Location:p1.php");
     }
 }else{
 $kumpulanuyu = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card_end WHERE id_end = $cnow"));
 $kumpulanuyucard_id = $kumpulanuyu["card_id"];
 $kumpulan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card WHERE card_id = $kumpulanuyucard_id"));
-$result = mysqli_query($con,"SELECT * FROM card_end WHERE id_end=$cnow");}
+$result = mysqli_query($con,"SELECT * FROM card_end WHERE id_end=$cnow");
+}
 $row = mysqli_num_rows($result);
 $rows=[]; //kotk kosong
     while ($rowa /*bajunya */= mysqli_fetch_assoc($result)){
         $rows[]=$rowa; //baju masukin kotaknya ga bawa lemari
     }
-    var_dump($rows);
-$urls=$rows[0]['unique_name'];
+var_dump($rows);
+$urls= "?ides=" . $rows[0]['unique_name'];
 ?>
 
 <!-- HTML -->

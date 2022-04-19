@@ -8,36 +8,7 @@ else{
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-	<!-- Basic Page Info -->
-	<meta charset="utf-8">
-	<title>Admin - Template</title>
-
-	<!-- Site favicon -->
-	<link rel="icon" type="image/png" sizes="16x16" href="../eidmubarakpira.png">
-
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-119386393-1');
-	</script>
-</head>
+<?php require 'head.php'; ?>
 <body class="login-page">
 	<div class="login-header box-shadow">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
@@ -48,10 +19,7 @@ else{
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-=======
 
->>>>>>> f321e190e2eb0780475c775afa27ec60aa406fd9
 	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
 		<div class="container">
 			<div class="row align-items-center">
@@ -76,11 +44,42 @@ else{
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="input-group mb-0">
-										<input class="btn btn-primary btn-lg btn-block" type="submit" name = "submit" id = "submit"></input>
+										<button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "jadi();" name = "submit" id = "submit">Login</button>
 									</div>
 								</div>
 							</div>
 						</form>
+						<script type="text/javascript">
+            var form = document.getElementById("myForm");
+            function handleForm(event) { event.preventDefault(); }
+            form.addEventListener('submit', handleForm);
+            </script>
+            <script type="text/javascript">
+              function jadi(){
+                  $(document).ready(function(){
+                      var usernameemail = document.getElementById('usernameemail').value;
+                      var password = document.getElementById('password').value;
+                      var kode = "logintoadmin";
+                        $.ajax({
+                          url: 'function.php',
+                          type: 'POST',
+                          data: {usernameemail:usernameemail,password:password,kode:kode},
+                          success: function(response){
+                          if(response == 1){
+                            window.location.reload();
+                          }else if(response == 99){
+              	             alert('Wrong Password');
+                           }else if(response == 999){
+               	             alert('Email or Username Is Not Registered');
+                           }else if(response == 9999){
+                	             alert('Username Is Already Taken');
+                             }else{
+                           }
+                          }
+                        });
+                  });
+              }
+            </script>
 					</div>
 				</div>
 			</div>

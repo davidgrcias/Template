@@ -1,6 +1,18 @@
 <?php require 'session.php'; ?>
 <?php require 'connt.php'; ?>
 <?php require 'sessionin.php'; ?>
+<?php
+function query($query){
+	global $connt;
+	$result = mysqli_query($connt, $query);
+	$rows = [];
+	while ($row = mysqli_fetch_assoc($result)){
+		$rows[] = $row;
+	}
+
+	return $rows;
+}
+?>
 <!DOCTYPE html>
 <html>
 <?php require 'head.php'; ?>
@@ -115,11 +127,7 @@
           									$(document).ready(function(){
           											var deleteid = iduser;
           											var kode = "hapususer";
-          											<?php if($admin["notif"] == "y") : ?>
           											var confirmalert = confirm("Apakah Kamu Yakin Ingin Menghapus Kartu Ini?");
-          											<?php else : ?>
-          											var confirmalert = true;
-          											<?php endif; ?>
           											if (confirmalert == true){
           												$.ajax({
           													url: 'function.php',
@@ -127,9 +135,7 @@
           													data: {deleteid:deleteid,kode:kode},
           													success: function(response){
           													if(response == 1){
-          														<?php if($admin["notif"] == "y") : ?>
           														alert('Kartu Berhasil Dihapus');
-          														<?php endif; ?>
           														document.getElementById(deleteid).style.display = "none";
           													}else if(response == 99){
           														 alert('You Have Reached The Limit For Reply To This Comment');

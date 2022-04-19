@@ -1,6 +1,81 @@
+<?php
+
+if(isset($_GET['logout'])){
+$_SESSION = [];
+session_unset();
+session_destroy();
+setcookie ("id", "", time() - 10);
+setcookie ("key", "", time() - 10);
+}
+$thamuz = "a";
+require 'function.php';
+session_start();
+global $connt;
+$admin = mysqli_fetch_assoc(mysqli_query($connt, "SELECT * FROM data_admin"));
+
+  if(isset($_SESSION['idd'])){
+    header("Location: index.php");
+  }
+  else{
+      
+  }
+if(isset($_POST['submit'])){
+  $usernameemail = strtolower(htmlspecialchars($_POST["usernameemail"]));
+  $password = strtolower(htmlspecialchars($_POST["password"]));
+
+  $result = mysqli_query($connt, "SELECT * FROM data_admin WHERE username = '$usernameemail' OR email = '$usernameemail'");
+  if (mysqli_num_rows($result) >= 1){
+
+    $row = mysqli_fetch_assoc($result);
+
+    if (password_verify($password, $row["password"])){
+        $_SESSION["loginn"] = true;
+        $_SESSION["idd"] = $row["id"];
+        header("Location: index.php?".$_SESSION["idd"]);
+    }
+    else{
+		echo'Wrong Password';
+      exit;
+    }
+  }
+  else{
+    echo'Email or Username Is Not Registered';
+    exit;
+  }
+}
+?>
 <!DOCTYPE html>
 <html>
-<?php require 'head.php'; ?>
+<head>
+	<!-- Basic Page Info -->
+	<meta charset="utf-8">
+	<title>Admin - Template</title>
+
+	<!-- Site favicon -->
+	<link rel="icon" type="image/png" sizes="16x16" href="../eidmubarakpira.png">
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
+	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-119386393-1');
+	</script>
+</head>
 <body class="login-page">
 	<div class="login-header box-shadow">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
@@ -11,15 +86,7 @@
 			</div>
 		</div>
 	</div>
-  <?php
 
-  if(!empty($_SESSION['idd'])){
-    header("Location: index.php");
-  }
-  else{
-  }
-
-  ?>
 	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
 		<div class="container">
 			<div class="row align-items-center">
@@ -44,42 +111,11 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="input-group mb-0">
-										<button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "jadi();" name = "submit" id = "submit">Login</button>
+										<input class="btn btn-primary btn-lg btn-block" type="submit" name = "submit" id = "submit"></input>
 									</div>
 								</div>
 							</div>
 						</form>
-            <script type="text/javascript">
-            var form = document.getElementById("myForm");
-            function handleForm(event) { event.preventDefault(); }
-            form.addEventListener('submit', handleForm);
-            </script>
-            <script type="text/javascript">
-              function jadi(){
-                  $(document).ready(function(){
-                      var usernameemail = document.getElementById('usernameemail').value;
-                      var password = document.getElementById('password').value;
-                      var kode = "logintoadmin";
-                        $.ajax({
-                          url: 'function.php',
-                          type: 'POST',
-                          data: {usernameemail:usernameemail,password:password,kode:kode},
-                          success: function(response){
-                          if(response == 1){
-                            window.location.reload();
-                          }else if(response == 99){
-              	             alert('Wrong Password');
-                           }else if(response == 999){
-               	             alert('Email or Username Is Not Registered');
-                           }else if(response == 9999){
-                	             alert('Username Is Already Taken');
-                             }else{
-                           }
-                          }
-                        });
-                  });
-              }
-            </script>
 					</div>
 				</div>
 			</div>

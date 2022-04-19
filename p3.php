@@ -22,6 +22,7 @@ $rows=[]; //kotk kosong
     while ($rowa /*bajunya */= mysqli_fetch_assoc($result)){
         $rows[]=$rowa; //baju masukin kotaknya ga bawa lemari
     }
+    var_dump($rows);
 $urls=$rows[0]['unique_name'];
 ?>
 

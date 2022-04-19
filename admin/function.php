@@ -1,6 +1,5 @@
 <?php
-$connt = mysqli_connect("localhost", "root", "", "template");
-session_start();
+$connt = mysqli_connect("localhost", "id18220523_admin", "qpVdFls]t8C}=5%|", "id18220523_template");
 date_default_timezone_set("Asia/Jakarta");
 
 if(!empty($_POST["kode"])){

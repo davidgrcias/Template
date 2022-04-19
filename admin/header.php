@@ -12,7 +12,8 @@ if(!empty($_SESSION['idd'])){
 else{
   $ididid = "";
 }
-
+var_dump($_SESSION['idd']);
+var_dump($thamuz);
 if(!empty($ididid)){
   $users = mysqli_query($connt, "SELECT * FROM data_admin WHERE id = $ididid");
   $user = mysqli_fetch_assoc($users);

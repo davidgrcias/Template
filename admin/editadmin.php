@@ -1,8 +1,10 @@
+<?php require 'session.php'; ?>
+<?php require 'connt.php'; ?>
+<?php require 'sessionin.php'; ?>
 <?php
 if( !isset($_GET["id"]) ){
   header("Location: index.php");
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -98,7 +100,6 @@ if( !isset($_GET["id"]) ){
   }
   ?>
 	<?php require 'header.php'; ?>
-
 	<?php require 'left-side-bar.php'; ?>
 
 	<div class="mobile-menu-overlay"></div>

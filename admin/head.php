@@ -1,9 +1,3 @@
-<?php
-$thamuz = "a";
-require 'function.php';
-global $connt;
-$admin = mysqli_fetch_assoc(mysqli_query($connt, "SELECT * FROM data_admin"));
-?>
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">

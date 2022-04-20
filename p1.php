@@ -1,6 +1,6 @@
 <?php
 require 'config.php';
-
+$_SESSION["tahap"]=1;
 $result = mysqli_query($con,"SELECT * FROM card WHERE approval = 1");
 $row = mysqli_num_rows($result);
 $rows=[]; //kotk kosong
@@ -25,15 +25,13 @@ $rows=[]; //kotk kosong
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Volkhov:ital,wght@1,700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Creepster&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
         body {
   background-repeat: no-repeat;
-  background-color: hsl(218, 41%, 15%);
+  background-color: #fffced;
   background-image: radial-gradient(
     650px circle at 50% 0%,
-    hsl(218, 41%, 35%) 15%,
-    hsl(218, 41%, 30%) 35%,
-    hsl(218, 41%, 20%) 75%,
-    hsl(218, 41%, 19%) 80%,
+    white 50%,
     transparent 100%
   );
 }
@@ -45,7 +43,7 @@ $rows=[]; //kotk kosong
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  color:white;
+  color:gray;
 }
 .stepper-item {
   position: relative;
@@ -85,7 +83,7 @@ $rows=[]; //kotk kosong
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #0a2e16;
+  background: #5b6336;
   margin-bottom: 6px;
 }
 
@@ -94,7 +92,7 @@ $rows=[]; //kotk kosong
 }
 
 .stepper-item.completed .step-counter {
-  background-color: #4bb543;
+  background-color: #d3eb75;
 }
 
 .stepper-item.completed::after {
@@ -118,23 +116,6 @@ $rows=[]; //kotk kosong
     font-size:20px;
 }
 
-.moon{
-  position: absolute;
-     top: 10%;
-     left: 40%;
-     transform: translate(-50%, -50%);
-     width: 100px; height: 100px; background: white; border-radius: 50%;
-    box-shadow: 0 0 30px 0px #e6e6e6, 0 0 100px 0 white;
-    background-image: linear-gradient(
-    45deg,
-    #e6e6e6 0%,
-    white 90%,
-    white 100%
-    );
-     z-index: -1;
-    filter: blur(2px);
-   }
-
    .thumbnail{
        overflow: hidden;
    }
@@ -152,9 +133,10 @@ transition: all 1s ease;
    }
    .caption{
        text-align: center;
-            font-family:"volkhov";
+            font-family: 'Inter', 'volkhov';
             font-size:25px;
             color: #b08d5b;
+            margin:1% 0 5% 0;
         }
         a {
             color:white;
@@ -178,26 +160,27 @@ transition: all 1s ease;
 .step-name{
   cursor: pointer;
 }
-
+.disclaimer{
+    display:none;
+}
 .step-counter{
   cursor: pointer;
 }
     </style>
 </head>
 <body>
-<div class="moon"></div>
 <div class="container">
 <div class="stepper-wrapper">
       <div class="stepper-item completed">
-        <div class="step-counter" onclick = "directp1();">1</div>
+        <div class="step-counter" style="color:#5B6336" onclick = "directp1();">1</div>
         <div class="step-name" onclick = "directp1();">Pilih Kartu Ucapan</div>
       </div>
       <div class="stepper-item">
-        <div class="step-counter" style = "cursor: not-allowed;">2</div>
+        <div class="step-counter" style = "color:white;cursor: not-allowed;">2</div>
         <div class="step-name" style = "cursor: not-allowed;">Tulis Pesan Anda</div>
       </div>
       <div class="stepper-item">
-        <div class="step-counter" style = "cursor: not-allowed;">3</div>
+        <div class="step-counter" style = "color:white;cursor: not-allowed;">3</div>
         <div class="step-name" style = "cursor: not-allowed;">Kirim Kartu</div>
       </div>
     </div>

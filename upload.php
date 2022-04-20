@@ -158,6 +158,7 @@ if(isset($_POST["submitimage"])){
         alert('Invalid Image Extension');
       </script>
       ";
+      exit;
     }
     else if($fileSize > 1000000){
       echo
@@ -166,13 +167,13 @@ if(isset($_POST["submitimage"])){
         alert('Image Size Is Too Large');
       </script>
       ";
+      exit;
     }
     else{
       $newImageName = $imageName . " - " . date("Y.m.d") . " - " . date("h.i.sa");
       $newImageName .= '.' . $imageExtension;
 
-      move_uploaded_file($tmpName, 'usersUpload/' . $newImageName);
-      $query = "INSERT INTO card VALUES('', '$email', '$imageName', '$newImageName', 0)";
+      $query = "INSERT INTO card VALUES(NULL, '$email', '$imageName', '$newImageName', 0)";
       mysqli_query($con, $query);
       echo
       "

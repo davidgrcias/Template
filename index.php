@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION["tahap"]=1;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,17 +17,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Volkhov:ital,wght@1,700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Creepster&display=swap');
         body {
-  background-color: hsl(168, 65.85%, 35%);
+  background-color: #616765;
 }
         .container {
             height: 100%;
             width:70%;
             display: flex;
             justify-content: center;
-  background-color: hsl(87.08, 71.07%, 65%);
+  background-color: #14498B;
   background-image: radial-gradient(
     650px circle at 50% 0%,
-    hsl(128, 49.45%, 65%) 15%,
+    #6984BB 15%,
     transparent 100%
   );
             z-index: 1;
@@ -41,7 +45,7 @@
    }
         .title {
         font-family: 'Mr Dafoe';
-        font-size: 9vw;
+        font-size: 12vw;
         color: hsl(66.43, 93.33%, 70.59%);
         text-shadow: 0 0 0.05em #fff, 0 0 0.2em hsl(90.27, 71.97%, 69.22%), 0 0 0.3em hsl(90.27, 71.97%, 69.22%);
         text-align: center;
@@ -49,29 +53,38 @@
 
 
     @keyframes smoothbounceball{
-    from { transform: translate3d(0, 0, 0);}
-    to { transform: translate3d(0, 200px, 0);}
+    from { transform: translate3d(0, 200px, 0);}
+    to { transform: translate3d(0, 0, 0);}
 }
     .frame {
         position: absolute;
     animation: smoothbounceball 0.5s;
     animation-direction: alternate;
-    animation-iteration-count: 4;
         background-attachment: fixed;
-        max-width:13%;
+        max-width:40%;
+        height:auto;
+        z-index:2;
+
+        }
+        
+    .framedaai {
+        position: absolute;
+        top:5%;
+        background-attachment: fixed;
+        max-width:15%;
         height:auto;
         z-index:2;
 
         }
         h2{
             font-family:'satisfy';
-            font-size:7vw;
+            font-size:6vw;
             color:white;
             text-align:center;
         }
         .mubarak{
             font-family:"volkhov";
-            color:#F7FF7F;
+            color:#C4DA6D;
         }
         .gradient-border {
         --borderWidth: 20%;
@@ -147,58 +160,6 @@
   bottom: 0;
 }
 
-.swing {
-    animation: swing ease-in-out 1s infinite alternate;
-    transform-origin: center -20px;
-    top:-40px;
-}
-.swing:after{
-    content: '';
-    top: -10px; left: 50%;
-    border-bottom: none;
-    border-right: none;
-    transform: rotate(45deg);
-}
-/* nail */
-.swing:before{
-    content: '';
-    width: 5px; height: 5px;
-    top: -14px;left: 54%;
-    border-radius: 50% 50%;
-    background: #000;
-}
-
-@keyframes swing {
-    0% { transform: rotate(3deg); }
-    100% { transform: rotate(-3deg); }
-}
-
-.swing2 {
-    animation: swing2 ease-in-out 1s infinite alternate;
-    transform-origin: center -20px;
-    top:-40px;
-}
-.swing2:after{
-    content: '';
-    top: -10px; left: 50%;
-    border-bottom: none;
-    border-right: none;
-    transform: rotate(45deg);
-}
-/* nail */
-.swing2:before{
-    content: '';
-    width: 5px; height: 5px;
-    top: -14px;left: 54%;
-    border-radius: 50% 50%;
-    background: #000;
-}
-
-@keyframes swing2 {
-    0% { transform: rotate(-3deg); }
-    100% { transform: rotate(3deg); }
-}
-
         .clear {
     clear: both;
 }
@@ -210,16 +171,6 @@
                 .title{
                     font-size:20vw;
                 }
-                .swing {
-                top:-20px;
-                }
-                .swing2 {
-                top:-20px;
-                }
-                .foto{
-
-                top:120px;
-                }
                 h2{
                     margin-top:60px;
                     font-size:15vw;
@@ -227,24 +178,56 @@
                 .button{
                     /* font-size:; */
                 }
-              }
+                .frame {
+        position: absolute;
+    animation: smoothbounceball 0.5s;
+    animation-direction: alternate;
+        background-attachment: fixed;
+        max-width:45%;
+        height:auto;
+        z-index:2;
 
+        }
+        
+    .framedaai {
+        position: absolute;
+        top:5%;
+        background-attachment: fixed;
+        max-width:25%;
+        height:auto;
+        z-index:2;
+        }
+        .inlineOverrideone {
+     font-size:8vw!important;
+   }   
+   .inlineOverridetwo {
+     font-size:15vw!important;
+   }   
+   .inlineOverrideleft {
+     left:1%!important;
+   }   
+   .inlineOverrideright {
+     right:1%!important;
+   }   
+              }
+.disclaimer{
+    display:none;
+}
     </style>
 </head>
 <body>
     <div class="container vh-100">
         <div class="container">
-            <div><p class="title">2022</p><br>
-            <h2> Happy Eid <p class="mubarak">Mubarak</p></h2><br>
+            <img class="framedaai"src="images/daailogo.png">
+            <div>
+                <h2 style="margin-top:50%;"> <p class="inlineOverrideone" style="font-size:2.5vw;color:#b5c769">Selamat Hari Raya</p> <p class="mubarak">Idul Fitri</p><p class="inlineOverridetwo" style="font-size:5.5vw;color:#d1ffa8;">1443 H</p></h2><br>
             <div class="gradient-border button" id="lanjut">
-            <a href="p2.php" >Kirim Kartu Ucapan!</a>
+            <a href="p1.php" >Kirim Kartu Ucapan!</a>
             </div>
         </div>
         </div>
-<img class="frame foto"src="images/pria-eidmubar.png" style="left:20%">
-<img class="frame foto"src="images/wanita-eidmubarak.png" style="right:20%">
-<img class="swing frame" src="images/ketupateidmubarak.png" width="200" style="right:5%;" >
-<img class="swing2 frame" src="images/ketupateidmubarak.png" width="200" style="left:5%;" >
+<img class="frame foto"src="images/pria-eidmubar.png" class="inlineOverrideleft" style="bottom:0%;left:10%">
+<img class="frame foto"src="images/wanita-eidmubarak.png" class="inlineOverrideright" style="bottom:0%;right:10%">
 </div>
 
     <div class="sticky-bottom-right"></div>

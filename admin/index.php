@@ -1,3 +1,6 @@
+<?php require 'session.php'; ?>
+<?php require 'connt.php'; ?>
+<?php require 'sessionin.php'; ?>
 <!DOCTYPE html>
 <html>
 <?php require 'head.php'; ?>
@@ -12,11 +15,20 @@
 	}
 </style>
 <body>
-	<?php require 'pre-loader.php'; ?>
-
 	<?php require 'header.php'; ?>
-
 	<?php require 'left-side-bar.php'; ?>
+	<?php
+	function query($query){
+	  global $connt;
+	  $result = mysqli_query($connt, $query);
+	  $rows = [];
+	  while ($row = mysqli_fetch_assoc($result)){
+	    $rows[] = $row;
+	  }
+
+	  return $rows;
+	}
+	?>
 
 	<div class="mobile-menu-overlay"></div>
 
@@ -94,7 +106,7 @@
 										<i class="dw dw-more"></i>
 									</a>
 									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-										<div style = "cursor: pointer;" class="dropdown-item" onclick = "deleteaccountadmin(<?php echo $user['card_id']; ?>);"><i class="dw dw-delete-3"></i> Hapus</div>
+										<!--<div style = "cursor: pointer;" class="dropdown-item" onclick = "deleteaccountadmin(<?php //echo $user['card_id']; ?>);"><i class="dw dw-delete-3"></i> Hapus</div>-->
 										<?php if($user["approval"] == 1) : ?>
 										<div style = "cursor: pointer;" class="dropdown-item" onclick = "hide(<?php echo $user['card_id']; ?>);"><i class="dw dw-hide"></i>Jangan Tampilkan</div>
 										<?php else : ?>

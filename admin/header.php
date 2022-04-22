@@ -1,40 +1,4 @@
 <?php
-if(empty($thamuz)){
-  header("Location: login.php");
-}
-else{
-
-}
-
-if(!empty($_SESSION['idd'])){
-  $ididid = $_SESSION['idd'];
-}
-else{
-  $ididid = "";
-}
-
-if(!empty($ididid)){
-  $users = mysqli_query($connt, "SELECT * FROM data_admin WHERE id = $ididid");
-  $user = mysqli_fetch_assoc($users);
-  if(empty($user["username"])){
-    $_SESSION = [];
-    session_unset();
-    session_destroy();
-    setcookie ("id", "", time() - 10);
-    setcookie ("key", "", time() - 10);
-    header("Location: login.php");
-  }
-}
-else{
-  $_SESSION = [];
-  session_unset();
-  session_destroy();
-  setcookie ("id", "", time() - 10);
-  setcookie ("key", "", time() - 10);
-  header("Location: login.php");
-}
-?>
-<?php
 $tanggal = date('d') . ' ' . date('F') . ' ' . date('Y');
 ?>
 <style media="screen">
@@ -120,7 +84,7 @@ $tanggal = date('d') . ' ' . date('F') . ' ' . date('Y');
       <div class="dropdown">
         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
           <span class="user-icon">
-            <img src="../eidmubarakpira.png" alt="">
+            <img src="../images/eidmubarakpira.png" alt="">
           </span>
           <span class="user-name">&nbsp;<?php echo $user["username"]; ?></span>
         </a>

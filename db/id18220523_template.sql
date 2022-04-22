@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 17, 2022 at 05:41 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
+-- Host: localhost:3306
+-- Generation Time: Apr 22, 2022 at 07:14 AM
+-- Server version: 10.5.12-MariaDB
+-- PHP Version: 7.3.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `template`
+-- Database: `id18220523_template`
 --
 
 -- --------------------------------------------------------
@@ -40,11 +41,19 @@ CREATE TABLE `card` (
 --
 
 INSERT INTO `card` (`card_id`, `email`, `imageName`, `image`, `approval`) VALUES
-(9, 'vinsensutanto@gmail.com', 'Eid Mubarak - mosque and moon in night time', 'Eid Mubarak - mosque and moon in night time - 2022.04.14 - 03.00.25am.png', 1),
-(10, 'vinsensutanto@gmail.com', 'Green Hill', 'Green Hill - 2022.04.17 - 05.34.51pm.png', 1),
-(11, 'vinsensutanto@gmail.com', 'Home', 'Home - 2022.04.17 - 05.35.21pm.png', 1),
-(12, 'vinsensutanto@gmail.com', 'leach photo', 'leach photo - 2022.04.17 - 05.36.14pm.png', 1),
-(13, 'vinsensutanto@gmail.com', 'Dark Green Theme ', 'Dark Green Theme  - 2022.04.17 - 05.39.37pm.png', 1);
+(1, 'vinsensutanto@gmail.com', 'SCK temp lebaran', 'SCK temp lebaran - 2022.04.22 - 06.58.24am.jpg', 1),
+(2, 'vinsensutanto@gmail.com', 'SCK temp lebaran 3', 'SCK temp lebaran 3 - 2022.04.22 - 06.57.45am.jpg', 1),
+(3, 'a@gmail.com', 'DAAI 1', 'DAAI 1 - 2022.04.22 - 06.27.47am.jpg', 1),
+(13, 'vinsensutanto@gmail.com', 'Dark Green Theme ', 'Dark Green Theme  - 2022.04.17 - 05.39.37pm.png', 0),
+(23, 'vinsensutanto@gmail.com', 'Hilly Palace ', 'Hilly Palace  - 2022.04.21 - 09.43.21am.png', 1),
+(25, 'vinsensutanto@gmail.com', 'Rindu Rumah', 'Rindu Rumah - 2022.04.21 - 09.52.53am.png', 1),
+(26, 'vinsensutanto@gmail.com', 'Leach Card', 'Leach Card - 2022.04.21 - 09.58.41am.png', 1),
+(27, 'vinsensutanto@gmail.com', 'Ramadan Night', 'Ramadan Night - 2022.04.21 - 10.03.23am.png', 1),
+(28, 'vinsensutanto@gmail.com', 'Green Mosque', 'Green Mosque - 2022.04.21 - 10.09.25am.png', 1),
+(30, 'vinsensutanto@gmail.com', 'Warm Wishes', 'Warm Wishes - 2022.04.21 - 11.05.02am.png', 1),
+(33, 'vinsensutanto@gmail.com', 'Eid Mubarak in Night with Golden Peace', 'Eid Mubarak in Night with Golden Peace - 2022.04.21 - 02.19.23pm.jpeg', 1),
+(34, 'vinsensutanto@Gmail.com', 'The Circle of Ramadhan', 'The Circle of Ramadhan - 2022.04.21 - 02.24.41pm.png', 1),
+(35, 'vinsensutanto@gmail.com', 'The Golden Ramadhan', 'The Golden Ramadhan - 2022.04.21 - 02.35.15pm.png', 1);
 
 -- --------------------------------------------------------
 
@@ -58,22 +67,17 @@ CREATE TABLE `card_end` (
   `kepada` varchar(255) NOT NULL,
   `isi` varchar(255) NOT NULL,
   `dari` varchar(255) NOT NULL,
-  `unique_name` varchar(10) NOT NULL
+  `unique_name` varchar(10) NOT NULL,
+  `card_color` varchar(25) NOT NULL,
+  `text_color` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `card_end`
 --
 
-INSERT INTO `card_end` (`id_end`, `card_id`, `kepada`, `isi`, `dari`, `unique_name`) VALUES
-(1, 8, 'Kepada', 'Bulan Ramadan beranjak pergi, semoga kita semua kembali fitri. Di hari yang suci ini, semoga kita senantiasa diberikan ampunan dan diberkahi kegembiraan.', 'Dari', 'MfGkH'),
-(2, 9, 'Kepada', 'Isi', 'Dari', 'aZ219'),
-(3, 4, 'Kepada', 'Isi', 'Dari', 'w3ojO'),
-(4, 9, 'Kepada', 'Isi', 'Dari', 'BbOZ7'),
-(5, 9, 'Kepada', 'Isi', 'Dari', 'mLvVc'),
-(6, 9, 'Kepada', 'Isi', 'Dari', 'VLsCF'),
-(7, 9, 'Kepada', 'Isi', 'Dari', 'W6sS7'),
-(8, 9, 'Kepada', 'Isi', 'Dari', 'wIlcu');
+INSERT INTO `card_end` (`id_end`, `card_id`, `kepada`, `isi`, `dari`, `unique_name`, `card_color`, `text_color`) VALUES
+(1, 35, 'Ibu dan Bapak', 'Bulan suci Ramadan telah berlalu, fajar hari kemenangan tampak mewarnai langit, membawa sinar kedamaian dan kesucian. Mohon maaf lahir dan batin. Semoga kebaikan Ramadan terus terasa sepanjang tahun', 'Vincent Sutanto', 'eh1K1', '#F1E6B2', 'black');
 
 -- --------------------------------------------------------
 
@@ -98,11 +102,7 @@ CREATE TABLE `data_admin` (
 --
 
 INSERT INTO `data_admin` (`id`, `notif`, `gallery`, `email`, `username`, `password`, `tanggal`, `bulan`, `tahun`) VALUES
-(1, 'y', '6187405d5a6e0.jpg', 'admin2@gmail.com', 'admin2', '$2y$10$jw.Vuu7p.fMVwX1aNNaVhOo6NbpblaqKUvr1ouqd5DxzHZQXw21ai', '04 October 2021', 'semua', 'semua'),
-(4, 'y', '619b9d9175715.png', 'admin@gmail.com', 'admin', '$2y$10$CJ11hYTo4.SluItHjNhhkOdP2zAmJL68gg/iVnP9t52RItaFp6C.S', '06 November 2021', 'May', '2023'),
-(8, 'y', 'noprofil.jpg', 'admin3@gmail.com', 'admin3', '$2y$10$B1iIAuFxpPM3gcWx4Sr4zu6o.tz7ZEk39o9eb.hji2DyoorbS9inG', '03 February 2022', '', ''),
-(9, 'y', 'noprofil.jpg', 'tes@gmail.com', 'tes', '$2y$10$tL8SWl/Ej4W7qC.N0c6F3Or7eOlbRn/MmzhqKHwh4z0BUuvLmT9NS', '12 April 2022', '', ''),
-(10, 'y', 'noprofil.jpg', 'halo@gmail.com', 'halo', '$2y$10$FD/QTYv/c8JTeQPFMPFCbutkyFkE70y5uWgw.bvc1MM1PDwE3SztW', '12 April 2022', '', '');
+(4, 'y', '619b9d9175715.png', 'admin@gmail.com', 'admin', '$2y$10$CJ11hYTo4.SluItHjNhhkOdP2zAmJL68gg/iVnP9t52RItaFp6C.S', '06 November 2021', 'May', '2023');
 
 --
 -- Indexes for dumped tables
@@ -134,13 +134,13 @@ ALTER TABLE `data_admin`
 -- AUTO_INCREMENT for table `card`
 --
 ALTER TABLE `card`
-  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `card_end`
 --
 ALTER TABLE `card_end`
-  MODIFY `id_end` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_end` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `data_admin`

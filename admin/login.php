@@ -1,3 +1,11 @@
+<?php require 'session.php'; ?>
+<?php
+if(!empty($_SESSION['idd'])){
+	header("Location: index.php");
+}
+else{
+}
+?>
 <!DOCTYPE html>
 <html>
 <?php require 'head.php'; ?>
@@ -11,15 +19,7 @@
 			</div>
 		</div>
 	</div>
-  <?php
 
-  if(!empty($_SESSION['idd'])){
-    header("Location: index.php");
-  }
-  else{
-  }
-
-  ?>
 	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
 		<div class="container">
 			<div class="row align-items-center">
@@ -49,7 +49,7 @@
 								</div>
 							</div>
 						</form>
-            <script type="text/javascript">
+						<script type="text/javascript">
             var form = document.getElementById("myForm");
             function handleForm(event) { event.preventDefault(); }
             form.addEventListener('submit', handleForm);

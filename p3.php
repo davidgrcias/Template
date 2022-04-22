@@ -1,28 +1,52 @@
 <?php
 require 'config.php';
-
-$cnow=$_SESSION["card_now"];
-$cclor= $_SESSION["card_color"];
-$tcolor= $_SESSION["text_color"];
+$tahap=$_SESSION['tahap'];
+if($tahap!==2&&!isset($_GET["ides"])){
+    header("Location:p1.php?notif=MohonIkutiTahapan");
+}
+if(!isset($_GET["ides"])&&!isset($_SESSION["tahap"])){
+    header("Location:p1.php?notif=MohonIkutiTahapan");
+}
+$ourweb="https://sigantengs.000webhostapp.com/p3.php?";
 if(isset($_GET["ides"])){
     $ide=$_GET['ides'];
-    $result = mysqli_query($con,"SELECT * FROM card_end WHERE unique_name='$ide'");
-    if($result===false) {
-        $result = mysqli_query($con,"SELECT * FROM card_end WHERE id_end=$cnow");
-    } else{
+    $kumpulanuyu = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card_end WHERE unique_name = '$ide'"));
+    if($kumpulanuyu==false){
+        header("Location:p1.php?notif=URLTidakValid");
+    }
+    $kumpulanuyucard_id = $kumpulanuyu["card_id"];
+    $kumpulan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card WHERE card_id = $kumpulanuyucard_id"));
+    $result = mysqli_query($con,"SELECT * FROM card_end WHERE unique_name ='$ide'");
+    $resultdua = mysqli_query($con,"SELECT * FROM card_end WHERE unique_name ='$ide'");
+    $row = mysqli_num_rows($result);
+$rowh=[]; //kotk kosong
+    while ($rowd /*bajunya */= mysqli_fetch_assoc($resultdua)){
+        $rowh[]=$rowd; //baju masukin kotaknya ga bawa lemari
+    }
+$cclor= $rowh[0]["card_color"];
+$tcolor= $rowh[0]["text_color"];
+    if($resultdua===false) {
         header("Location:p1.php");
     }
 }else{
+$cnow=$_SESSION["card_now"];
+$cclor= $_SESSION["card_color"];
+$tcolor= $_SESSION["text_color"];
 $kumpulanuyu = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card_end WHERE id_end = $cnow"));
 $kumpulanuyucard_id = $kumpulanuyu["card_id"];
 $kumpulan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card WHERE card_id = $kumpulanuyucard_id"));
-$result = mysqli_query($con,"SELECT * FROM card_end WHERE id_end=$cnow");}
+$result = mysqli_query($con,"SELECT * FROM card_end WHERE id_end=$cnow");
+}
 $row = mysqli_num_rows($result);
 $rows=[]; //kotk kosong
     while ($rowa /*bajunya */= mysqli_fetch_assoc($result)){
         $rows[]=$rowa; //baju masukin kotaknya ga bawa lemari
     }
-$urls=$rows[0]['unique_name'];
+    if(isset($_SESSION["card_now"])&&!isset($_GET["ides"])){
+$urls= "ides=" . $rows[0]['unique_name'];
+}else {
+$urls= "ides=" . $rows[0]['unique_name'];
+}
 ?>
 
 <!-- HTML -->
@@ -51,17 +75,16 @@ $urls=$rows[0]['unique_name'];
         @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Creepster&display=swap');
                     body {
             background-repeat: no-repeat;
-            background-color: hsl(218, 41%, 15%);
+  background-color: #616765;
             background-image: radial-gradient(
                 650px circle at 50% 0%,
-                hsl(218, 41%, 35%) 15%,
-                hsl(218, 41%, 30%) 35%,
-                hsl(218, 41%, 20%) 75%,
-                hsl(218, 41%, 19%) 80%,
+                #888f8c 60%,
                 transparent 100%
             );
             }
-
+.disclaimer{
+    display:none;
+}
                 .stepper-wrapper {
             font-family: 'satisfy';
             font-size:25px;
@@ -117,13 +140,13 @@ $urls=$rows[0]['unique_name'];
             }
 
             .stepper-item.completed .step-counter {
-            background-color: #4bb543;
+            background-color: #d3eb75;
             }
 
             .stepper-item.completed::after {
             position: absolute;
             content: "";
-            border-bottom: 2px solid #00ff04;
+            border-bottom: 2px solid #ccc;
             width: 100%;
             top: 20px;
             left: 50%;
@@ -141,29 +164,12 @@ $urls=$rows[0]['unique_name'];
                 font-size:20px;
             }
 
-            .moon{
-            position: sticky;
-              top: 10%;
-              left: 40%;
-              transform: translate(-50%, -50%);
-              width: 100px; height: 100px; background: white; border-radius: 50%;
-              box-shadow: 0 0 30px 0px #e6e6e6, 0 0 100px 0 white;
-              background-image: linear-gradient(
-              45deg,
-              #e6e6e6 0%,
-              white 90%,
-              white 100%
-              );
-              z-index: -1;
-              filter: blur(2px);
-            }
-
             .mosque{
-              max-width: 100%;
+              width: 80vw;
   height: auto;
-
+bottom:-3%;
                 z-index:-2;
-                filter: blur(2px);
+                /*filter: blur(2px);*/
             }
             .thumbnail{
        overflow: hidden;
@@ -349,7 +355,7 @@ $urls=$rows[0]['unique_name'];
                 display: inline-block;
                 padding: 25px 30px;
                 margin: 40px 0;
-                color: #07f403;
+                color: #47B9FF;
                 text-decoration: none;
                 text-transform: uppercase;
                 transition: 0.5s;
@@ -359,12 +365,12 @@ $urls=$rows[0]['unique_name'];
 
             }
             a:hover{
-                background: #07f403;
+                background: #47B9FF;
                 color: #050801;
-                box-shadow: 0 0 5px #07f403,
-                            0 0 25px #07f403,
-                            0 0 50px #07f403,
-                            0 0 200px #07f403;
+                box-shadow: 0 0 5px #47B9FF,
+                            0 0 25px #47B9FF,
+                            0 0 50px #47B9FF,
+                            0 0 200px #47B9FF;
                 -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
             }
             a:nth-child(1){
@@ -382,7 +388,7 @@ $urls=$rows[0]['unique_name'];
                 left: 0;
                 width: 100%;
                 height: 2px;
-                background: linear-gradient(90deg,transparent,#07f403);
+                background: linear-gradient(90deg,transparent,#47B9FF);
                 animation: animate1 1s linear infinite;
             }
             @keyframes animate1{
@@ -398,7 +404,7 @@ $urls=$rows[0]['unique_name'];
                 right: 0;
                 width: 2px;
                 height: 100%;
-                background: linear-gradient(180deg,transparent,#07f403);
+                background: linear-gradient(180deg,transparent,#47B9FF);
                 animation: animate2 1s linear infinite;
                 animation-delay: 0.25s;
             }
@@ -415,7 +421,7 @@ $urls=$rows[0]['unique_name'];
                 right: 0;
                 width: 100%;
                 height: 2px;
-                background: linear-gradient(270deg,transparent,#07f403);
+                background: linear-gradient(270deg,transparent,#47B9FF);
                 animation: animate3 1s linear infinite;
                 animation-delay: 0.50s;
             }
@@ -434,7 +440,7 @@ $urls=$rows[0]['unique_name'];
                 left: 0;
                 width: 2px;
                 height: 100%;
-                background: linear-gradient(360deg,transparent,#07f403);
+                background: linear-gradient(360deg,transparent,#47B9FF);
                 animation: animate4 1s linear infinite;
                 animation-delay: 0.75s;
             }
@@ -482,14 +488,20 @@ $urls=$rows[0]['unique_name'];
                 .wrapper{
                   width:280px!important;
                 }
+                .mosque{
+                width: 120vw;
+                height: auto;
+                  bottom: -10%!important;
+                z-index:-2;
+                /*filter: blur(2px);*/
+            }
               }
     </style>
 </head>
 <body onload = "autoClick();">
-<div class="moon"></div>
-<div class="bottomcenter"><img src="images/mosque-bright.png" class="mosque"></img></div>
+<!--<div class="bottomcenter"><img src="images/mosque-bright.png" class="mosque"></img></div>-->
 <div class="container">
-<div class="stepper-wrapper">
+<div class="stepper-wrapper" style="margin-top:3%;">
       <div class="stepper-item completed">
         <div class="step-counter" onclick = "directp1();">1</div>
         <div class="step-name"><span onclick = "directp1();">Pilih Kartu Ucapan</span></div>
@@ -516,22 +528,22 @@ $urls=$rows[0]['unique_name'];
     <div class="tooltip">Back</div>
     <span><i class="fa fa-arrow-rotate-back"></i></span>
   </div>
-  <a style="all:unset;" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blabla<?=$urls;?>">
+  <a style="all:unset;" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?=$ourweb.$urls;?>">
   <div class="icon facebook">
     <div class="tooltip">Facebook</div>
     <span style="all:unset;"><i class="fa fa-facebook-f"></i></span>
   </div></a>
-  <a style="all:unset;" target="_blank" href="http://twitter.com/share?text=Check Out My Card!&url=http://blabla<?=$urls;?>&hashtags=hashtag1,hashtag2,hashtag3">
+  <a style="all:unset;" target="_blank" href="http://twitter.com/share?text=Check Out My Card!&url=<?=$ourweb.$urls;?>&hashtags=hashtag1,hashtag2,hashtag3">
   <div class="icon twitter">
     <div class="tooltip">Twitter</div>
     <span style="all:unset;"><i class="fa fa-twitter"></i></span>
   </div></a>
-  <a style="all:unset;" href="whatsapp://send?text=<?=$urls;?>" data-action="share/whatsapp/share">
+  <a style="all:unset;" href="whatsapp://send?text=<?=$ourweb.$urls;?>" data-action="share/whatsapp/share">
   <div class="icon whatsapp">
     <div class="tooltip">Whatsapp</div>
     <span style="all:unset;"><i class="fa fa-whatsapp"></i></span>
   </div></a>
-  <a style="all:unset;" target="_blank" href="https://telegram.me/share/url?url=https://blabla<?=$urls;?>&text=Check Out My Card!">
+  <a style="all:unset;" target="_blank" href="https://telegram.me/share/url?url=<?=$ourweb.$urls;?>&text=Check Out My Card!">
   <div class="icon telegram">
     <div class="tooltip">Telegram</div>
     <span style="all:unset;"><i class="fa fa-telegram"></i></span>
@@ -571,7 +583,7 @@ $urls=$rows[0]['unique_name'];
             <?= $rows[0]['isi']?></p>
       <p style="margin:5% 0% 5% 0%;opacity:0;">.</p>
 
-			<p style="text-align:right;font-size: 4vw; height:50px; width:50%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-left:10px;outline-width: 1px;outline-color:#ff4c4d;float:right;">
+			<p style="text-align:right;font-size: 4vw; height:50px; width:50%;box-sizing: border-box;--background: transparent;border-radius: 15px;padding-left:10px;padding-bottom:10%;outline-width: 1px;outline-color:#ff4c4d;float:right;">
             <?= $rows[0]['dari']?></p>
 
 			<div style='clear:both;text-align:center; margin-top:5%;'>
@@ -594,7 +606,7 @@ $urls=$rows[0]['unique_name'];
 
     <script>
     function copyURL() {
-    navigator.clipboard.writeText("https://blabla<?=$urls;?>");
+    navigator.clipboard.writeText("<?=$ourweb.$urls;?>");
 
     var tooltip = document.getElementById("copylink");
     tooltip.innerHTML = "Copied Card's URL";
@@ -613,7 +625,7 @@ $urls=$rows[0]['unique_name'];
             onrendered: function(canvas) {
               var imageData = canvas.toDataURL("image/jpg");
               var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
-              $("#download").attr("download", "image.jpg").attr("href", newData);
+              $("#download").attr("download", "KartuUcapan-IdulFitri.jpg").attr("href", newData);
             }
           });
 

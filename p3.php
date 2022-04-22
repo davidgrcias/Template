@@ -91,7 +91,7 @@ $urls= "ides=" . $rows[0]['unique_name'];
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
-            color:white;
+            color:gray;
             }
             .stepper-item {
             position: relative;

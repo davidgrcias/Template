@@ -488,7 +488,7 @@ function pilih2() {
 			</div><!-- /style -->
 
 			<div style='clear:both;text-align:center; margin-top:240px;'>
-				<input id="download" type='submit' value='Selesai!' name="selesai">
+				<input id="download" type='submit' value='selesai' name="selesai">
 			</div>
 		</form>
 

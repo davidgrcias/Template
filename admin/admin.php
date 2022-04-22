@@ -1,3 +1,18 @@
+<?php require 'session.php'; ?>
+<?php require 'connt.php'; ?>
+<?php require 'sessionin.php'; ?>
+<?php
+function query($query){
+	global $connt;
+	$result = mysqli_query($connt, $query);
+	$rows = [];
+	while ($row = mysqli_fetch_assoc($result)){
+		$rows[] = $row;
+	}
+
+	return $rows;
+}
+?>
 <!DOCTYPE html>
 <html>
 <?php require 'head.php'; ?>
@@ -25,10 +40,7 @@
   }
 </style>
 <body>
-	<?php require 'pre-loader.php'; ?>
-
 	<?php require 'header.php'; ?>
-
 	<?php require 'left-side-bar.php'; ?>
 
 	<div class="mobile-menu-overlay"></div>
@@ -43,7 +55,7 @@
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="../banksampah/">Dashboard</a></li>
+									<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Admin</li>
 								</ol>
 							</nav>
@@ -105,7 +117,7 @@
           											<?php endif; ?>
           											if (confirmalert == true){
           												$.ajax({
-          													url: '../banksampah/function.php',
+          													url: 'function.php',
           													type: 'POST',
           													data: {deleteid:deleteid,kode:kode},
           													success: function(response){

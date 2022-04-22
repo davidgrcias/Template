@@ -1,9 +1,10 @@
 <?php
-require 'config.php';
 
+require 'config.php';
 if(!isset($_GET["id"])){
   header("Location: p1.php");
 }
+$_SESSION['tahap']=2;
 $acak='none';
 function generate(){
   global $acak;
@@ -27,8 +28,11 @@ if ($row>=1) {
 }
 
 $id = $_GET['id'];
-$indomie = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card_end"));
+// $indomie = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card_end"));
 $kumpulan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM card WHERE card_id = $id"));
+if($kumpulan==false){
+        header("Location:p1.php?notif=URLTidakValid");
+    }
 $result = mysqli_query($con,"SELECT * FROM card WHERE card_id='$id'");
 $row = mysqli_num_rows($result);
 $rows=[]; //kotk kosong
@@ -36,11 +40,10 @@ $rows=[]; //kotk kosong
     while ($rowa /*bajunya */= mysqli_fetch_assoc($result)){
         $rows=$rowa; //baju masukin kotaknya ga bawa lemari
     }
-
+    
 if(isset($_POST['selesai']))
 {
   urlmaking();
-
   $card_id = $_POST['card_id'];
   $imageName = $_POST['imageName'];
   $image = $_POST['image'];
@@ -49,14 +52,12 @@ if(isset($_POST['selesai']))
   $isi = $_POST['isi'];
   $dari = $_POST['dari'];
   $textcolor = $_POST['text_color'];
-
-  $sql= "INSERT INTO card_end VALUES ('','$card_id', '$kepada', '$isi', '$dari','$acak') ";
+$sql= "INSERT INTO `card_end` (`id_end`, `card_id`, `kepada`, `isi`, `dari`, `unique_name`,`card_color`,`text_color`) VALUES (NULL,'$card_id', '$kepada', '$isi', '$dari','$acak','$bgcolor','$textcolor');";
+//   $sql= "INSERT INTO card_end VALUES ('','$card_id', '$kepada', '$isi', '$dari','$acak','$bgcolor','$textcolor') ";
   $query = mysqli_query($con, $sql);
-
   $resultb = mysqli_query($con,"SELECT id_end FROM card_end ORDER BY id_end DESC limit 1");
   $rowk = mysqli_num_rows($resultb);
   $rowz=[]; //kotk kosong
-  echo "<br>";
   while ($rowb /*bajunya */= mysqli_fetch_assoc($resultb)){
     $rowz=$rowb; //baju masukin kotaknya ga bawa lemari
 }
@@ -64,9 +65,9 @@ if(isset($_POST['selesai']))
   $_SESSION["card_color"]=$bgcolor;
   $_SESSION["text_color"]=$textcolor;
     if($query) {
-      header('Location: p3.php');
+      header('Location:p3.php');exit();
     } else {
-      header('Location: p2.php?status=gagal');
+      header('Location:p1.php?status=gagal');exit();
           }
     }
 ?>
@@ -88,6 +89,7 @@ if(isset($_POST['selesai']))
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Volkhov:ital,wght@1,700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Creepster&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
         body {
   background-repeat: no-repeat;
   background-color: #e0e0e0;
@@ -96,11 +98,13 @@ if(isset($_POST['selesai']))
     .stepper-wrapper {
   font-family: 'satisfy';
   font-size:25px;
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  color:white;
+  color:gray;
 }
+
 .stepper-item {
   position: relative;
   display: flex;
@@ -144,17 +148,18 @@ if(isset($_POST['selesai']))
 }
 
 .stepper-item.active {
-  font-weight: bold;
 }
 
 .stepper-item.completed .step-counter {
-  background-color: #4bb543;
+  background-color: #d3eb75;
 }
-
+.disclaimer{
+    display:none;
+}
 .stepper-item.completed::after {
   position: absolute;
   content: "";
-  border-bottom: 2px solid #00ff04;
+  border-bottom: 2px solid #ccc;
   width: 100%;
   top: 20px;
   left: 50%;
@@ -171,23 +176,6 @@ if(isset($_POST['selesai']))
     font-family:'concert one';
     font-size:20px;
 }
-
-.moon{
-  position: sticky;
-     top: 10%;
-     left: 40%;
-     transform: translate(-50%, -50%);
-     width: 100px; height: 100px; background: white; border-radius: 50%;
-    box-shadow: 0 0 30px 0px yellow, 0 0 100px 0 white;
-    background-image: linear-gradient(
-    45deg,
-    yellow 0%,
-    white 90%,
-    white 100%
-    );
-     z-index: -1;
-    filter: blur(2px);
-   }
 
    .thumbnail{
        overflow: hidden;
@@ -211,7 +199,7 @@ if(isset($_POST['selesai']))
             color: #b08d5b;
         }
         a {
-            color:white;
+            color:#5B6336;
             text-decoration: none;
         }
         a:hover{
@@ -320,6 +308,9 @@ input[type='submit'] {
 	border-radius:20px;
 	cursor:pointer;
 }
+input[type=text], select, textarea{
+    font-family: 'Inter', 'volkhov';
+}
 .pilihan {
 	position:relative;
 	margin-top:25px;
@@ -330,7 +321,7 @@ input[type='submit'] {
 
 .step-name{
   cursor: pointer;
-  color:#4BB543;
+  color:gray;
 }
 
 .step-counter{
@@ -395,20 +386,19 @@ function pilih2() {
 </script>
 </head>
 <body body onload = "autoClick();">
-<div class="moon"></div>
-<div class="container">
+<div class="container" style="margin-top:2%;">
 <div class="stepper-wrapper">
       <div class="stepper-item completed">
-        <div class="step-counter"><a href="p1.php">1</a></div>
+        <div class="step-counter" style="color:#5B6336!important"><a href="p1.php">1</a></div>
         <div class="step-name"><span onclick = "directp1();">Pilihan Kartu Ucapan</span></div>
       </div>
       <div class="stepper-item active" >
-        <div class="step-counter" style="background-color: #4bb543;"><a href="">2</a></div>
+        <div class="step-counter" style="background-color:#D3EB75;color:#5B6336!important;"><a href="">2</a></div>
         <div class="step-name" style="text-decoration:none;" onclick = "window.location.reload();">Tulis Pesan Anda</div>
       </div>
       <div class="stepper-item">
-        <div class="step-counter" style = "cursor: not-allowed;">3</div>
-        <div class="step-name" style = "cursor: not-allowed;color:#0A2E16;" >Kirim Kartu</div>
+        <div class="step-counter" style = "background-color:#5B6336;color:white;cursor: not-allowed;">3</div>
+        <div class="step-name" style = "cursor: not-allowed;color:gray;" >Kirim Kartu</div>
       </div>
     </div>
     <script type="text/javascript">
@@ -422,11 +412,11 @@ function pilih2() {
 <center>
       <!-- ini ntar ambil semua data trus itung ada berapa kan nah trus digituin -->
   <!-- <div class="col-md-7"> -->
-          <div class="caption">
-            <p>Card Name : <?php echo $kumpulan["imageName"] ?></p>
-          </div>
+  <!--        <div class="caption">-->
+  <!--          <p>Card Name : <?php //echo $kumpulan["imageName"] ?></p>-->
+  <!--        </div>-->
 
-    <div class="bgcolor" id="bgc">
+    <div class="bgcolor" id="bgc" style="margin-top:3%;">
       <div class="seper">
         <div class="thumbnail">
             <img src="usersUpload/<?php echo $kumpulan["image"] ?>" class="imagethumbnail" style="width:100%">
@@ -447,12 +437,12 @@ function pilih2() {
 		  <input type='hidden' name='text_color' id="textcolor" value='white'>
 
 		<div class='isiform'>
-			<input type='text' name='kepada' class='kepada' value='Kepada' maxlength = 20>
+			<input type='text' name='kepada' class='kepada' placeholder='Kepada' maxlength = 20>
 
-			<textarea class='isi' name='isi' id="isi" maxlength = 300>Isi</textarea>
+			<textarea class='isi' name='isi' id="isi" maxlength = 300 placeholder="isi"></textarea>
 
 			<div style='text-align:right;'>
-				<input type='text' name='dari' class='dari' value='Dari' maxlength = 20>
+				<input type='text' name='dari' class='dari' placeholder='Dari' maxlength = 20>
 			</div>
 
 			<div style='margin-top:40px; float:left; font-size:30px;'>
@@ -492,10 +482,8 @@ function pilih2() {
         <option class="short" data-limit='70' value=' Taqabbalallahu minna wa minkum.'>Taqabbalallahu minna wa minkum</option>
         <option class="short" data-limit='70' value=' Mohon maaf lahir dan batin.'>Mohon maaf lahir dan batin</option>
         <option class="short" data-limit='70' value=' Di hari yang suci ini, semoga kita senantiasa diberikan ampunan dan diberkahi kegembiraan.'>Di hari yang suci ini, semoga kita senantiasa diberikan ampunan dan diberkahi kegembiraan</option>
-        <option class="short" data-limit='70' value=' Semoga Allah menerima amal ibadah Ramadan kita semua.'>Semoga Allah menerima amal ibadah Ramadan kita semua</option>
-        <option class="short" data-limit='70' value=' Semoga kebahagiaan akan selalu bersamamu setiap harinya.'>Semoga kebahagiaan akan selalu bersamamu setiap harinya</option>
-        <option class="short" data-limit='70' value=' Semoga kita dapat memperbaiki diri dan saling memaafkan dengan lapang dada.'>Semoga kita dapat memperbaiki diri dan saling memaafkan dengan lapang dada</option>
-        <option class="short" data-limit='70' value=' Mohon maaf atas segala ucapan dan perbuatanku yang telah menyakitimu.'>Mohon maaf atas segala ucapan dan perbuatanku yang telah menyakitimu</option>
+        <option class="short" data-limit='70' value=' Semoga kita dapat memperbaiki diri dan saling memaafkan dengan lapang dada'>Semoga kita dapat memperbaiki diri dan saling memaafkan dengan lapang dada</option>
+        <option class="short" data-limit='70' value=' Semoga kebaikan Ramadan terus terasa sepanjang tahun'>Semoga kebaikan Ramadan terus terasa sepanjang tahun</option>
       </select>
 			</div><!-- /style -->
 
